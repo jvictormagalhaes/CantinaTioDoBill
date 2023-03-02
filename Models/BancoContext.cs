@@ -1,14 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CantinaDoTioBill.Models
 {
-    internal class BancoContext : DbContext
+    class BancoContext : DbContext
     {
         public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Produto> Produto { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options) {
+            options.UseSqlite("Data Source=banco.db");
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace CantinaDoTioBill.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required, MaxLength(100)]
         public string Nome { get; set; }
         [Required]
         public string Cpf { get; set; }
