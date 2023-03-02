@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CantinaDoTioBill.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Xsl;
 
 namespace CantinaDoTioBill
 {
@@ -32,24 +34,35 @@ namespace CantinaDoTioBill
             this.Close();
         }
 
-        private void cbUf_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void bntSalvar_Click(object sender, EventArgs e)
+        public void bntSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (var db = new BancoContext())
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.Nome = txtNome.Text;
+                    cliente.Cpf = txtCpf.Text;
+                    cliente.Endereco = txtEndereco.Text;
+                    cliente.Rg = txtRg.Text;
+                    cliente.Telefone = txtTelefone.Text;
+                    cliente.Bairro = txtBairro.Text;
+                    db.Cliente.Add(cliente);
+                    db.SaveChanges();
 
+                    MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

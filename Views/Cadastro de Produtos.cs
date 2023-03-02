@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CantinaDoTioBill.Models;
+using System.Globalization;
 
 namespace CantinaDoTioBill
 {
@@ -32,14 +25,34 @@ namespace CantinaDoTioBill
 
         }
 
-        private void pnlStatus_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void bntCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var db = new BancoContext())
+                {
+                    Produto produto = new Produto();
+                    produto.Nome = txtNome.Text;
+                    produto.Estoque = Convert.ToInt32(txtEstoque.Text);
+                    produto.ValCompra = Convert.ToDouble(txtValCompra.Text, CultureInfo.InvariantCulture);
+                    produto.ValVenda = Convert.ToDouble(txtValVenda.Text, CultureInfo.InvariantCulture);
+
+                    db.Produto.Add(produto);
+                    db.SaveChanges();
+
+                    MessageBox.Show("Produto cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

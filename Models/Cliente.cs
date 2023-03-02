@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,8 +22,10 @@ namespace CantinaDoTioBill.Models
         public string Telefone { get; set; }
         [Required]
         public string Endereco { get; set; }
+        [Required]
+        public string Bairro { get; set; }
 
-        public Cliente(int id, string nome, string cpf, string rg, string telefone, string endereco)
+        public Cliente(int id, string nome, string cpf, string rg, string telefone, string endereco, string bairro)
         {
             Id = id;
             Nome = nome;
@@ -30,6 +33,7 @@ namespace CantinaDoTioBill.Models
             Rg = rg;
             Telefone = telefone;
             Endereco = endereco;
+            Bairro = bairro;
         }
 
         public Cliente()

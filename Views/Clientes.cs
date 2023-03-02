@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CantinaDoTioBill.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,7 @@ namespace CantinaDoTioBill.View
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
             FrmCadastroCliente cadastroCliente = new FrmCadastroCliente();
-            cadastroCliente.ShowDialog();    
+            cadastroCliente.Show();
         }
 
         private void bntSair_Click(object sender, EventArgs e)

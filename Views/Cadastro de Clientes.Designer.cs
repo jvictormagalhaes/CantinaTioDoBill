@@ -50,7 +50,7 @@
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.bntCancelar = new System.Windows.Forms.Button();
-            this.bntSalvar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblRegistro = new System.Windows.Forms.Label();
             this.lblResgistroId = new System.Windows.Forms.Label();
@@ -73,8 +73,8 @@
             this.relatóriosToolStripMenuItem});
             this.MenuInicio.Location = new System.Drawing.Point(0, 0);
             this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.MenuInicio.Size = new System.Drawing.Size(773, 24);
+            this.MenuInicio.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.MenuInicio.Size = new System.Drawing.Size(883, 30);
             this.MenuInicio.TabIndex = 12;
             this.MenuInicio.Text = "MenuInicio";
             // 
@@ -83,13 +83,13 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuáriosToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.cadastroToolStripMenuItem.Text = "Usuário";
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.usuáriosToolStripMenuItem.Text = "Cadastro de Usuário";
             // 
             // cadastroToolStripMenuItem1
@@ -99,25 +99,25 @@
             this.produtosToolStripMenuItem,
             this.quentinhasToolStripMenuItem});
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.produtosToolStripMenuItem.Text = "Produtos";
             // 
             // quentinhasToolStripMenuItem
             // 
             this.quentinhasToolStripMenuItem.Name = "quentinhasToolStripMenuItem";
-            this.quentinhasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.quentinhasToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.quentinhasToolStripMenuItem.Text = "Tipos de Quentinhas";
             // 
             // vendasToolStripMenuItem
@@ -125,13 +125,13 @@
             this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vendaBalcãoToolStripMenuItem});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.vendasToolStripMenuItem.Text = "Vendas";
             // 
             // vendaBalcãoToolStripMenuItem
             // 
             this.vendaBalcãoToolStripMenuItem.Name = "vendaBalcãoToolStripMenuItem";
-            this.vendaBalcãoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.vendaBalcãoToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.vendaBalcãoToolStripMenuItem.Text = "Venda Balcão";
             // 
             // relatóriosToolStripMenuItem
@@ -139,92 +139,97 @@
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.relatórioDeVendasToolStripMenuItem});
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
             // relatórioDeVendasToolStripMenuItem
             // 
             this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
-            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.relatórioDeVendasToolStripMenuItem.Text = "Relatório de Vendas";
             // 
             // txtRg
             // 
             this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRg.Location = new System.Drawing.Point(603, 52);
+            this.txtRg.Location = new System.Drawing.Point(689, 69);
+            this.txtRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(136, 23);
+            this.txtRg.Size = new System.Drawing.Size(155, 27);
             this.txtRg.TabIndex = 24;
             // 
             // txtCpf
             // 
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCpf.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCpf.Location = new System.Drawing.Point(462, 52);
+            this.txtCpf.Location = new System.Drawing.Point(528, 69);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(136, 23);
+            this.txtCpf.Size = new System.Drawing.Size(155, 27);
             this.txtCpf.TabIndex = 23;
             // 
             // txtEndereco
             // 
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndereco.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEndereco.Location = new System.Drawing.Point(165, 102);
+            this.txtEndereco.Location = new System.Drawing.Point(189, 136);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(289, 23);
+            this.txtEndereco.Size = new System.Drawing.Size(330, 27);
             this.txtEndereco.TabIndex = 22;
             // 
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefone.Location = new System.Drawing.Point(13, 102);
+            this.txtTelefone.Location = new System.Drawing.Point(15, 136);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(142, 23);
+            this.txtTelefone.Size = new System.Drawing.Size(162, 27);
             this.txtTelefone.TabIndex = 20;
             // 
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNome.Location = new System.Drawing.Point(133, 52);
+            this.txtNome.Location = new System.Drawing.Point(152, 69);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(324, 23);
+            this.txtNome.Size = new System.Drawing.Size(370, 27);
             this.txtNome.TabIndex = 19;
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(605, 34);
+            this.lblRg.Location = new System.Drawing.Point(691, 45);
             this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(22, 15);
+            this.lblRg.Size = new System.Drawing.Size(28, 20);
             this.lblRg.TabIndex = 18;
             this.lblRg.Text = "RG";
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(461, 34);
+            this.lblCpf.Location = new System.Drawing.Point(527, 45);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(28, 15);
+            this.lblCpf.Size = new System.Drawing.Size(33, 20);
             this.lblCpf.TabIndex = 17;
             this.lblCpf.Text = "CPF";
             // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(164, 83);
+            this.lblEndereco.Location = new System.Drawing.Point(187, 111);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(56, 15);
+            this.lblEndereco.Size = new System.Drawing.Size(71, 20);
             this.lblEndereco.TabIndex = 16;
             this.lblEndereco.Text = "Endereço";
             // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(12, 85);
+            this.lblTelefone.Location = new System.Drawing.Point(14, 113);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(51, 15);
+            this.lblTelefone.Size = new System.Drawing.Size(66, 20);
             this.lblTelefone.TabIndex = 14;
             this.lblTelefone.Text = "Telefone";
             // 
@@ -232,9 +237,9 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNome.Location = new System.Drawing.Point(130, 34);
+            this.lblNome.Location = new System.Drawing.Point(149, 45);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(44, 16);
             this.lblNome.TabIndex = 13;
             this.lblNome.Text = "Nome";
             this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
@@ -245,50 +250,53 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntCancelar.Location = new System.Drawing.Point(85, 3);
+            this.bntCancelar.Location = new System.Drawing.Point(97, 4);
+            this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntCancelar.Name = "bntCancelar";
-            this.bntCancelar.Size = new System.Drawing.Size(71, 25);
+            this.bntCancelar.Size = new System.Drawing.Size(82, 33);
             this.bntCancelar.TabIndex = 1;
             this.bntCancelar.Text = "Cancelar";
             this.bntCancelar.UseVisualStyleBackColor = true;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
-            // bntSalvar
+            // btnSalvar
             // 
-            this.bntSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSalvar.Location = new System.Drawing.Point(3, 3);
-            this.bntSalvar.Name = "bntSalvar";
-            this.bntSalvar.Size = new System.Drawing.Size(76, 25);
-            this.bntSalvar.TabIndex = 0;
-            this.bntSalvar.Text = "Salvar";
-            this.bntSalvar.UseVisualStyleBackColor = true;
-            this.bntSalvar.Click += new System.EventHandler(this.bntSalvar_Click);
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(3, 4);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(88, 33);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.bntSalvar_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.Controls.Add(this.bntSalvar, 0, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSalvar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.bntCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(603, 444);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(689, 592);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(159, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(182, 41);
             this.tableLayoutPanel1.TabIndex = 50;
             // 
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
             this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegistro.Location = new System.Drawing.Point(9, 30);
+            this.lblRegistro.Location = new System.Drawing.Point(10, 40);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(72, 13);
+            this.lblRegistro.Size = new System.Drawing.Size(87, 16);
             this.lblRegistro.TabIndex = 51;
             this.lblRegistro.Text = "Registro Nº";
             this.lblRegistro.Click += new System.EventHandler(this.label5_Click);
@@ -296,9 +304,9 @@
             // lblResgistroId
             // 
             this.lblResgistroId.AutoSize = true;
-            this.lblResgistroId.Location = new System.Drawing.Point(24, 4);
+            this.lblResgistroId.Location = new System.Drawing.Point(27, 5);
             this.lblResgistroId.Name = "lblResgistroId";
-            this.lblResgistroId.Size = new System.Drawing.Size(65, 15);
+            this.lblResgistroId.Size = new System.Drawing.Size(83, 20);
             this.lblResgistroId.TabIndex = 1;
             this.lblResgistroId.Text = "ResgistroId";
             this.lblResgistroId.Visible = false;
@@ -308,34 +316,36 @@
             this.pnResgistroId.BackColor = System.Drawing.Color.LightBlue;
             this.pnResgistroId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnResgistroId.Controls.Add(this.lblResgistroId);
-            this.pnResgistroId.Location = new System.Drawing.Point(10, 48);
+            this.pnResgistroId.Location = new System.Drawing.Point(11, 64);
+            this.pnResgistroId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnResgistroId.Name = "pnResgistroId";
-            this.pnResgistroId.Size = new System.Drawing.Size(114, 24);
+            this.pnResgistroId.Size = new System.Drawing.Size(130, 31);
             this.pnResgistroId.TabIndex = 52;
             // 
             // txtBairro
             // 
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBairro.Location = new System.Drawing.Point(463, 102);
+            this.txtBairro.Location = new System.Drawing.Point(529, 136);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(142, 23);
+            this.txtBairro.Size = new System.Drawing.Size(162, 27);
             this.txtBairro.TabIndex = 54;
             // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblBairro.Location = new System.Drawing.Point(462, 85);
+            this.lblBairro.Location = new System.Drawing.Point(528, 113);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(38, 15);
+            this.lblBairro.Size = new System.Drawing.Size(49, 20);
             this.lblBairro.TabIndex = 53;
             this.lblBairro.Text = "Bairro";
             // 
             // FrmCadastroCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 491);
+            this.ClientSize = new System.Drawing.Size(883, 655);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.pnResgistroId);
@@ -355,6 +365,7 @@
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.MenuInicio;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmCadastroCliente";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -383,23 +394,23 @@
         private System.Windows.Forms.ToolStripMenuItem vendaBalcãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtRg;
-        private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button bntCancelar;
-        private System.Windows.Forms.Button bntSalvar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblRegistro;
         private System.Windows.Forms.Label lblResgistroId;
         private System.Windows.Forms.Panel pnResgistroId;
-        private TextBox txtBairro;
         private Label lblBairro;
+        public TextBox txtRg;
+        public TextBox txtCpf;
+        public TextBox txtEndereco;
+        public TextBox txtTelefone;
+        public TextBox txtNome;
+        public TextBox txtBairro;
     }
 }

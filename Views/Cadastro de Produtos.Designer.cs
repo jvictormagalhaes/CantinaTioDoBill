@@ -45,14 +45,12 @@
             this.bntCancelar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtValCompra = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtValVenda = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtEstoque = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblResgistroId = new System.Windows.Forms.Label();
             this.pnId = new System.Windows.Forms.Panel();
@@ -72,7 +70,7 @@
             this.relatóriosToolStripMenuItem});
             this.MenuInicio.Location = new System.Drawing.Point(0, 0);
             this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Size = new System.Drawing.Size(984, 28);
+            this.MenuInicio.Size = new System.Drawing.Size(728, 28);
             this.MenuInicio.TabIndex = 25;
             this.MenuInicio.Text = "MenuInicio";
             // 
@@ -162,7 +160,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
             this.tableLayoutPanel1.Controls.Add(this.btnAdicionar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.bntCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(780, 506);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(524, 506);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -183,6 +181,7 @@
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // bntCancelar
             // 
@@ -219,24 +218,24 @@
             this.lblNome.Text = "Nome";
             this.lblNome.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(155, 72);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(351, 27);
-            this.textBox1.TabIndex = 56;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Location = new System.Drawing.Point(155, 72);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(351, 27);
+            this.txtNome.TabIndex = 56;
+            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox3
+            // txtValCompra
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(13, 135);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(130, 27);
-            this.textBox3.TabIndex = 63;
+            this.txtValCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValCompra.Location = new System.Drawing.Point(13, 135);
+            this.txtValCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtValCompra.Name = "txtValCompra";
+            this.txtValCompra.Size = new System.Drawing.Size(130, 27);
+            this.txtValCompra.TabIndex = 63;
             // 
             // label3
             // 
@@ -249,14 +248,14 @@
             this.label3.TabIndex = 62;
             this.label3.Text = "Val. Compra";
             // 
-            // textBox4
+            // txtValVenda
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(154, 135);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(130, 27);
-            this.textBox4.TabIndex = 65;
+            this.txtValVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValVenda.Location = new System.Drawing.Point(154, 135);
+            this.txtValVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtValVenda.Name = "txtValVenda";
+            this.txtValVenda.Size = new System.Drawing.Size(130, 27);
+            this.txtValVenda.TabIndex = 65;
             // 
             // label6
             // 
@@ -269,34 +268,14 @@
             this.label6.TabIndex = 64;
             this.label6.Text = "Val. Venda";
             // 
-            // textBox5
+            // txtEstoque
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(659, 72);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 27);
-            this.textBox5.TabIndex = 67;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(658, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "Unidade";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(522, 72);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(130, 27);
-            this.textBox6.TabIndex = 69;
+            this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstoque.Location = new System.Drawing.Point(522, 72);
+            this.txtEstoque.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEstoque.Name = "txtEstoque";
+            this.txtEstoque.Size = new System.Drawing.Size(130, 27);
+            this.txtEstoque.TabIndex = 69;
             // 
             // label8
             // 
@@ -334,16 +313,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 562);
-            this.Controls.Add(this.textBox6);
+            this.ClientSize = new System.Drawing.Size(728, 562);
+            this.Controls.Add(this.txtEstoque);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtValVenda);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtValCompra);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pnId);
             this.Controls.Add(this.label5);
@@ -381,14 +358,12 @@
         private System.Windows.Forms.Button bntCancelar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtValCompra;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtValVenda;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtEstoque;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblResgistroId;
         private System.Windows.Forms.Panel pnId;
