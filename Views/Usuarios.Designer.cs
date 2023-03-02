@@ -153,11 +153,12 @@
             this.tableLayoutPanel1.Controls.Add(this.bntSair, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.bntAdicionar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnRemover, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(508, 396);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(508, 495);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 42);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 52);
             this.tableLayoutPanel1.TabIndex = 54;
             // 
             // bntSair
@@ -167,9 +168,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSair.Location = new System.Drawing.Point(197, 3);
+            this.bntSair.Location = new System.Drawing.Point(197, 4);
+            this.bntSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntSair.Name = "bntSair";
-            this.bntSair.Size = new System.Drawing.Size(80, 36);
+            this.bntSair.Size = new System.Drawing.Size(80, 44);
             this.bntSair.TabIndex = 1;
             this.bntSair.Text = "Sair";
             this.bntSair.UseVisualStyleBackColor = true;
@@ -182,9 +184,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntAdicionar.Location = new System.Drawing.Point(3, 3);
+            this.bntAdicionar.Location = new System.Drawing.Point(3, 4);
+            this.bntAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntAdicionar.Name = "bntAdicionar";
-            this.bntAdicionar.Size = new System.Drawing.Size(96, 36);
+            this.bntAdicionar.Size = new System.Drawing.Size(96, 44);
             this.bntAdicionar.TabIndex = 0;
             this.bntAdicionar.Text = "Adicionar";
             this.bntAdicionar.UseVisualStyleBackColor = true;
@@ -197,9 +200,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Location = new System.Drawing.Point(105, 3);
+            this.btnRemover.Location = new System.Drawing.Point(105, 4);
+            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(86, 36);
+            this.btnRemover.Size = new System.Drawing.Size(86, 44);
             this.btnRemover.TabIndex = 2;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -211,21 +215,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvUsuarios.Location = new System.Drawing.Point(14, 46);
+            this.dtvUsuarios.Location = new System.Drawing.Point(14, 58);
+            this.dtvUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvUsuarios.Name = "dtvUsuarios";
             this.dtvUsuarios.RowHeadersWidth = 51;
             this.dtvUsuarios.RowTemplate.Height = 24;
-            this.dtvUsuarios.Size = new System.Drawing.Size(773, 344);
+            this.dtvUsuarios.Size = new System.Drawing.Size(773, 430);
             this.dtvUsuarios.TabIndex = 56;
+            this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
             // 
             // FrmUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 562);
             this.Controls.Add(this.dtvUsuarios);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.MenuInicio);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmUsuarios";
             this.Text = "Usuários";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

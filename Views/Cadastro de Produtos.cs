@@ -39,7 +39,7 @@ namespace CantinaDoTioBill
                     Produto produto = new Produto();
                     produto.Nome = txtNome.Text;
                     produto.Estoque = Convert.ToInt32(txtEstoque.Text);
-                    produto.Preco = Convert.ToDouble(txtPreco.Text, CultureInfo.InvariantCulture);
+                    produto.Preco = Convert.ToDouble(txtPreco.Text);
 
                     db.Produto.Add(produto);
                     db.SaveChanges();

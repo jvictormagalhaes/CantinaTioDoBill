@@ -6,7 +6,6 @@ C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.FrmHome.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.FrmLogin.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.View.FrmProdutos.resources
-C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.FrmTpQuentinha.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.View.FrmUsuarios.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.FrmTelaVenda.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.View.FrmVendas.resources

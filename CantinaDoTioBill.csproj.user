@@ -22,9 +22,6 @@
     <Compile Update="Views\Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Tipo de Quentinha.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Views\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>

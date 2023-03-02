@@ -61,7 +61,7 @@
             this.relatóriosToolStripMenuItem});
             this.MenuInicio.Location = new System.Drawing.Point(0, 0);
             this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Size = new System.Drawing.Size(800, 30);
+            this.MenuInicio.Size = new System.Drawing.Size(800, 28);
             this.MenuInicio.TabIndex = 2;
             this.MenuInicio.Text = "MenuInicio";
             // 
@@ -70,7 +70,7 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuáriosToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.cadastroToolStripMenuItem.Text = "Usuário";
             // 
             // usuáriosToolStripMenuItem
@@ -86,7 +86,7 @@
             this.produtosToolStripMenuItem,
             this.quentinhasToolStripMenuItem});
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(82, 26);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             // 
             // clientesToolStripMenuItem
@@ -113,7 +113,7 @@
             this.vendasToolStripMenuItem1,
             this.vendaBalcãoToolStripMenuItem});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.vendasToolStripMenuItem.Text = "Vendas";
             // 
             // vendasToolStripMenuItem1
@@ -133,7 +133,7 @@
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.relatórioDeVendasToolStripMenuItem});
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
             // relatórioDeVendasToolStripMenuItem
@@ -152,11 +152,12 @@
             this.tableLayoutPanel1.Controls.Add(this.bntSair, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.bntAdicionar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(518, 396);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(518, 495);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(270, 42);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(270, 52);
             this.tableLayoutPanel1.TabIndex = 54;
             // 
             // bntSair
@@ -165,9 +166,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSair.Location = new System.Drawing.Point(187, 3);
+            this.bntSair.Location = new System.Drawing.Point(187, 4);
+            this.bntSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntSair.Name = "bntSair";
-            this.bntSair.Size = new System.Drawing.Size(80, 36);
+            this.bntSair.Size = new System.Drawing.Size(80, 44);
             this.bntSair.TabIndex = 1;
             this.bntSair.Text = "Sair";
             this.bntSair.UseVisualStyleBackColor = true;
@@ -179,9 +181,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntAdicionar.Location = new System.Drawing.Point(3, 3);
+            this.bntAdicionar.Location = new System.Drawing.Point(3, 4);
+            this.bntAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntAdicionar.Name = "bntAdicionar";
-            this.bntAdicionar.Size = new System.Drawing.Size(86, 36);
+            this.bntAdicionar.Size = new System.Drawing.Size(86, 44);
             this.bntAdicionar.TabIndex = 0;
             this.bntAdicionar.Text = "Adicionar";
             this.bntAdicionar.UseVisualStyleBackColor = true;
@@ -193,9 +196,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(95, 3);
+            this.button1.Location = new System.Drawing.Point(95, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 36);
+            this.button1.Size = new System.Drawing.Size(86, 44);
             this.button1.TabIndex = 2;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
@@ -206,24 +210,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvProdutos.Location = new System.Drawing.Point(12, 31);
+            this.dtvProdutos.Location = new System.Drawing.Point(12, 39);
+            this.dtvProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvProdutos.Name = "dtvProdutos";
             this.dtvProdutos.RowHeadersWidth = 51;
             this.dtvProdutos.RowTemplate.Height = 24;
-            this.dtvProdutos.Size = new System.Drawing.Size(773, 359);
+            this.dtvProdutos.Size = new System.Drawing.Size(773, 449);
             this.dtvProdutos.TabIndex = 55;
+            this.dtvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvProdutos_CellContentClick);
             // 
             // FrmProdutos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 562);
             this.Controls.Add(this.dtvProdutos);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.MenuInicio);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmProdutos";
             this.Text = "Produtos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmProdutos_Load);
             this.MenuInicio.ResumeLayout(false);
             this.MenuInicio.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

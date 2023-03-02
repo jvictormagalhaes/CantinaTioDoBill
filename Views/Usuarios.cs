@@ -16,7 +16,7 @@ namespace CantinaDoTioBill.View
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
             FrmCadastroUsuario cadastroUsuario = new FrmCadastroUsuario();
-            cadastroUsuario.ShowDialog();
+            cadastroUsuario.Show();
         }
 
         private void bntSair_Click(object sender, EventArgs e)
@@ -49,6 +49,15 @@ namespace CantinaDoTioBill.View
         }
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+            using (var db = new BancoContext())
+            {
+                var usuarios = db.Usuario.Select(x => x).ToList();
+                dtvUsuarios.DataSource = usuarios;
+            }
+        }
+
+        private void dtvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

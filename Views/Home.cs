@@ -1,40 +1,16 @@
 ﻿using CantinaDoTioBill.View;
-using Microsoft.Data.Sqlite;
-using System;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 
 namespace CantinaDoTioBill
 {
     public partial class FrmHome : Form
     {
-        string caminhoBD = Path.Combine(Application.LocalUserAppDataPath, "data.db");
         public FrmHome()
         {
             InitializeComponent();
         }
 
-        private void CriarBancoDeDados(string caminho)
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (SqliteConnection db = new SqliteConnection($"Filename={caminho}"))
-            {
-                db.Open();
-
-                StringBuilder sb = new StringBuilder();
-               // sb.Append()
-            }    
-        }
-
-        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e){
-        }
-
-        private void quentinhasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FrmTpQuentinha tpQuentinha = new FrmTpQuentinha();
-            tpQuentinha.ShowDialog();
-            this.Show();
         }
 
         private void FrmInicio_Load(object sender, EventArgs e)

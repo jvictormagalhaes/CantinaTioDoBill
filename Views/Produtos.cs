@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CantinaDoTioBill.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,20 @@ namespace CantinaDoTioBill.View
         {
             this.Close();
 
+        }
+
+        private void dtvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmProdutos_Load(object sender, EventArgs e)
+        {
+            using (var db = new BancoContext())
+            {
+                var produtos = db.Produto.Select(x => x).ToList();
+                dtvProdutos.DataSource = produtos;
+            }
         }
     }
 }
