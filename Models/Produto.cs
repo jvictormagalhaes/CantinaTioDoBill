@@ -14,18 +14,15 @@ namespace CantinaDoTioBill.Models
         [Required]
         public string Nome { get; set; }
         [Required]
-        public double ValCompra { get; set; }
-        [Required]
-        public double ValVenda { get; set; }
+        public double Preco { get; set; }
         [Required]
         public int Estoque { get; set; }
 
-        public Produto(int id, string nome, double valCompra, double valVenda, int estoque)
+        public Produto(int id, string nome, double preco, int estoque)
         {
             Id = id;
             Nome = nome;
-            ValCompra = valCompra;
-            ValVenda = valVenda;
+            Preco = preco;
             Estoque = estoque;
         }
 

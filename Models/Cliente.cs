@@ -24,6 +24,7 @@ namespace CantinaDoTioBill.Models
         public string Endereco { get; set; }
         [Required]
         public string Bairro { get; set; }
+        public string Numero { get; set; }
 
         public Cliente(int id, string nome, string cpf, string rg, string telefone, string endereco, string bairro)
         {

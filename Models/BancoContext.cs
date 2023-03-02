@@ -10,7 +10,7 @@ namespace CantinaDoTioBill.Models
         public DbSet<TipoQuentinha> TipoQuentinha { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseSqlite("Data Source=banco.db");
+            options.UseSqlite("Data Source=C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\Curso C# Completo\\Cantinha do tio Bill\\CantinaDoTioBill\\Banco.db");
         }
     }
 }

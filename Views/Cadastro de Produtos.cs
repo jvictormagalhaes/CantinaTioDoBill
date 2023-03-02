@@ -39,8 +39,7 @@ namespace CantinaDoTioBill
                     Produto produto = new Produto();
                     produto.Nome = txtNome.Text;
                     produto.Estoque = Convert.ToInt32(txtEstoque.Text);
-                    produto.ValCompra = Convert.ToDouble(txtValCompra.Text, CultureInfo.InvariantCulture);
-                    produto.ValVenda = Convert.ToDouble(txtValVenda.Text, CultureInfo.InvariantCulture);
+                    produto.Preco = Convert.ToDouble(txtPreco.Text, CultureInfo.InvariantCulture);
 
                     db.Produto.Add(produto);
                     db.SaveChanges();

@@ -52,6 +52,7 @@ namespace CantinaDoTioBill
                     cliente.Rg = txtRg.Text;
                     cliente.Telefone = txtTelefone.Text;
                     cliente.Bairro = txtBairro.Text;
+                    cliente.Numero = txtNumero.Text;
                     db.Cliente.Add(cliente);
                     db.SaveChanges();
 

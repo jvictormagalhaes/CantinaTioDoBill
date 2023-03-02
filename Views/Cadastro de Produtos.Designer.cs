@@ -46,9 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtValCompra = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtValVenda = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,7 +68,7 @@
             this.relatóriosToolStripMenuItem});
             this.MenuInicio.Location = new System.Drawing.Point(0, 0);
             this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Size = new System.Drawing.Size(728, 28);
+            this.MenuInicio.Size = new System.Drawing.Size(659, 28);
             this.MenuInicio.TabIndex = 25;
             this.MenuInicio.Text = "MenuInicio";
             // 
@@ -160,7 +158,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
             this.tableLayoutPanel1.Controls.Add(this.btnAdicionar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.bntCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(524, 506);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(455, 215);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -228,50 +226,30 @@
             this.txtNome.TabIndex = 56;
             this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtValCompra
+            // txtPreco
             // 
-            this.txtValCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValCompra.Location = new System.Drawing.Point(13, 135);
-            this.txtValCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtValCompra.Name = "txtValCompra";
-            this.txtValCompra.Size = new System.Drawing.Size(130, 27);
-            this.txtValCompra.TabIndex = 63;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "Val. Compra";
-            // 
-            // txtValVenda
-            // 
-            this.txtValVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValVenda.Location = new System.Drawing.Point(154, 135);
-            this.txtValVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtValVenda.Name = "txtValVenda";
-            this.txtValVenda.Size = new System.Drawing.Size(130, 27);
-            this.txtValVenda.TabIndex = 65;
+            this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPreco.Location = new System.Drawing.Point(11, 134);
+            this.txtPreco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(130, 27);
+            this.txtPreco.TabIndex = 65;
             // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(155, 114);
+            this.label6.Location = new System.Drawing.Point(12, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
+            this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 64;
-            this.label6.Text = "Val. Venda";
+            this.label6.Text = "Preço";
             // 
             // txtEstoque
             // 
             this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstoque.Location = new System.Drawing.Point(522, 72);
+            this.txtEstoque.Location = new System.Drawing.Point(154, 134);
             this.txtEstoque.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(130, 27);
@@ -282,7 +260,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(523, 51);
+            this.label8.Location = new System.Drawing.Point(155, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 20);
             this.label8.TabIndex = 68;
@@ -313,13 +291,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 562);
+            this.ClientSize = new System.Drawing.Size(659, 271);
             this.Controls.Add(this.txtEstoque);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtValVenda);
+            this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtValCompra);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pnId);
@@ -359,9 +335,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtValCompra;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtValVenda;
+        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEstoque;
         private System.Windows.Forms.Label label8;
