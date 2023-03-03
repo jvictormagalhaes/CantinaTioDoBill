@@ -118,5 +118,15 @@ namespace CantinaDoTioBill
             FrmRotas rotas = new FrmRotas();
             rotas.Show();
         }
+
+        private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuInicio_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

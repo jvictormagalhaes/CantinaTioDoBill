@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuInicio = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +47,10 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.bntSair = new System.Windows.Forms.Button();
             this.dtvUsuarios = new System.Windows.Forms.DataGridView();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -191,7 +196,7 @@
             this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(122, 75);
-            this.btnRemover.TabIndex = 2;
+            this.btnRemover.TabIndex = 3;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = false;
             this.btnRemover.Click += new System.EventHandler(this.button1_Click);
@@ -207,9 +212,10 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(122, 69);
-            this.btnEditar.TabIndex = 3;
+            this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // bntSair
             // 
@@ -222,25 +228,77 @@
             this.bntSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntSair.Name = "bntSair";
             this.bntSair.Size = new System.Drawing.Size(75, 33);
-            this.bntSair.TabIndex = 1;
+            this.bntSair.TabIndex = 4;
             this.bntSair.Text = "Sair";
             this.bntSair.UseVisualStyleBackColor = true;
             this.bntSair.Click += new System.EventHandler(this.bntSair_Click);
             // 
             // dtvUsuarios
             // 
+            this.dtvUsuarios.AllowUserToAddRows = false;
+            this.dtvUsuarios.AllowUserToDeleteRows = false;
+            this.dtvUsuarios.AllowUserToResizeColumns = false;
+            this.dtvUsuarios.AllowUserToResizeRows = false;
             this.dtvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmId,
+            this.clmNome,
+            this.clmUsername,
+            this.clmSenha});
             this.dtvUsuarios.Location = new System.Drawing.Point(12, 72);
             this.dtvUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvUsuarios.Name = "dtvUsuarios";
+            this.dtvUsuarios.ReadOnly = true;
+            this.dtvUsuarios.RowHeadersVisible = false;
             this.dtvUsuarios.RowHeadersWidth = 51;
             this.dtvUsuarios.RowTemplate.Height = 24;
-            this.dtvUsuarios.Size = new System.Drawing.Size(493, 297);
+            this.dtvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtvUsuarios.Size = new System.Drawing.Size(443, 297);
             this.dtvUsuarios.TabIndex = 56;
             this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
+            // 
+            // clmId
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Format = "D4";
+            this.clmId.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmId.HeaderText = "ID";
+            this.clmId.MinimumWidth = 6;
+            this.clmId.Name = "clmId";
+            this.clmId.ReadOnly = true;
+            this.clmId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmId.Width = 40;
+            // 
+            // clmNome
+            // 
+            this.clmNome.HeaderText = "Nome";
+            this.clmNome.MinimumWidth = 6;
+            this.clmNome.Name = "clmNome";
+            this.clmNome.ReadOnly = true;
+            this.clmNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmNome.Width = 150;
+            // 
+            // clmUsername
+            // 
+            this.clmUsername.HeaderText = "Username";
+            this.clmUsername.MinimumWidth = 6;
+            this.clmUsername.Name = "clmUsername";
+            this.clmUsername.ReadOnly = true;
+            this.clmUsername.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmUsername.Width = 125;
+            // 
+            // clmSenha
+            // 
+            this.clmSenha.HeaderText = "Senha";
+            this.clmSenha.MinimumWidth = 6;
+            this.clmSenha.Name = "clmSenha";
+            this.clmSenha.ReadOnly = true;
+            this.clmSenha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmSenha.Width = 125;
             // 
             // label1
             // 
@@ -299,5 +357,9 @@
         private System.Windows.Forms.DataGridView dtvUsuarios;
         private Button btnEditar;
         private Label label1;
+        private DataGridViewTextBoxColumn clmId;
+        private DataGridViewTextBoxColumn clmNome;
+        private DataGridViewTextBoxColumn clmUsername;
+        private DataGridViewTextBoxColumn clmSenha;
     }
 }

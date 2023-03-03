@@ -34,6 +34,7 @@
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vendaBalcãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +53,6 @@
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.rotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuInicio.SuspendLayout();
             this.pnlFuncao.SuspendLayout();
             this.SuspendLayout();
@@ -72,21 +72,22 @@
             this.MenuInicio.Size = new System.Drawing.Size(928, 30);
             this.MenuInicio.TabIndex = 1;
             this.MenuInicio.Text = "MenuInicio";
+            this.MenuInicio.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuInicio_ItemClicked);
             // 
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuáriosToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.cadastroToolStripMenuItem.Text = "Usuário";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.cadastroToolStripMenuItem.Text = "Usuários";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.usuáriosToolStripMenuItem.Text = "Cadastro de Usuário";
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.usuáriosToolStripMenuItem.Text = "Cadastro de Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem1
@@ -96,8 +97,9 @@
             this.produtosToolStripMenuItem,
             this.rotasToolStripMenuItem});
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
-            this.cadastroToolStripMenuItem1.Text = "Cadastro";
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(88, 24);
+            this.cadastroToolStripMenuItem1.Text = "Cadastros";
+            this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -112,6 +114,13 @@
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
+            // 
+            // rotasToolStripMenuItem
+            // 
+            this.rotasToolStripMenuItem.Name = "rotasToolStripMenuItem";
+            this.rotasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rotasToolStripMenuItem.Text = "Rotas";
+            this.rotasToolStripMenuItem.Click += new System.EventHandler(this.rotasToolStripMenuItem_Click);
             // 
             // vendasToolStripMenuItem
             // 
@@ -315,13 +324,6 @@
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(631, 390);
             this.pnlLogo.TabIndex = 3;
-            // 
-            // rotasToolStripMenuItem
-            // 
-            this.rotasToolStripMenuItem.Name = "rotasToolStripMenuItem";
-            this.rotasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.rotasToolStripMenuItem.Text = "Rotas";
-            this.rotasToolStripMenuItem.Click += new System.EventHandler(this.rotasToolStripMenuItem_Click);
             // 
             // FrmHome
             // 

@@ -31,25 +31,26 @@ namespace CantinaDoTioBill
 
             if(usuario == "admin" && txtSenha.Text == "admin")
             {
-                MessageBox.Show("Acesso Liberado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FrmHome hm = new FrmHome();
-                hm.ShowDialog();
+                SimpleMessage.Inform("Acesso Liberado ! ", "Acesso");
+                FrmHome form = new FrmHome();
+                form.ShowDialog();
+                this.Close();
 
             }
             else
             {
                 if (ConsultaSenha())
                 {
-                    MessageBox.Show("Acesso Liberado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FrmHome hm = new FrmHome();
-                    hm.ShowDialog();
+                    SimpleMessage.Inform("Acesso Liberado ! ", "Acesso"); 
+                    FrmHome form = new FrmHome();
+                    form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Acesso Negado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    SimpleMessage.Error("Usuário ou senha incorretos !", "Erro");
                 }
             }
-            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)

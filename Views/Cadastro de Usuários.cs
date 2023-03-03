@@ -32,26 +32,7 @@ namespace CantinaDoTioBill
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (var db = new BancoContext())
-                {
-                    Usuario user = new Usuario();
-                    user.Nome = txtNome.Text;
-                    user.Username = txtUsername.Text;
-                    user.Senha = txtSenha.Text;
-
-                    db.Usuario.Add(user);
-                    db.SaveChanges();
-
-                    MessageBox.Show("Usuário cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            DialogResult = DialogResult.OK;
         }
 
         private void rbStatusInativo_CheckedChanged(object sender, EventArgs e)

@@ -208,7 +208,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel1.Controls.Add(this.btnAdicionar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(593, 507);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(593, 248);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -270,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 563);
+            this.ClientSize = new System.Drawing.Size(800, 304);
             this.Controls.Add(this.txtRegistroId);
             this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.tableLayoutPanel1);

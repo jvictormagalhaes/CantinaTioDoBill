@@ -40,8 +40,8 @@ namespace CantinaDoTioBill.View
                             cliente.Numero = form.txtNumero.Text;
                             db.Cliente.Add(cliente);
                             db.SaveChanges();
-                            AtualizarCliente(db);
 
+                            AtualizarCliente(db);
 
                             MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -61,44 +61,51 @@ namespace CantinaDoTioBill.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if (dtvClientes.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvClientes.SelectedRows[0];
-                Cliente cliente = linha.DataBoundItem as Cliente;
-
-                using (var form = new FrmCadastroCliente())
+                DataGridViewRow linha = null;
+                if (dtvClientes.SelectedRows.Count > 0)
                 {
-                   form.Text = "Editar Cliente";
-                    form.txtNome.Text = cliente.Nome;
-                    form.txtCpf.Text = cliente.Cpf;
-                    form.txtRg.Text = cliente.Rg;
-                    form.txtEndereco.Text = cliente.Endereco;
-                    form.txtBairro.Text = cliente.Bairro;
-                    form.txtNumero.Text = cliente.Numero;
+                    linha = dtvClientes.SelectedRows[0];
+                    Cliente cliente = linha.DataBoundItem as Cliente;
 
-                    if (form.ShowDialog() == DialogResult.OK)
+                    using (var form = new FrmCadastroCliente())
                     {
-                        using (var db = new BancoContext())
+                        form.Text = "Editar Cliente";
+                        form.txtNome.Text = cliente.Nome;
+                        form.txtCpf.Text = cliente.Cpf;
+                        form.txtRg.Text = cliente.Rg;
+                        form.txtEndereco.Text = cliente.Endereco;
+                        form.txtBairro.Text = cliente.Bairro;
+                        form.txtNumero.Text = cliente.Numero;
+
+                        if (form.ShowDialog() == DialogResult.OK)
                         {
-                            cliente.Nome = form.txtNome.Text;
-                            cliente.Cpf = form.txtCpf.Text;
-                            cliente.Endereco = form.txtEndereco.Text;
-                            cliente.Rg = form.txtRg.Text;
-                            cliente.Telefone = form.txtTelefone.Text;
-                            cliente.Bairro = form.txtBairro.Text;
-                            cliente.Numero = form.txtNumero.Text;
+                            using (var db = new BancoContext())
+                            {
+                                cliente.Nome = form.txtNome.Text;
+                                cliente.Cpf = form.txtCpf.Text;
+                                cliente.Endereco = form.txtEndereco.Text;
+                                cliente.Rg = form.txtRg.Text;
+                                cliente.Telefone = form.txtTelefone.Text;
+                                cliente.Bairro = form.txtBairro.Text;
+                                cliente.Numero = form.txtNumero.Text;
 
-                            db.Cliente.Attach(cliente);
-                            db.Entry(cliente).State = EntityState.Modified;
-                            db.SaveChanges();
+                                db.Cliente.Attach(cliente);
+                                db.Entry(cliente).State = EntityState.Modified;
+                                db.SaveChanges();
 
-                            MessageBox.Show("Cliente atualizado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AtualizarCliente(db);
+                                MessageBox.Show("Cliente atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                AtualizarCliente(db);
 
+                            }
                         }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -138,7 +145,7 @@ namespace CantinaDoTioBill.View
                         db.Entry(cliente).State = EntityState.Deleted;
                         db.SaveChanges();
 
-                        MessageBox.Show("Cliente excluído com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cliente excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         AtualizarCliente(db);
                     }
                 }

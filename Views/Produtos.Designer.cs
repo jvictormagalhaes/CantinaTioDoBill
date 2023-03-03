@@ -220,6 +220,7 @@
             this.btnRemover.TabIndex = 56;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // label1
             // 

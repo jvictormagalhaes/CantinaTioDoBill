@@ -1,13 +1,7 @@
 ﻿using CantinaDoTioBill.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using MessageUtils;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CantinaDoTioBill.View
 {
@@ -20,8 +14,31 @@ namespace CantinaDoTioBill.View
 
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
-            FrmCadastroProdutos cadastroProdutos = new FrmCadastroProdutos();
-            cadastroProdutos.Show();
+            try
+            {
+                using (var form = new FrmCadastroProdutos())
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var db = new BancoContext())
+                        {
+                            Produto produto = new Produto();
+                            produto.Nome = form.txtNome.Text;
+                            produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
+                            produto.Preco = Convert.ToDouble(form.txtPreco.Text);
+                            db.Produto.Add(produto);
+                            db.SaveChanges();
+                            AtualizarProdutos(db);
+
+                            MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void bntSair_Click(object sender, EventArgs e)
@@ -46,6 +63,73 @@ namespace CantinaDoTioBill.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DataGridViewRow linha = null;
+            if (dtvProdutos.SelectedRows.Count > 0)
+            {
+                linha = dtvProdutos.SelectedRows[0];
+                Produto produto = linha.DataBoundItem as Produto;
+
+                using (var form = new FrmCadastroProdutos())
+                {
+                    form.Text = "Editar Produto";
+                    form.txtNome.Text = produto.Nome;
+                    form.txtEstoque.Text = produto.Estoque.ToString();
+                    form.txtPreco.Text = produto.Preco.ToString();
+
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var db = new BancoContext())
+                        {
+                            produto.Nome = form.txtNome.Text;
+                            produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
+                            produto.Preco = Convert.ToDouble(form.txtPreco.Text);
+                        
+
+                            db.Produto.Attach(produto);
+                            db.Entry(produto).State = EntityState.Modified;
+                            db.SaveChanges();
+
+                            MessageBox.Show("Produto atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizarProdutos(db);
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void AtualizarProdutos(BancoContext db)
+        {
+            if (dtvProdutos.Rows.Count > 0)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                var atualizar = db.Cliente.Select(x => x).ToList();
+                dtvProdutos.DataSource = atualizar;
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow linha = null;
+            if (dtvProdutos.SelectedRows.Count > 0)
+            {
+                linha = dtvProdutos.SelectedRows[0];
+                Produto produto = linha.DataBoundItem as Produto;
+
+                if (SimpleMessage.Confirm("Deseja realmente excluir esse produto?", "Exclusão de Produto"))
+                {
+                    using(var db = new BancoContext())
+                    {
+                        db.Produto.Attach(produto);
+                        db.Entry(produto).State = EntityState.Modified;
+                        db.SaveChanges();
+
+                        MessageBox.Show("Produto excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AtualizarProdutos(db);
+                    }
+                }
+            }
 
         }
     }

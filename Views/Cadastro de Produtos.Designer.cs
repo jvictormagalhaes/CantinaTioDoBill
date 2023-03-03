@@ -334,12 +334,12 @@
         private System.Windows.Forms.Button bntCancelar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEstoque;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblResgistroId;
         private System.Windows.Forms.Panel pnId;
+        public TextBox txtNome;
+        public TextBox txtPreco;
+        public TextBox txtEstoque;
     }
 }
