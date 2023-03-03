@@ -103,7 +103,7 @@ namespace CantinaDoTioBill.View
             if (dtvProdutos.Rows.Count > 0)
             {
                 this.Cursor = Cursors.WaitCursor;
-                var atualizar = db.Cliente.Select(x => x).ToList();
+                var atualizar = db.Produto.Select(x => x).ToList();
                 dtvProdutos.DataSource = atualizar;
                 this.Cursor = Cursors.Default;
             }
@@ -122,7 +122,7 @@ namespace CantinaDoTioBill.View
                     using(var db = new BancoContext())
                     {
                         db.Produto.Attach(produto);
-                        db.Entry(produto).State = EntityState.Modified;
+                        db.Entry(produto).State = EntityState.Deleted;
                         db.SaveChanges();
 
                         MessageBox.Show("Produto excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

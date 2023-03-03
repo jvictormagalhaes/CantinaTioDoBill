@@ -33,12 +33,13 @@
             this.txtNomeRota = new System.Windows.Forms.TextBox();
             this.txtTaxa = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 24);
+            this.label1.Location = new System.Drawing.Point(15, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 0;
@@ -47,29 +48,33 @@
             // lblTaxa
             // 
             this.lblTaxa.AutoSize = true;
-            this.lblTaxa.Location = new System.Drawing.Point(17, 93);
+            this.lblTaxa.Location = new System.Drawing.Point(13, 79);
             this.lblTaxa.Name = "lblTaxa";
             this.lblTaxa.Size = new System.Drawing.Size(114, 20);
             this.lblTaxa.TabIndex = 1;
             this.lblTaxa.Text = "Taxa de Entrega";
+            this.lblTaxa.Click += new System.EventHandler(this.lblTaxa_Click);
             // 
             // txtNomeRota
             // 
-            this.txtNomeRota.Location = new System.Drawing.Point(17, 47);
+            this.txtNomeRota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeRota.Location = new System.Drawing.Point(17, 42);
             this.txtNomeRota.Name = "txtNomeRota";
             this.txtNomeRota.Size = new System.Drawing.Size(297, 27);
             this.txtNomeRota.TabIndex = 2;
             // 
             // txtTaxa
             // 
-            this.txtTaxa.Location = new System.Drawing.Point(17, 116);
+            this.txtTaxa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTaxa.Location = new System.Drawing.Point(17, 100);
             this.txtTaxa.Name = "txtTaxa";
             this.txtTaxa.Size = new System.Drawing.Size(125, 27);
             this.txtTaxa.TabIndex = 3;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(113, 160);
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(64, 164);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 29);
             this.btnSalvar.TabIndex = 4;
@@ -77,11 +82,23 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(173, 164);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 29);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmCadastroRotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 205);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtTaxa);
             this.Controls.Add(this.txtNomeRota);
@@ -100,8 +117,9 @@
 
         private Label label1;
         private Label lblTaxa;
-        private TextBox txtNomeRota;
-        private TextBox txtTaxa;
         private Button btnSalvar;
+        private Button btnCancelar;
+        public TextBox txtNomeRota;
+        public TextBox txtTaxa;
     }
 }

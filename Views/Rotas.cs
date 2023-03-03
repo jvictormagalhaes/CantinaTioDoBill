@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CantinaDoTioBill.Models;
+using MessageUtils;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace CantinaDoTioBill.Views
 {
@@ -24,8 +20,114 @@ namespace CantinaDoTioBill.Views
 
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
-            FrmCadastroRotas cadRotas = new FrmCadastroRotas();
-            cadRotas.Show();
+            try
+            {
+                using (var form = new FrmCadastroRotas())
+                {
+                    if(ShowDialog() == DialogResult.OK)
+                    {
+                        using(var db = new BancoContext())
+                        {
+                            Rota rotas = new Rota();
+                            rotas.NomeRota = form.txtNomeRota.Text;
+                            rotas.Taxa = Convert.ToDouble(form.txtTaxa.Text);
+
+                            db.Rota.Add(rotas);
+                            db.SaveChanges();
+
+                            SimpleMessage.Inform("Rota adicionada!", "Informação");
+                            AtualizarRotas(db);
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow linha = null;
+            if(dtvRotas.SelectedRows.Count > 0)
+            {
+                linha = dtvRotas.SelectedRows[0];
+                Rota rota = linha.DataBoundItem as Rota;
+
+                using(var form = new FrmCadastroRotas())
+                {
+                    form.Text = "Editar Rota";
+                    form.txtNomeRota.Text = rota.NomeRota;
+                    form.txtTaxa.Text = rota.Taxa.ToString();
+
+                    if(form.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            using(var db = new BancoContext())
+                            {
+                                rota.NomeRota = form.txtNomeRota.Text;
+                                rota.Taxa = Convert.ToDouble(form.txtTaxa.Text);
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow linha = null;
+            if(dtvRotas.SelectedRows.Count > 0)
+            {
+                linha = dtvRotas.SelectedRows[0];
+                Rota rota = linha.DataBoundItem as Rota;
+
+                if(SimpleMessage.Confirm("Deseja realmente excluir esta rota?","Exclusão da rota"))
+                {
+                    try
+                    {
+                        using(var db = new BancoContext())
+                        {
+                            db.Rota.Attach(rota);
+                            db.Entry(rota).State = EntityState.Deleted;
+                            db.SaveChanges();
+
+                            SimpleMessage.Inform("Rota excluída!", "Informação");
+                            AtualizarRotas(db);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+            }
+        }
+
+        private void AtualizarRotas(BancoContext db)
+        {
+            if(dtvRotas.Rows.Count > 0)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                var atualizar = db.Rota.Select(x => x).ToList();
+                dtvRotas.DataSource = atualizar;
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void FrmRotas_Load(object sender, EventArgs e)
+        {
+            using(var db = new BancoContext())
+            {
+                var rotas = db.Rota.Select(x => x).ToList();
+                dtvRotas.DataSource = rotas;
+            }
         }
     }
 }

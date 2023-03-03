@@ -16,9 +16,6 @@ namespace CantinaDoTioBill.Models
         public string NomeRota { get; set; }
         [Required]
         public double Taxa { get; set; }
-        [ForeignKey("Cliente")]
-        public int IdCliente { get; set; }
-        public Cliente Cliente { get; set; }
 
         public Rota()
         {

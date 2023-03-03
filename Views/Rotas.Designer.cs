@@ -125,6 +125,7 @@
             this.btnRemover.TabIndex = 2;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnEditar
             // 
@@ -140,6 +141,7 @@
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // MenuInicio
             // 
@@ -263,6 +265,7 @@
             this.Name = "FrmRotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rotas";
+            this.Load += new System.EventHandler(this.FrmRotas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvRotas)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.MenuInicio.ResumeLayout(false);

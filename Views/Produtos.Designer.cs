@@ -192,6 +192,10 @@
             // 
             // dtvProdutos
             // 
+            this.dtvProdutos.AllowUserToAddRows = false;
+            this.dtvProdutos.AllowUserToDeleteRows = false;
+            this.dtvProdutos.AllowUserToResizeColumns = false;
+            this.dtvProdutos.AllowUserToResizeRows = false;
             this.dtvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -201,6 +205,7 @@
             this.dtvProdutos.Name = "dtvProdutos";
             this.dtvProdutos.RowHeadersWidth = 51;
             this.dtvProdutos.RowTemplate.Height = 24;
+            this.dtvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvProdutos.Size = new System.Drawing.Size(569, 322);
             this.dtvProdutos.TabIndex = 55;
             this.dtvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvProdutos_CellContentClick);

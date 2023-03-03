@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CantinaDoTioBill.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -18,11 +19,11 @@ namespace CantinaDoTioBill
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            FrmLogin login = new FrmLogin();
-            if (login.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new FrmHome());
-            }
+          //  FrmLogin login = new FrmLogin();
+           // if (login.ShowDialog() == DialogResult.OK)
+          //  {
+                Application.Run(new FrmProdutos());
+           // }
         }
     }
 }
