@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuInicio = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +46,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.bntSair = new System.Windows.Forms.Button();
             this.dtvUsuarios = new System.Windows.Forms.DataGridView();
-            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -245,7 +244,7 @@
             this.dtvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmId,
+            this.clmID,
             this.clmNome,
             this.clmUsername,
             this.clmSenha});
@@ -257,21 +256,17 @@
             this.dtvUsuarios.RowHeadersWidth = 51;
             this.dtvUsuarios.RowTemplate.Height = 24;
             this.dtvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvUsuarios.Size = new System.Drawing.Size(443, 297);
+            this.dtvUsuarios.Size = new System.Drawing.Size(514, 292);
             this.dtvUsuarios.TabIndex = 56;
             this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
             // 
-            // clmId
+            // clmID
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.Format = "D4";
-            this.clmId.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmId.HeaderText = "ID";
-            this.clmId.MinimumWidth = 6;
-            this.clmId.Name = "clmId";
-            this.clmId.ReadOnly = true;
-            this.clmId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmId.Width = 40;
+            this.clmID.HeaderText = "ID";
+            this.clmID.MinimumWidth = 6;
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            this.clmID.Width = 125;
             // 
             // clmNome
             // 
@@ -279,16 +274,14 @@
             this.clmNome.MinimumWidth = 6;
             this.clmNome.Name = "clmNome";
             this.clmNome.ReadOnly = true;
-            this.clmNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmNome.Width = 150;
+            this.clmNome.Width = 125;
             // 
             // clmUsername
             // 
-            this.clmUsername.HeaderText = "Username";
+            this.clmUsername.HeaderText = "Usuário";
             this.clmUsername.MinimumWidth = 6;
             this.clmUsername.Name = "clmUsername";
             this.clmUsername.ReadOnly = true;
-            this.clmUsername.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.clmUsername.Width = 125;
             // 
             // clmSenha
@@ -297,7 +290,6 @@
             this.clmSenha.MinimumWidth = 6;
             this.clmSenha.Name = "clmSenha";
             this.clmSenha.ReadOnly = true;
-            this.clmSenha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.clmSenha.Width = 125;
             // 
             // label1
@@ -357,7 +349,7 @@
         private System.Windows.Forms.DataGridView dtvUsuarios;
         private Button btnEditar;
         private Label label1;
-        private DataGridViewTextBoxColumn clmId;
+        private DataGridViewTextBoxColumn clmID;
         private DataGridViewTextBoxColumn clmNome;
         private DataGridViewTextBoxColumn clmUsername;
         private DataGridViewTextBoxColumn clmSenha;
