@@ -1,4 +1,5 @@
 ﻿using CantinaDoTioBill.View;
+using CantinaDoTioBill.Views;
 
 namespace CantinaDoTioBill
 {
@@ -110,6 +111,12 @@ namespace CantinaDoTioBill
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRotas rotas = new FrmRotas();
+            rotas.Show();
         }
     }
 }

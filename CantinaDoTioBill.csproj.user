@@ -7,6 +7,9 @@
     <Compile Update="Views\Cadastro de Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Cadastro de Rotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Cadastro de Usuários.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +23,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Rotas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Usuarios.cs">

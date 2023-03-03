@@ -48,5 +48,10 @@ namespace CantinaDoTioBill
         {
             this.Close();
         }
+
+        private void btnRota_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

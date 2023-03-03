@@ -10,11 +10,6 @@ namespace CantinaDoTioBill.View
             InitializeComponent();
         }
 
-        private void bntCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             using (var db = new BancoContext())
