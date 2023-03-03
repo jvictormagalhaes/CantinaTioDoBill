@@ -46,7 +46,7 @@
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 35);
-            this.btnEntrar.TabIndex = 0;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.button1_Click);
@@ -82,7 +82,7 @@
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(176, 27);
-            this.txtUser.TabIndex = 3;
+            this.txtUser.TabIndex = 0;
             // 
             // txtSenha
             // 
@@ -92,7 +92,7 @@
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(176, 27);
-            this.txtSenha.TabIndex = 4;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnSair
@@ -104,7 +104,7 @@
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(96, 38);
-            this.btnSair.TabIndex = 5;
+            this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);

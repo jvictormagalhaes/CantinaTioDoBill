@@ -57,8 +57,8 @@
             this.pnResgistroId = new System.Windows.Forms.Panel();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lvlNumero = new System.Windows.Forms.Label();
             this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnResgistroId.SuspendLayout();
@@ -275,6 +275,7 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.bntSalvar_Click);
+            this.btnSalvar.Leave += new System.EventHandler(this.btnSalvar_Leave);
             // 
             // tableLayoutPanel1
             // 
@@ -343,32 +344,32 @@
             this.lblBairro.TabIndex = 53;
             this.lblBairro.Text = "Bairro";
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(704, 136);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 27);
-            this.textBox1.TabIndex = 56;
-            // 
             // txtNumero
             // 
-            this.txtNumero.AutoSize = true;
-            this.txtNumero.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNumero.Location = new System.Drawing.Point(703, 113);
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero.Location = new System.Drawing.Point(704, 136);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(26, 20);
-            this.txtNumero.TabIndex = 55;
-            this.txtNumero.Text = "Nº";
+            this.txtNumero.Size = new System.Drawing.Size(64, 27);
+            this.txtNumero.TabIndex = 56;
+            // 
+            // lvlNumero
+            // 
+            this.lvlNumero.AutoSize = true;
+            this.lvlNumero.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lvlNumero.Location = new System.Drawing.Point(703, 113);
+            this.lvlNumero.Name = "lvlNumero";
+            this.lvlNumero.Size = new System.Drawing.Size(26, 20);
+            this.lvlNumero.TabIndex = 55;
+            this.lvlNumero.Text = "Nº";
             // 
             // FrmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 373);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.lvlNumero);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.pnResgistroId);
@@ -435,7 +436,7 @@
         public TextBox txtTelefone;
         public TextBox txtNome;
         public TextBox txtBairro;
-        public TextBox textBox1;
-        private Label txtNumero;
+        public TextBox txtNumero;
+        private Label lvlNumero;
     }
 }

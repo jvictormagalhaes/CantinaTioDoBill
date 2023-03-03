@@ -46,6 +46,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.bntSair = new System.Windows.Forms.Button();
             this.dtvUsuarios = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
@@ -152,7 +153,7 @@
             this.tableLayoutPanel1.Controls.Add(this.bntAdicionar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnRemover, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnEditar, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(543, 68);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(556, 72);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -232,20 +233,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvUsuarios.Location = new System.Drawing.Point(12, 43);
+            this.dtvUsuarios.Location = new System.Drawing.Point(12, 72);
             this.dtvUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvUsuarios.Name = "dtvUsuarios";
             this.dtvUsuarios.RowHeadersWidth = 51;
             this.dtvUsuarios.RowTemplate.Height = 24;
-            this.dtvUsuarios.Size = new System.Drawing.Size(493, 326);
+            this.dtvUsuarios.Size = new System.Drawing.Size(493, 297);
             this.dtvUsuarios.TabIndex = 56;
             this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Lista de Usuários\r\n";
             // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 398);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtvUsuarios);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.MenuInicio);
@@ -286,5 +298,6 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.DataGridView dtvUsuarios;
         private Button btnEditar;
+        private Label label1;
     }
 }

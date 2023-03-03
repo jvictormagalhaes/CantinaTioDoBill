@@ -45,6 +45,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.dtvProdutos = new System.Windows.Forms.DataGridView();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.MenuInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProdutos)).BeginInit();
             this.SuspendLayout();
@@ -164,7 +165,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntAdicionar.Location = new System.Drawing.Point(616, 54);
+            this.bntAdicionar.Location = new System.Drawing.Point(622, 86);
             this.bntAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntAdicionar.Name = "bntAdicionar";
             this.bntAdicionar.Size = new System.Drawing.Size(128, 87);
@@ -180,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(616, 149);
+            this.btnEditar.Location = new System.Drawing.Point(622, 181);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(128, 86);
@@ -195,7 +196,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvProdutos.Location = new System.Drawing.Point(12, 39);
+            this.dtvProdutos.Location = new System.Drawing.Point(12, 71);
             this.dtvProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvProdutos.Name = "dtvProdutos";
             this.dtvProdutos.RowHeadersWidth = 51;
@@ -212,7 +213,7 @@
             this.btnRemover.BackColor = System.Drawing.Color.Red;
             this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Location = new System.Drawing.Point(616, 243);
+            this.btnRemover.Location = new System.Drawing.Point(622, 275);
             this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(128, 79);
@@ -220,11 +221,22 @@
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 25);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Lista de Produtos";
+            // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 454);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.bntSair);
             this.Controls.Add(this.dtvProdutos);
@@ -262,5 +274,6 @@
         private System.Windows.Forms.Button bntAdicionar;
         private System.Windows.Forms.DataGridView dtvProdutos;
         private Button btnRemover;
+        private Label label1;
     }
 }

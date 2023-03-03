@@ -41,29 +41,12 @@ namespace CantinaDoTioBill
 
         public void bntSalvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (var db = new BancoContext())
-                {
-                    Cliente cliente = new Cliente();
-                    cliente.Nome = txtNome.Text;
-                    cliente.Cpf = txtCpf.Text;
-                    cliente.Endereco = txtEndereco.Text;
-                    cliente.Rg = txtRg.Text;
-                    cliente.Telefone = txtTelefone.Text;
-                    cliente.Bairro = txtBairro.Text;
-                    cliente.Numero = txtNumero.Text;
-                    db.Cliente.Add(cliente);
-                    db.SaveChanges();
+            DialogResult = DialogResult.OK;
+        }
 
-                    MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+        private void btnSalvar_Leave(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
