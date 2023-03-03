@@ -1,4 +1,5 @@
 ﻿using CantinaDoTioBill.Models;
+using MessageUtils;
 using Microsoft.EntityFrameworkCore;
 
 namespace CantinaDoTioBill.View
@@ -120,6 +121,30 @@ namespace CantinaDoTioBill.View
                 dtvClientes.DataSource = atualizar;
                 this.Cursor = Cursors.Default;
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow linha = null;
+            if (dtvClientes.SelectedRows.Count > 0)
+            {
+                linha = dtvClientes.SelectedRows[0];
+                Cliente cliente = linha.DataBoundItem as Cliente;
+                if(SimpleMessage.Confirm("Deseja realmente excluir o cliente?", "Exclusão de Produto"))
+                {
+                    using(var db = new BancoContext())
+                    {
+                        db.Cliente.Attach(cliente);
+                        db.Entry(cliente).State = EntityState.Deleted;
+                        db.SaveChanges();
+
+                        MessageBox.Show("Cliente excluído com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AtualizarCliente(db);
+                    }
+                }
+            }
+
+
         }
     }
 }

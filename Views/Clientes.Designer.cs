@@ -254,6 +254,7 @@
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // label1
             // 
@@ -267,11 +268,12 @@
             // 
             // clmID
             // 
-            this.clmID.DataPropertyName = "IdCliente";
+            this.clmID.DataPropertyName = "Id";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Format = "D4";
             this.clmID.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmID.HeaderText = "ID";
+            this.clmID.MinimumWidth = 6;
             this.clmID.Name = "clmID";
             this.clmID.ReadOnly = true;
             this.clmID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
