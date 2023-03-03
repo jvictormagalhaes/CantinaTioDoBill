@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CantinaDoTioBill.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,15 @@ namespace CantinaDoTioBill.View
         private void bntSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmVendas_Load(object sender, EventArgs e)
+        {
+            using (var db = new BancoContext())
+            {
+                var vendas = db.Vendas.Select(x => x).ToList();
+                dtvVendas.DataSource = vendas;
+            }
         }
     }
 }

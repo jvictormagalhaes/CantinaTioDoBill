@@ -34,10 +34,6 @@ namespace CantinaDoTioBill.View
            
         }
 
-        private void lvUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void FrmUsuarios_Shown(object sender, EventArgs e)
         {
             

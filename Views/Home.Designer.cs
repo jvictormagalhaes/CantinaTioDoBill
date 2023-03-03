@@ -100,14 +100,14 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
@@ -123,14 +123,14 @@
             // vendasToolStripMenuItem1
             // 
             this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
-            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(191, 26);
             this.vendasToolStripMenuItem1.Text = "Vendas";
             this.vendasToolStripMenuItem1.Click += new System.EventHandler(this.vendasToolStripMenuItem1_Click);
             // 
             // vendaBalcãoToolStripMenuItem
             // 
             this.vendaBalcãoToolStripMenuItem.Name = "vendaBalcãoToolStripMenuItem";
-            this.vendaBalcãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.vendaBalcãoToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.vendaBalcãoToolStripMenuItem.Text = "Tela de Vendas";
             this.vendaBalcãoToolStripMenuItem.Click += new System.EventHandler(this.vendaBalcãoToolStripMenuItem_Click);
             // 
@@ -186,7 +186,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(0, 429);
+            this.label5.Location = new System.Drawing.Point(0, 439);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 16);
             this.label5.TabIndex = 10;
@@ -197,7 +197,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(21, 323);
+            this.label4.Location = new System.Drawing.Point(21, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 16);
             this.label4.TabIndex = 9;
@@ -208,7 +208,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(16, 215);
+            this.label3.Location = new System.Drawing.Point(16, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 16);
             this.label3.TabIndex = 8;
@@ -219,7 +219,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(18, 108);
+            this.label2.Location = new System.Drawing.Point(18, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 7;
@@ -229,7 +229,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(17, 9);
+            this.label1.Location = new System.Drawing.Point(17, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 16);
             this.label1.TabIndex = 6;
@@ -240,7 +240,7 @@
             this.btnVendas.BackgroundImage = global::CantinaDoTioBill.Properties.Resources.Vendas;
             this.btnVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVendas.FlatAppearance.BorderSize = 0;
-            this.btnVendas.Location = new System.Drawing.Point(21, 340);
+            this.btnVendas.Location = new System.Drawing.Point(21, 350);
             this.btnVendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(63, 69);
@@ -253,7 +253,7 @@
             this.btnProdutos.BackgroundImage = global::CantinaDoTioBill.Properties.Resources.botaoProduto;
             this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProdutos.FlatAppearance.BorderSize = 0;
-            this.btnProdutos.Location = new System.Drawing.Point(21, 235);
+            this.btnProdutos.Location = new System.Drawing.Point(21, 245);
             this.btnProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(63, 68);
@@ -265,7 +265,7 @@
             // 
             this.btnTelaVenda.BackgroundImage = global::CantinaDoTioBill.Properties.Resources.vb;
             this.btnTelaVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTelaVenda.Location = new System.Drawing.Point(21, 449);
+            this.btnTelaVenda.Location = new System.Drawing.Point(21, 459);
             this.btnTelaVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTelaVenda.Name = "btnTelaVenda";
             this.btnTelaVenda.Size = new System.Drawing.Size(63, 67);
@@ -279,7 +279,7 @@
             this.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCliente.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnCliente.FlatAppearance.BorderSize = 0;
-            this.btnCliente.Location = new System.Drawing.Point(21, 131);
+            this.btnCliente.Location = new System.Drawing.Point(21, 141);
             this.btnCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(63, 67);
@@ -292,7 +292,7 @@
             this.btnUsuario.BackgroundImage = global::CantinaDoTioBill.Properties.Resources.botãoUser;
             this.btnUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUsuario.FlatAppearance.BorderSize = 0;
-            this.btnUsuario.Location = new System.Drawing.Point(21, 29);
+            this.btnUsuario.Location = new System.Drawing.Point(21, 39);
             this.btnUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(63, 67);
@@ -329,6 +329,7 @@
             this.MainMenuStrip = this.MenuInicio;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tela de Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmInicio_Load);

@@ -21,7 +21,7 @@ namespace CantinaDoTioBill.View
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
             FrmCadastroProdutos cadastroProdutos = new FrmCadastroProdutos();
-            cadastroProdutos.ShowDialog();
+            cadastroProdutos.Show();
         }
 
         private void bntSair_Click(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace CantinaDoTioBill.View
                 var produtos = db.Produto.Select(x => x).ToList();
                 dtvProdutos.DataSource = produtos;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

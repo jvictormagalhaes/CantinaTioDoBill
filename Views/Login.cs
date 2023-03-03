@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CantinaDoTioBill.Models;
+using MessageUtils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +26,19 @@ namespace CantinaDoTioBill
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if(txtUser.Text == "admin" && txtSenha.Text == "admin")
+            {
+                MessageBox.Show("Acesso Liberado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                FrmHome hm = new FrmHome();
+                hm.ShowDialog();
+
+            }
+            else
+            {
+              ConsultaSenha();
+            }
         }
-  
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -45,6 +57,26 @@ namespace CantinaDoTioBill
                 Application.Exit();
             }
             else { };
+        }
+
+        public bool ConsultaSenha()
+        {
+            bool entrar = false;
+            try
+            {
+                using (var db = new BancoContext())
+                {
+                    var user = db.Usuario.Select(x => x).ToList();
+                    var senha = db.Usuario.Select(s => s).ToList();
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return entrar;
         }
     }
 }

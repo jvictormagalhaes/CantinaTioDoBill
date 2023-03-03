@@ -40,13 +40,12 @@
             this.vendaBalcãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bntSair = new System.Windows.Forms.Button();
             this.bntAdicionar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.dtvProdutos = new System.Windows.Forms.DataGridView();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.MenuInicio.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +60,7 @@
             this.relatóriosToolStripMenuItem});
             this.MenuInicio.Location = new System.Drawing.Point(0, 0);
             this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Size = new System.Drawing.Size(800, 28);
+            this.MenuInicio.Size = new System.Drawing.Size(813, 28);
             this.MenuInicio.TabIndex = 2;
             this.MenuInicio.Text = "MenuInicio";
             // 
@@ -142,34 +141,17 @@
             this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.relatórioDeVendasToolStripMenuItem.Text = "Relatório de Vendas";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanel1.Controls.Add(this.bntSair, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.bntAdicionar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(518, 495);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(270, 52);
-            this.tableLayoutPanel1.TabIndex = 54;
-            // 
             // bntSair
             // 
             this.bntSair.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSair.Location = new System.Drawing.Point(187, 4);
+            this.bntSair.Location = new System.Drawing.Point(702, 410);
             this.bntSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntSair.Name = "bntSair";
-            this.bntSair.Size = new System.Drawing.Size(80, 44);
+            this.bntSair.Size = new System.Drawing.Size(99, 31);
             this.bntSair.TabIndex = 1;
             this.bntSair.Text = "Sair";
             this.bntSair.UseVisualStyleBackColor = true;
@@ -180,29 +162,32 @@
             this.bntAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntAdicionar.Location = new System.Drawing.Point(3, 4);
+            this.bntAdicionar.Location = new System.Drawing.Point(616, 54);
             this.bntAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntAdicionar.Name = "bntAdicionar";
-            this.bntAdicionar.Size = new System.Drawing.Size(86, 44);
+            this.bntAdicionar.Size = new System.Drawing.Size(128, 87);
             this.bntAdicionar.TabIndex = 0;
             this.bntAdicionar.Text = "Adicionar";
             this.bntAdicionar.UseVisualStyleBackColor = true;
             this.bntAdicionar.Click += new System.EventHandler(this.bntAdicionar_Click);
             // 
-            // button1
+            // btnEditar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(95, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 44);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Location = new System.Drawing.Point(616, 149);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(128, 86);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtvProdutos
             // 
@@ -215,26 +200,43 @@
             this.dtvProdutos.Name = "dtvProdutos";
             this.dtvProdutos.RowHeadersWidth = 51;
             this.dtvProdutos.RowTemplate.Height = 24;
-            this.dtvProdutos.Size = new System.Drawing.Size(773, 449);
+            this.dtvProdutos.Size = new System.Drawing.Size(569, 322);
             this.dtvProdutos.TabIndex = 55;
             this.dtvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvProdutos_CellContentClick);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemover.BackColor = System.Drawing.Color.Red;
+            this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover.Location = new System.Drawing.Point(616, 243);
+            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(128, 79);
+            this.btnRemover.TabIndex = 56;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = false;
             // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 562);
+            this.ClientSize = new System.Drawing.Size(813, 454);
+            this.Controls.Add(this.btnRemover);
+            this.Controls.Add(this.bntSair);
             this.Controls.Add(this.dtvProdutos);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.bntAdicionar);
             this.Controls.Add(this.MenuInicio);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmProdutos";
             this.Text = "Produtos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmProdutos_Load);
             this.MenuInicio.ResumeLayout(false);
             this.MenuInicio.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,10 +257,10 @@
         private System.Windows.Forms.ToolStripMenuItem vendaBalcãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button bntSair;
         private System.Windows.Forms.Button bntAdicionar;
         private System.Windows.Forms.DataGridView dtvProdutos;
+        private Button btnRemover;
     }
 }

@@ -30,26 +30,22 @@ namespace CantinaDoTioBill
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmUsuarios usuarios = new FrmUsuarios();
-            usuarios.ShowDialog();
-            this.Show();
+            usuarios.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             FrmClientes clientes = new FrmClientes();
-            clientes.ShowDialog();
-            this.Show();
+            clientes.Show();
+
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmProdutos produtos= new FrmProdutos();
-            produtos.ShowDialog();
-            this.Show();
+            FrmProdutos produtos = new FrmProdutos();
+            produtos.Show();
         }
 
         private void vendaBalcãoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,25 +69,14 @@ namespace CantinaDoTioBill
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmProdutos produtos = new FrmProdutos();
             produtos.ShowDialog();
-            this.Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmUsuarios usuarios = new FrmUsuarios();
-            usuarios.ShowDialog();
-            this.Show();
-            
-
+            usuarios.Show();
         }
 
         private void btnTelaVenda_Click(object sender, EventArgs e)
@@ -102,18 +87,14 @@ namespace CantinaDoTioBill
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmClientes clientes = new FrmClientes();
-            clientes.ShowDialog();
-            this.Show();
+            clientes.Show();
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FrmVendas vendas = new FrmVendas();
-            vendas.ShowDialog();
-            this.Show();
+            vendas.Show();
         }
 
         private void label3_Click(object sender, EventArgs e)
