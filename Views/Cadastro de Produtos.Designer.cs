@@ -186,6 +186,7 @@
             this.bntCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntCancelar.BackColor = System.Drawing.Color.Red;
             this.bntCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntCancelar.Location = new System.Drawing.Point(105, 5);
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -193,7 +194,7 @@
             this.bntCancelar.Size = new System.Drawing.Size(83, 31);
             this.bntCancelar.TabIndex = 1;
             this.bntCancelar.Text = "Cancelar";
-            this.bntCancelar.UseVisualStyleBackColor = true;
+            this.bntCancelar.UseVisualStyleBackColor = false;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
             // label5

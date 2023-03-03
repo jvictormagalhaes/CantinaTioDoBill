@@ -97,7 +97,6 @@ namespace CantinaDoTioBill.View
 
                                 MessageBox.Show("Cliente atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 AtualizarCliente(db);
-
                             }
                         }
                     }

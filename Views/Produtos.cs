@@ -1,6 +1,7 @@
 ﻿using CantinaDoTioBill.Models;
 using MessageUtils;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using System.Data;
 
 namespace CantinaDoTioBill.View
@@ -25,7 +26,7 @@ namespace CantinaDoTioBill.View
                             Produto produto = new Produto();
                             produto.Nome = form.txtNome.Text;
                             produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtPreco.Text);
+                            produto.Preco = Convert.ToDouble(form.txtPreco.Text, CultureInfo.InvariantCulture);
                             db.Produto.Add(produto);
                             db.SaveChanges();
                             AtualizarProdutos(db);
@@ -82,7 +83,7 @@ namespace CantinaDoTioBill.View
                         {
                             produto.Nome = form.txtNome.Text;
                             produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtPreco.Text);
+                            produto.Preco = Convert.ToDouble(form.txtPreco.Text, CultureInfo.InvariantCulture);
                         
 
                             db.Produto.Attach(produto);

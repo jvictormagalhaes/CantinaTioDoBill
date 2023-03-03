@@ -64,16 +64,24 @@
             // 
             // dtvRotas
             // 
+            this.dtvRotas.AllowUserToAddRows = false;
+            this.dtvRotas.AllowUserToDeleteRows = false;
+            this.dtvRotas.AllowUserToResizeColumns = false;
+            this.dtvRotas.AllowUserToResizeRows = false;
             this.dtvRotas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvRotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvRotas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtvRotas.Location = new System.Drawing.Point(12, 83);
             this.dtvRotas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvRotas.Name = "dtvRotas";
+            this.dtvRotas.ReadOnly = true;
+            this.dtvRotas.RowHeadersVisible = false;
             this.dtvRotas.RowHeadersWidth = 51;
             this.dtvRotas.RowTemplate.Height = 24;
-            this.dtvRotas.Size = new System.Drawing.Size(493, 297);
+            this.dtvRotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtvRotas.Size = new System.Drawing.Size(384, 207);
             this.dtvRotas.TabIndex = 62;
             // 
             // tableLayoutPanel1
@@ -278,11 +286,7 @@
         #endregion
 
         private Label label1;
-        private DataGridView dtvRotas;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button bntAdicionar;
-        private Button btnRemover;
-        private Button btnEditar;
         private MenuStrip MenuInicio;
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem usuáriosToolStripMenuItem;
@@ -296,5 +300,9 @@
         private ToolStripMenuItem relatóriosToolStripMenuItem;
         private ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
         private Button bntSair;
+        public Button bntAdicionar;
+        public Button btnRemover;
+        public Button btnEditar;
+        private DataGridView dtvRotas;
     }
 }

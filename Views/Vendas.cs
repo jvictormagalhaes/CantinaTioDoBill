@@ -20,10 +20,7 @@ namespace CantinaDoTioBill.View
 
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-           FrmTelaVenda vendaBalcao = new FrmTelaVenda();
-            vendaBalcao.ShowDialog();
-            this.Show();
+           
         }
 
         private void bntSair_Click(object sender, EventArgs e)
@@ -38,6 +35,16 @@ namespace CantinaDoTioBill.View
                 var vendas = db.Vendas.Select(x => x).ToList();
                 dtvVendas.DataSource = vendas;
             }
+        }
+
+        private void btnConcluirVenda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelarVenda_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

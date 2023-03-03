@@ -2,7 +2,7 @@
 using MessageUtils;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-
+using System.Globalization;
 
 namespace CantinaDoTioBill.Views
 {
@@ -24,7 +24,7 @@ namespace CantinaDoTioBill.Views
             {
                 using (var form = new FrmCadastroRotas())
                 {
-                    if(ShowDialog() == DialogResult.OK)
+                    if(form.ShowDialog() == DialogResult.OK)
                     {
                         using(var db = new BancoContext())
                         {
@@ -68,7 +68,13 @@ namespace CantinaDoTioBill.Views
                             using(var db = new BancoContext())
                             {
                                 rota.NomeRota = form.txtNomeRota.Text;
-                                rota.Taxa = Convert.ToDouble(form.txtTaxa.Text);
+                                rota.Taxa = Convert.ToDouble(form.txtTaxa.Text.ToString(CultureInfo.InvariantCulture));
+                                db.Rota.Attach(rota);
+                                db.Entry(rota).State = EntityState.Modified;
+                                db.SaveChanges();
+
+                                SimpleMessage.Inform("Rota atualizada!", "Informação");
+                                AtualizarRotas(db);
                             }
                         }
                         catch(Exception ex)

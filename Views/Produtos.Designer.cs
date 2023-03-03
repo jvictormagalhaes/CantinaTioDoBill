@@ -203,6 +203,7 @@
             this.dtvProdutos.Location = new System.Drawing.Point(12, 71);
             this.dtvProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvProdutos.Name = "dtvProdutos";
+            this.dtvProdutos.RowHeadersVisible = false;
             this.dtvProdutos.RowHeadersWidth = 51;
             this.dtvProdutos.RowTemplate.Height = 24;
             this.dtvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -251,6 +252,7 @@
             this.Controls.Add(this.MenuInicio);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmProdutos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
             this.Load += new System.EventHandler(this.FrmProdutos_Load);
             this.MenuInicio.ResumeLayout(false);
