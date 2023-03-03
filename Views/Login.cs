@@ -26,16 +26,28 @@ namespace CantinaDoTioBill
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text == "admin" && txtSenha.Text == "admin")
+            string usuario = txtUser.Text;
+            string senha = txtSenha.Text;
+
+            if(usuario == "admin" && txtSenha.Text == "admin")
             {
-                MessageBox.Show("Acesso Liberado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Acesso Liberado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmHome hm = new FrmHome();
                 hm.ShowDialog();
 
             }
             else
             {
-              ConsultaSenha();
+                if (ConsultaSenha())
+                {
+                    MessageBox.Show("Acesso Liberado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmHome hm = new FrmHome();
+                    hm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Acesso Negado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -66,9 +78,11 @@ namespace CantinaDoTioBill
             {
                 using (var db = new BancoContext())
                 {
-                    var user = db.Usuario.Select(x => x).ToList();
-                    var senha = db.Usuario.Select(s => s).ToList();
-
+                   var Usuario = db.Usuario.FirstOrDefault(x => x.Username == txtUser.Text && x.Senha == txtSenha.Text);
+                   if(Usuario != null)
+                        entrar = true;
+                   else
+                        entrar = false;
                 }
             }
             catch (Exception e)

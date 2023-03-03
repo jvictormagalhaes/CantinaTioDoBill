@@ -44,6 +44,7 @@
             this.bntAdicionar = new System.Windows.Forms.Button();
             this.dtvClientes = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.MenuInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvClientes)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,10 +158,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSair.Location = new System.Drawing.Point(3, 155);
+            this.bntSair.Location = new System.Drawing.Point(668, 349);
             this.bntSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntSair.Name = "bntSair";
-            this.bntSair.Size = new System.Drawing.Size(104, 66);
+            this.bntSair.Size = new System.Drawing.Size(104, 31);
             this.bntSair.TabIndex = 1;
             this.bntSair.Text = "Sair";
             this.bntSair.UseVisualStyleBackColor = true;
@@ -203,8 +204,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btnEditar, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bntSair, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.bntAdicionar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnExcluir, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(662, 78);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -215,12 +216,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(110, 225);
             this.tableLayoutPanel1.TabIndex = 53;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(3, 154);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(104, 68);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 393);
             this.Controls.Add(this.dtvClientes);
+            this.Controls.Add(this.bntSair);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.MenuInicio);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -255,5 +268,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridView dtvClientes;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button btnExcluir;
     }
 }

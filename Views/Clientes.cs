@@ -39,12 +39,9 @@ namespace CantinaDoTioBill.View
             using(var form = new FrmCadastroCliente())
             {
                 form.Text = "Atualizar cliente";
-                if(form.ShowDialog() == DialogResult.OK)
+                using (var db = new BancoContext())
                 {
-                    using (var db = new BancoContext())
-                    {
-                     
-                    }
+
                 }
             }
       
