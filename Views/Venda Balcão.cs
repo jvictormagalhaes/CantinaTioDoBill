@@ -91,5 +91,38 @@ namespace CantinaDoTioBill
                 }
             }
         }
+
+        private void btnAdicionarProduto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AtualizarListaVendas(BancoContext db)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var atualizar = db.Vendas.Select(x => x).ToList();
+            dtvListaProdutos.DataSource = atualizar;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void txtQuantidadeProduto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQuantidadeProduto.Text == String.Empty)
+            {
+                txtQuantidadeProduto.Text = "";
+            }
+            else
+            {
+                double desconto = 2.5;
+                double valorUn = Convert.ToDouble(txtValorUnProduto.Text);
+                int quantidade = Convert.ToInt32(txtQuantidadeProduto.Text);
+                txtTotal.Text = ((valorUn * Convert.ToInt16(txtQuantidadeProduto.Text)).ToString("F2")); 
+                double total = quantidade;
+                if (quantidade >= 5)
+                    txtDesconto.Text = desconto.ToString();
+                else
+                    txtDesconto.Text = "0";
+            }
+        }
     }
 }

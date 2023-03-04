@@ -201,6 +201,7 @@
             this.txtIdProduto.ReadOnly = true;
             this.txtIdProduto.Size = new System.Drawing.Size(84, 27);
             this.txtIdProduto.TabIndex = 4;
+            this.txtIdProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNomeProduto
             // 
@@ -231,6 +232,8 @@
             this.txtQuantidadeProduto.Name = "txtQuantidadeProduto";
             this.txtQuantidadeProduto.Size = new System.Drawing.Size(122, 27);
             this.txtQuantidadeProduto.TabIndex = 7;
+            this.txtQuantidadeProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantidadeProduto.TextChanged += new System.EventHandler(this.txtQuantidadeProduto_TextChanged);
             // 
             // txtValorUnProduto
             // 
@@ -239,6 +242,7 @@
             this.txtValorUnProduto.Name = "txtValorUnProduto";
             this.txtValorUnProduto.Size = new System.Drawing.Size(133, 27);
             this.txtValorUnProduto.TabIndex = 8;
+            this.txtValorUnProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotal
             // 
@@ -247,6 +251,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(122, 27);
             this.txtTotal.TabIndex = 9;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -325,6 +330,7 @@
             this.btnAdicionarProduto.TabIndex = 17;
             this.btnAdicionarProduto.Text = "Adicionar Produto";
             this.btnAdicionarProduto.UseVisualStyleBackColor = false;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
             // btnRemoverProduto
             // 
@@ -383,17 +389,19 @@
             this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDesconto.Location = new System.Drawing.Point(14, 418);
             this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.ReadOnly = true;
             this.txtDesconto.Size = new System.Drawing.Size(122, 27);
             this.txtDesconto.TabIndex = 22;
+            this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(148, 397);
+            this.label12.Location = new System.Drawing.Point(146, 397);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 20);
+            this.label12.Size = new System.Drawing.Size(116, 20);
             this.label12.TabIndex = 25;
-            this.label12.Text = "Rota";
+            this.label12.Text = "Rota de Entrega";
             // 
             // txtNomeRota
             // 
@@ -419,6 +427,7 @@
             this.txtTaxaEntrega.Name = "txtTaxaEntrega";
             this.txtTaxaEntrega.Size = new System.Drawing.Size(122, 27);
             this.txtTaxaEntrega.TabIndex = 26;
+            this.txtTaxaEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSelecionarRota
             // 
@@ -521,7 +530,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(487, 27);
+            this.label17.Location = new System.Drawing.Point(487, 30);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(122, 20);
             this.label17.TabIndex = 39;
@@ -530,7 +539,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(401, 27);
+            this.label18.Location = new System.Drawing.Point(401, 30);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(24, 20);
             this.label18.TabIndex = 38;
@@ -539,7 +548,7 @@
             // txtNomeCliente
             // 
             this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeCliente.Location = new System.Drawing.Point(487, 51);
+            this.txtNomeCliente.Location = new System.Drawing.Point(487, 54);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(289, 27);
             this.txtNomeCliente.TabIndex = 37;
@@ -547,16 +556,17 @@
             // txtIdCliente
             // 
             this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdCliente.Location = new System.Drawing.Point(401, 51);
+            this.txtIdCliente.Location = new System.Drawing.Point(401, 54);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(79, 27);
             this.txtIdCliente.TabIndex = 36;
+            this.txtIdCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(785, 27);
+            this.label19.Location = new System.Drawing.Point(785, 30);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(71, 20);
             this.label19.TabIndex = 41;
@@ -565,7 +575,7 @@
             // txtEndereco
             // 
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEndereco.Location = new System.Drawing.Point(785, 51);
+            this.txtEndereco.Location = new System.Drawing.Point(785, 54);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(289, 27);
             this.txtEndereco.TabIndex = 40;
@@ -573,7 +583,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(1077, 27);
+            this.label20.Location = new System.Drawing.Point(1077, 30);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(26, 20);
             this.label20.TabIndex = 43;
@@ -582,7 +592,7 @@
             // txtNumeroCasa
             // 
             this.txtNumeroCasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroCasa.Location = new System.Drawing.Point(1077, 51);
+            this.txtNumeroCasa.Location = new System.Drawing.Point(1077, 54);
             this.txtNumeroCasa.Name = "txtNumeroCasa";
             this.txtNumeroCasa.Size = new System.Drawing.Size(79, 27);
             this.txtNumeroCasa.TabIndex = 42;
@@ -590,7 +600,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(485, 83);
+            this.label21.Location = new System.Drawing.Point(485, 85);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(49, 20);
             this.label21.TabIndex = 45;
@@ -599,7 +609,7 @@
             // txtBairro
             // 
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBairro.Location = new System.Drawing.Point(487, 105);
+            this.txtBairro.Location = new System.Drawing.Point(487, 107);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(154, 27);
             this.txtBairro.TabIndex = 44;
@@ -607,7 +617,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(645, 83);
+            this.label22.Location = new System.Drawing.Point(645, 85);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(66, 20);
             this.label22.TabIndex = 47;
@@ -616,7 +626,7 @@
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefone.Location = new System.Drawing.Point(647, 105);
+            this.txtTelefone.Location = new System.Drawing.Point(647, 107);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(129, 27);
             this.txtTelefone.TabIndex = 46;
@@ -736,7 +746,6 @@
         private Button btnSelecionarProduto;
         private TextBox txtQuantidadeProduto;
         private TextBox txtValorUnProduto;
-        private TextBox txtTotal;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -777,5 +786,6 @@
         private TextBox txtTelefone;
         private Button button4;
         private Button btnCadastrarNovoCliente;
+        public TextBox txtTotal;
     }
 }
