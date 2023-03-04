@@ -45,7 +45,7 @@
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.btnSelecionarProduto = new System.Windows.Forms.Button();
             this.txtQuantidadeProduto = new System.Windows.Forms.TextBox();
-            this.txtValorUn = new System.Windows.Forms.TextBox();
+            this.txtValorUnProduto = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,22 +72,23 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtvListaProdutos = new System.Windows.Forms.DataGridView();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNumeroCasa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnCadastrarNovoCliente = new System.Windows.Forms.Button();
             this.MenuInicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvListaProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuInicio
@@ -197,7 +198,8 @@
             this.txtIdProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdProduto.Location = new System.Drawing.Point(15, 158);
             this.txtIdProduto.Name = "txtIdProduto";
-            this.txtIdProduto.Size = new System.Drawing.Size(79, 27);
+            this.txtIdProduto.ReadOnly = true;
+            this.txtIdProduto.Size = new System.Drawing.Size(84, 27);
             this.txtIdProduto.TabIndex = 4;
             // 
             // txtNomeProduto
@@ -216,10 +218,11 @@
             this.btnSelecionarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSelecionarProduto.Location = new System.Drawing.Point(400, 158);
             this.btnSelecionarProduto.Name = "btnSelecionarProduto";
-            this.btnSelecionarProduto.Size = new System.Drawing.Size(36, 27);
+            this.btnSelecionarProduto.Size = new System.Drawing.Size(57, 31);
             this.btnSelecionarProduto.TabIndex = 6;
             this.btnSelecionarProduto.Text = "...";
             this.btnSelecionarProduto.UseVisualStyleBackColor = false;
+            this.btnSelecionarProduto.Click += new System.EventHandler(this.btnSelecionarProduto_Click);
             // 
             // txtQuantidadeProduto
             // 
@@ -229,13 +232,13 @@
             this.txtQuantidadeProduto.Size = new System.Drawing.Size(122, 27);
             this.txtQuantidadeProduto.TabIndex = 7;
             // 
-            // txtValorUn
+            // txtValorUnProduto
             // 
-            this.txtValorUn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorUn.Location = new System.Drawing.Point(169, 235);
-            this.txtValorUn.Name = "txtValorUn";
-            this.txtValorUn.Size = new System.Drawing.Size(133, 27);
-            this.txtValorUn.TabIndex = 8;
+            this.txtValorUnProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorUnProduto.Location = new System.Drawing.Point(169, 235);
+            this.txtValorUnProduto.Name = "txtValorUnProduto";
+            this.txtValorUnProduto.Size = new System.Drawing.Size(133, 27);
+            this.txtValorUnProduto.TabIndex = 8;
             // 
             // txtTotal
             // 
@@ -403,7 +406,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(271, 396);
+            this.label13.Location = new System.Drawing.Point(271, 397);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(114, 20);
             this.label13.TabIndex = 27;
@@ -412,7 +415,7 @@
             // txtTaxaEntrega
             // 
             this.txtTaxaEntrega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTaxaEntrega.Location = new System.Drawing.Point(273, 417);
+            this.txtTaxaEntrega.Location = new System.Drawing.Point(273, 418);
             this.txtTaxaEntrega.Name = "txtTaxaEntrega";
             this.txtTaxaEntrega.Size = new System.Drawing.Size(122, 27);
             this.txtTaxaEntrega.TabIndex = 26;
@@ -425,16 +428,17 @@
             this.btnSelecionarRota.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSelecionarRota.Location = new System.Drawing.Point(401, 417);
             this.btnSelecionarRota.Name = "btnSelecionarRota";
-            this.btnSelecionarRota.Size = new System.Drawing.Size(36, 27);
+            this.btnSelecionarRota.Size = new System.Drawing.Size(56, 33);
             this.btnSelecionarRota.TabIndex = 28;
             this.btnSelecionarRota.Text = "...";
             this.btnSelecionarRota.UseVisualStyleBackColor = false;
+            this.btnSelecionarRota.Click += new System.EventHandler(this.btnSelecionarRota_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(220, 458);
+            this.label14.Location = new System.Drawing.Point(220, 459);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(127, 31);
             this.label14.TabIndex = 31;
@@ -498,21 +502,21 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dataGridView1
+            // dtvListaProdutos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(473, 158);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(679, 390);
-            this.dataGridView1.TabIndex = 35;
+            this.dtvListaProdutos.AllowUserToAddRows = false;
+            this.dtvListaProdutos.AllowUserToDeleteRows = false;
+            this.dtvListaProdutos.AllowUserToResizeColumns = false;
+            this.dtvListaProdutos.AllowUserToResizeRows = false;
+            this.dtvListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtvListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvListaProdutos.ColumnHeadersVisible = false;
+            this.dtvListaProdutos.Location = new System.Drawing.Point(473, 158);
+            this.dtvListaProdutos.Name = "dtvListaProdutos";
+            this.dtvListaProdutos.RowHeadersWidth = 51;
+            this.dtvListaProdutos.RowTemplate.Height = 29;
+            this.dtvListaProdutos.Size = new System.Drawing.Size(679, 390);
+            this.dtvListaProdutos.TabIndex = 35;
             // 
             // label17
             // 
@@ -532,21 +536,22 @@
             this.label18.TabIndex = 38;
             this.label18.Text = "ID";
             // 
-            // textBox1
+            // txtNomeCliente
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(487, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 27);
-            this.textBox1.TabIndex = 37;
+            this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeCliente.Location = new System.Drawing.Point(487, 51);
+            this.txtNomeCliente.Name = "txtNomeCliente";
+            this.txtNomeCliente.Size = new System.Drawing.Size(289, 27);
+            this.txtNomeCliente.TabIndex = 37;
             // 
-            // textBox2
+            // txtIdCliente
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(401, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 27);
-            this.textBox2.TabIndex = 36;
+            this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdCliente.Location = new System.Drawing.Point(401, 51);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.ReadOnly = true;
+            this.txtIdCliente.Size = new System.Drawing.Size(79, 27);
+            this.txtIdCliente.TabIndex = 36;
             // 
             // label19
             // 
@@ -557,13 +562,13 @@
             this.label19.TabIndex = 41;
             this.label19.Text = "Endereço";
             // 
-            // textBox3
+            // txtEndereco
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(785, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 27);
-            this.textBox3.TabIndex = 40;
+            this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEndereco.Location = new System.Drawing.Point(785, 51);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(289, 27);
+            this.txtEndereco.TabIndex = 40;
             // 
             // label20
             // 
@@ -574,30 +579,30 @@
             this.label20.TabIndex = 43;
             this.label20.Text = "Nº";
             // 
-            // textBox4
+            // txtNumeroCasa
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(1077, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(79, 27);
-            this.textBox4.TabIndex = 42;
+            this.txtNumeroCasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroCasa.Location = new System.Drawing.Point(1077, 51);
+            this.txtNumeroCasa.Name = "txtNumeroCasa";
+            this.txtNumeroCasa.Size = new System.Drawing.Size(79, 27);
+            this.txtNumeroCasa.TabIndex = 42;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(485, 83);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 20);
+            this.label21.Size = new System.Drawing.Size(49, 20);
             this.label21.TabIndex = 45;
-            this.label21.Text = "Rua";
+            this.label21.Text = "Bairro";
             // 
-            // textBox5
+            // txtBairro
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(487, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 27);
-            this.textBox5.TabIndex = 44;
+            this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBairro.Location = new System.Drawing.Point(487, 105);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(154, 27);
+            this.txtBairro.TabIndex = 44;
             // 
             // label22
             // 
@@ -608,13 +613,13 @@
             this.label22.TabIndex = 47;
             this.label22.Text = "Telefone";
             // 
-            // textBox6
+            // txtTelefone
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(647, 105);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(129, 27);
-            this.textBox6.TabIndex = 46;
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.Location = new System.Drawing.Point(647, 105);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(129, 27);
+            this.txtTelefone.TabIndex = 46;
             // 
             // button4
             // 
@@ -624,30 +629,46 @@
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(785, 102);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(158, 30);
+            this.button4.Size = new System.Drawing.Size(158, 37);
             this.button4.TabIndex = 48;
             this.button4.Text = "Selecionar Cliente";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnCadastrarNovoCliente
+            // 
+            this.btnCadastrarNovoCliente.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnCadastrarNovoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrarNovoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarNovoCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrarNovoCliente.Location = new System.Drawing.Point(949, 102);
+            this.btnCadastrarNovoCliente.Name = "btnCadastrarNovoCliente";
+            this.btnCadastrarNovoCliente.Size = new System.Drawing.Size(207, 37);
+            this.btnCadastrarNovoCliente.TabIndex = 49;
+            this.btnCadastrarNovoCliente.Text = "Cadastrar Novo Cliente";
+            this.btnCadastrarNovoCliente.UseVisualStyleBackColor = false;
+            this.btnCadastrarNovoCliente.Click += new System.EventHandler(this.btnCadastrarNovoCliente_Click);
             // 
             // FrmTelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 596);
+            this.Controls.Add(this.btnCadastrarNovoCliente);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtNumeroCasa);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtNomeCliente);
+            this.Controls.Add(this.txtIdCliente);
+            this.Controls.Add(this.dtvListaProdutos);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -674,7 +695,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.txtValorUn);
+            this.Controls.Add(this.txtValorUnProduto);
             this.Controls.Add(this.txtQuantidadeProduto);
             this.Controls.Add(this.btnSelecionarProduto);
             this.Controls.Add(this.txtNomeProduto);
@@ -689,7 +710,7 @@
             this.Load += new System.EventHandler(this.FrmTelaVenda_Load);
             this.MenuInicio.ResumeLayout(false);
             this.MenuInicio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvListaProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -714,7 +735,7 @@
         private TextBox txtNomeProduto;
         private Button btnSelecionarProduto;
         private TextBox txtQuantidadeProduto;
-        private TextBox txtValorUn;
+        private TextBox txtValorUnProduto;
         private TextBox txtTotal;
         private Label label2;
         private Label label3;
@@ -741,19 +762,20 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private DataGridView dataGridView1;
+        private DataGridView dtvListaProdutos;
         private Label label17;
         private Label label18;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtNomeCliente;
+        private TextBox txtIdCliente;
         private Label label19;
-        private TextBox textBox3;
+        private TextBox txtEndereco;
         private Label label20;
-        private TextBox textBox4;
+        private TextBox txtNumeroCasa;
         private Label label21;
-        private TextBox textBox5;
+        private TextBox txtBairro;
         private Label label22;
-        private TextBox textBox6;
+        private TextBox txtTelefone;
         private Button button4;
+        private Button btnCadastrarNovoCliente;
     }
 }

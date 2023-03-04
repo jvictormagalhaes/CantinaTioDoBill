@@ -26,7 +26,7 @@ namespace CantinaDoTioBill.View
                             Produto produto = new Produto();
                             produto.Nome = form.txtNome.Text;
                             produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtPreco.Text, CultureInfo.InvariantCulture);
+                            produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
                             db.Produto.Add(produto);
                             db.SaveChanges();
                             AtualizarProdutos(db);
@@ -75,7 +75,7 @@ namespace CantinaDoTioBill.View
                     form.Text = "Editar Produto";
                     form.txtNome.Text = produto.Nome;
                     form.txtEstoque.Text = produto.Estoque.ToString();
-                    form.txtPreco.Text = produto.Preco.ToString();
+                    form.txtValorUnitario.Text = produto.Preco.ToString();
 
                     if (form.ShowDialog() == DialogResult.OK)
                     {
@@ -83,7 +83,7 @@ namespace CantinaDoTioBill.View
                         {
                             produto.Nome = form.txtNome.Text;
                             produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtPreco.Text, CultureInfo.InvariantCulture);
+                            produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
                         
 
                             db.Produto.Attach(produto);

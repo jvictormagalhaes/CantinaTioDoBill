@@ -389,7 +389,6 @@
         private System.Windows.Forms.Button bntSair;
         private System.Windows.Forms.Button bntAdicionar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dtvClientes;
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnExcluir;
         private Label label1;
@@ -400,5 +399,6 @@
         private DataGridViewTextBoxColumn clmTelefone;
         private DataGridViewTextBoxColumn clmEndereco;
         private DataGridViewTextBoxColumn clmNumero;
+        public DataGridView dtvClientes;
     }
 }

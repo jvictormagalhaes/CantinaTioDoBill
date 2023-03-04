@@ -40,17 +40,15 @@
             this.vendaBalcãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtValorUnitario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.MenuInicio.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuInicio
@@ -145,30 +143,13 @@
             this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.relatórioDeVendasToolStripMenuItem.Text = "Relatório de Vendas";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAdicionar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.bntCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(455, 215);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(192, 41);
-            this.tableLayoutPanel1.TabIndex = 27;
-            // 
             // btnAdicionar
             // 
             this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Location = new System.Drawing.Point(4, 5);
+            this.btnAdicionar.Location = new System.Drawing.Point(451, 227);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(94, 31);
@@ -184,10 +165,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntCancelar.BackColor = System.Drawing.Color.Red;
             this.bntCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntCancelar.Location = new System.Drawing.Point(105, 5);
+            this.bntCancelar.Location = new System.Drawing.Point(551, 227);
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntCancelar.Name = "bntCancelar";
-            this.bntCancelar.Size = new System.Drawing.Size(83, 31);
+            this.bntCancelar.Size = new System.Drawing.Size(96, 31);
             this.bntCancelar.TabIndex = 1;
             this.bntCancelar.Text = "Cancelar";
             this.bntCancelar.UseVisualStyleBackColor = false;
@@ -213,25 +194,25 @@
             this.txtNome.TabIndex = 56;
             this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtPreco
+            // txtValorUnitario
             // 
-            this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPreco.Location = new System.Drawing.Point(11, 129);
-            this.txtPreco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(130, 27);
-            this.txtPreco.TabIndex = 65;
+            this.txtValorUnitario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorUnitario.Location = new System.Drawing.Point(11, 129);
+            this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtValorUnitario.Name = "txtValorUnitario";
+            this.txtValorUnitario.Size = new System.Drawing.Size(130, 27);
+            this.txtValorUnitario.TabIndex = 65;
             // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 108);
+            this.label6.Location = new System.Drawing.Point(9, 108);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 20);
+            this.label6.Size = new System.Drawing.Size(100, 20);
             this.label6.TabIndex = 64;
-            this.label6.Text = "Preço";
+            this.label6.Text = "Valor Unitário";
             // 
             // txtEstoque
             // 
@@ -258,13 +239,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 271);
+            this.Controls.Add(this.bntCancelar);
+            this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtEstoque);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtPreco);
+            this.Controls.Add(this.txtValorUnitario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.MenuInicio);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmCadastroProdutos";
@@ -272,7 +254,6 @@
             this.Load += new System.EventHandler(this.FrmCadastroProdutos_Load);
             this.MenuInicio.ResumeLayout(false);
             this.MenuInicio.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,14 +272,13 @@
         private System.Windows.Forms.ToolStripMenuItem vendaBalcãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button bntCancelar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         public TextBox txtNome;
-        public TextBox txtPreco;
+        public TextBox txtValorUnitario;
         public TextBox txtEstoque;
     }
 }

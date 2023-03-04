@@ -14,7 +14,7 @@ namespace CantinaDoTioBill.Models
         [Required]
         public string Nome { get; set; }
         [Required]
-        public double Preco { get; set; }
+        public double Preco{ get; set; }
         [Required]
         public int Estoque { get; set; }
 

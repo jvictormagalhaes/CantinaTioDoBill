@@ -15,10 +15,6 @@ namespace CantinaDoTioBill.Models
         public int Id { get; set; }
         [Required]
         public bool Status { get; set; }
-        [ForeignKey("Cliente")]
-        public Cliente IdCliente { get; set; }
-        [ForeignKey("Cliente")]
-        public Cliente NomeCliente { get; set; }
         [Required]
         public double Subtotal { get; set; }
         [Required]
