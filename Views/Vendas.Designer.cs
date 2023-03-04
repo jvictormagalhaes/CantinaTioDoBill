@@ -164,7 +164,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntAdicionar.Location = new System.Drawing.Point(578, 77);
+            this.bntAdicionar.Location = new System.Drawing.Point(641, 78);
             this.bntAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntAdicionar.Name = "bntAdicionar";
             this.bntAdicionar.Size = new System.Drawing.Size(124, 66);
@@ -184,14 +184,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvVendas.ColumnHeadersVisible = false;
-            this.dtvVendas.Location = new System.Drawing.Point(12, 39);
+            this.dtvVendas.Location = new System.Drawing.Point(12, 50);
             this.dtvVendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvVendas.Name = "dtvVendas";
             this.dtvVendas.ReadOnly = true;
             this.dtvVendas.RowHeadersWidth = 51;
             this.dtvVendas.RowTemplate.Height = 24;
             this.dtvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvVendas.Size = new System.Drawing.Size(508, 324);
+            this.dtvVendas.Size = new System.Drawing.Size(613, 313);
             this.dtvVendas.TabIndex = 56;
             // 
             // btnConcluirVenda
@@ -201,7 +201,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConcluirVenda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConcluirVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConcluirVenda.Location = new System.Drawing.Point(578, 147);
+            this.btnConcluirVenda.Location = new System.Drawing.Point(641, 148);
             this.btnConcluirVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConcluirVenda.Name = "btnConcluirVenda";
             this.btnConcluirVenda.Size = new System.Drawing.Size(124, 65);
@@ -218,7 +218,7 @@
             this.btnCancelarVenda.BackColor = System.Drawing.Color.Red;
             this.btnCancelarVenda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarVenda.Location = new System.Drawing.Point(578, 216);
+            this.btnCancelarVenda.Location = new System.Drawing.Point(641, 217);
             this.btnCancelarVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelarVenda.Name = "btnCancelarVenda";
             this.btnCancelarVenda.Size = new System.Drawing.Size(124, 63);

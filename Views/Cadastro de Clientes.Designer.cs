@@ -52,16 +52,12 @@
             this.bntCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblRegistro = new System.Windows.Forms.Label();
-            this.lblResgistroId = new System.Windows.Forms.Label();
-            this.pnResgistroId = new System.Windows.Forms.Panel();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lvlNumero = new System.Windows.Forms.Label();
             this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.pnResgistroId.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuInicio
@@ -153,7 +149,7 @@
             // txtRg
             // 
             this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRg.Location = new System.Drawing.Point(689, 69);
+            this.txtRg.Location = new System.Drawing.Point(552, 63);
             this.txtRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(155, 27);
@@ -163,7 +159,7 @@
             // 
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCpf.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCpf.Location = new System.Drawing.Point(528, 69);
+            this.txtCpf.Location = new System.Drawing.Point(391, 63);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(155, 27);
@@ -173,7 +169,7 @@
             // 
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndereco.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEndereco.Location = new System.Drawing.Point(189, 136);
+            this.txtEndereco.Location = new System.Drawing.Point(15, 122);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(330, 27);
@@ -183,7 +179,7 @@
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefone.Location = new System.Drawing.Point(15, 136);
+            this.txtTelefone.Location = new System.Drawing.Point(715, 62);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(162, 27);
@@ -193,7 +189,7 @@
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNome.Location = new System.Drawing.Point(152, 69);
+            this.txtNome.Location = new System.Drawing.Point(15, 63);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(370, 27);
@@ -202,7 +198,7 @@
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(691, 45);
+            this.lblRg.Location = new System.Drawing.Point(554, 39);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(28, 20);
             this.lblRg.TabIndex = 18;
@@ -211,7 +207,7 @@
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(527, 45);
+            this.lblCpf.Location = new System.Drawing.Point(390, 39);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(33, 20);
             this.lblCpf.TabIndex = 17;
@@ -220,7 +216,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(187, 111);
+            this.lblEndereco.Location = new System.Drawing.Point(13, 97);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(71, 20);
             this.lblEndereco.TabIndex = 16;
@@ -229,7 +225,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(14, 113);
+            this.lblTelefone.Location = new System.Drawing.Point(714, 39);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(66, 20);
             this.lblTelefone.TabIndex = 14;
@@ -239,7 +235,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNome.Location = new System.Drawing.Point(149, 45);
+            this.lblNome.Location = new System.Drawing.Point(12, 39);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(44, 16);
             this.lblNome.TabIndex = 13;
@@ -294,42 +290,10 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(182, 41);
             this.tableLayoutPanel1.TabIndex = 50;
             // 
-            // lblRegistro
-            // 
-            this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegistro.Location = new System.Drawing.Point(10, 40);
-            this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(87, 16);
-            this.lblRegistro.TabIndex = 51;
-            this.lblRegistro.Text = "Registro Nº";
-            this.lblRegistro.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // lblResgistroId
-            // 
-            this.lblResgistroId.AutoSize = true;
-            this.lblResgistroId.Location = new System.Drawing.Point(27, 5);
-            this.lblResgistroId.Name = "lblResgistroId";
-            this.lblResgistroId.Size = new System.Drawing.Size(83, 20);
-            this.lblResgistroId.TabIndex = 1;
-            this.lblResgistroId.Text = "ResgistroId";
-            this.lblResgistroId.Visible = false;
-            // 
-            // pnResgistroId
-            // 
-            this.pnResgistroId.BackColor = System.Drawing.Color.LightBlue;
-            this.pnResgistroId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnResgistroId.Controls.Add(this.lblResgistroId);
-            this.pnResgistroId.Location = new System.Drawing.Point(11, 64);
-            this.pnResgistroId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnResgistroId.Name = "pnResgistroId";
-            this.pnResgistroId.Size = new System.Drawing.Size(130, 31);
-            this.pnResgistroId.TabIndex = 52;
-            // 
             // txtBairro
             // 
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBairro.Location = new System.Drawing.Point(529, 136);
+            this.txtBairro.Location = new System.Drawing.Point(355, 122);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(162, 27);
@@ -339,7 +303,7 @@
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblBairro.Location = new System.Drawing.Point(528, 113);
+            this.lblBairro.Location = new System.Drawing.Point(354, 99);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(49, 20);
             this.lblBairro.TabIndex = 53;
@@ -348,7 +312,7 @@
             // txtNumero
             // 
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(704, 136);
+            this.txtNumero.Location = new System.Drawing.Point(530, 122);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(64, 27);
@@ -358,7 +322,7 @@
             // 
             this.lvlNumero.AutoSize = true;
             this.lvlNumero.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lvlNumero.Location = new System.Drawing.Point(703, 113);
+            this.lvlNumero.Location = new System.Drawing.Point(529, 99);
             this.lvlNumero.Name = "lvlNumero";
             this.lvlNumero.Size = new System.Drawing.Size(26, 20);
             this.lvlNumero.TabIndex = 55;
@@ -373,8 +337,6 @@
             this.Controls.Add(this.lvlNumero);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
-            this.Controls.Add(this.pnResgistroId);
-            this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtCpf);
@@ -399,8 +361,6 @@
             this.MenuInicio.ResumeLayout(false);
             this.MenuInicio.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.pnResgistroId.ResumeLayout(false);
-            this.pnResgistroId.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,9 +387,6 @@
         private System.Windows.Forms.Button bntCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblRegistro;
-        private System.Windows.Forms.Label lblResgistroId;
-        private System.Windows.Forms.Panel pnResgistroId;
         private Label lblBairro;
         public TextBox txtRg;
         public TextBox txtCpf;

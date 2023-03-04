@@ -43,18 +43,14 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblResgistroId = new System.Windows.Forms.Label();
-            this.pnId = new System.Windows.Forms.Panel();
             this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.pnId.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuInicio
@@ -197,20 +193,10 @@
             this.bntCancelar.UseVisualStyleBackColor = false;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 16);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Registro Nº";
-            // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(154, 49);
+            this.lblNome.Location = new System.Drawing.Point(12, 42);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(50, 20);
             this.lblNome.TabIndex = 55;
@@ -220,7 +206,7 @@
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(155, 72);
+            this.txtNome.Location = new System.Drawing.Point(13, 65);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(351, 27);
@@ -230,7 +216,7 @@
             // txtPreco
             // 
             this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPreco.Location = new System.Drawing.Point(11, 134);
+            this.txtPreco.Location = new System.Drawing.Point(11, 129);
             this.txtPreco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(130, 27);
@@ -241,7 +227,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 113);
+            this.label6.Location = new System.Drawing.Point(12, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 64;
@@ -250,7 +236,7 @@
             // txtEstoque
             // 
             this.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstoque.Location = new System.Drawing.Point(154, 134);
+            this.txtEstoque.Location = new System.Drawing.Point(154, 129);
             this.txtEstoque.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(130, 27);
@@ -261,32 +247,11 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(155, 113);
+            this.label8.Location = new System.Drawing.Point(155, 107);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 20);
             this.label8.TabIndex = 68;
             this.label8.Text = "Estoque";
-            // 
-            // lblResgistroId
-            // 
-            this.lblResgistroId.AutoSize = true;
-            this.lblResgistroId.Location = new System.Drawing.Point(20, 5);
-            this.lblResgistroId.Name = "lblResgistroId";
-            this.lblResgistroId.Size = new System.Drawing.Size(83, 20);
-            this.lblResgistroId.TabIndex = 0;
-            this.lblResgistroId.Text = "ResgistroId";
-            this.lblResgistroId.Visible = false;
-            // 
-            // pnId
-            // 
-            this.pnId.BackColor = System.Drawing.Color.LightBlue;
-            this.pnId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnId.Controls.Add(this.lblResgistroId);
-            this.pnId.Location = new System.Drawing.Point(15, 68);
-            this.pnId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnId.Name = "pnId";
-            this.pnId.Size = new System.Drawing.Size(130, 31);
-            this.pnId.TabIndex = 54;
             // 
             // FrmCadastroProdutos
             // 
@@ -299,8 +264,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.pnId);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.MenuInicio);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -310,8 +273,6 @@
             this.MenuInicio.ResumeLayout(false);
             this.MenuInicio.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.pnId.ResumeLayout(false);
-            this.pnId.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,12 +294,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button bntCancelar;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblResgistroId;
-        private System.Windows.Forms.Panel pnId;
         public TextBox txtNome;
         public TextBox txtPreco;
         public TextBox txtEstoque;
