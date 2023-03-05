@@ -2,15 +2,8 @@
 using CantinaDoTioBill.View;
 using CantinaDoTioBill.Views;
 using MessageUtils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CantinaDoTioBill
 {
@@ -95,15 +88,20 @@ namespace CantinaDoTioBill
 
         private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
-           
-        }
+            using (var db = new BancoContext())
+            {
+                var telaVenda = new TelaVenda();
+                telaVenda.NomeItem = txtNomeProduto.Text;
+                telaVenda.IdProduto = Convert.ToInt32(txtIdProduto.Text);
+                telaVenda.ValorUnitario = Convert.ToDouble(txtValorUnProduto.Text);
+                telaVenda.Quantidade = Convert.ToInt32(txtQuantidadeProduto.Text);
+                telaVenda.Total = Convert.ToDouble(txtTotal.Text);
 
-        private void AtualizarListaVendas(BancoContext db)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            var atualizar = db.Vendas.Select(x => x).ToList();
-            dtvListaProdutos.DataSource = atualizar;
-            this.Cursor = Cursors.Default;
+                db.TelaVenda.Add(telaVenda);
+                db.SaveChanges();
+
+                AtualizarListaVendas(db);
+            }
         }
 
         private void txtQuantidadeProduto_TextChanged(object sender, EventArgs e)
@@ -128,10 +126,22 @@ namespace CantinaDoTioBill
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)
         {
-            if(SimpleMessage.Confirm("Deseja realmente remover este produto?", "Remover Produto"))
+            DataGridViewRow linha = null;
+            if(dtvListaProdutos.SelectedRows.Count > 0)
             {
-                DataGridViewRow linha = dtvListaProdutos.SelectedRows[0];
-                linha.Cells.Clear();
+                linha = dtvListaProdutos.SelectedRows[0];
+                TelaVenda telaVenda = linha.DataBoundItem as TelaVenda;
+                
+                if(SimpleMessage.Confirm("Deseja retirar o produto?","Exclusão de Produto")){
+                    using(var db = new BancoContext())
+                    {
+                        db.TelaVenda.Attach(telaVenda);
+                        db.Entry(telaVenda).State = EntityState.Deleted;
+                        db.SaveChanges();
+
+                        AtualizarListaVendas(db);
+                    }
+                }
             }
         }
 
@@ -157,6 +167,17 @@ namespace CantinaDoTioBill
                 txtTotal.Text = String.Empty;
                 dtvListaProdutos.DataSource = null;
             }
+        }
+        private void AtualizarListaVendas(BancoContext db)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var atualizar = db.TelaVenda.Select(x => x).ToList();
+            dtvListaProdutos.DataSource = atualizar;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuInicio = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +58,7 @@
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotalProduto = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -89,12 +88,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnCadastrarNovoCliente = new System.Windows.Forms.Button();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
-            this.clmIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmIdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmValorUnitaro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenuInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvListaProdutos)).BeginInit();
             this.SuspendLayout();
@@ -374,15 +367,16 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "R$";
             // 
-            // label10
+            // lblTotalProduto
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(215, 339);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(147, 31);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "totalProduto";
+            this.lblTotalProduto.AutoSize = true;
+            this.lblTotalProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalProduto.Location = new System.Drawing.Point(215, 339);
+            this.lblTotalProduto.Name = "lblTotalProduto";
+            this.lblTotalProduto.Size = new System.Drawing.Size(147, 31);
+            this.lblTotalProduto.TabIndex = 21;
+            this.lblTotalProduto.Text = "totalProduto";
+            this.lblTotalProduto.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -530,13 +524,6 @@
             this.dtvListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtvListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvListaProdutos.ColumnHeadersVisible = false;
-            this.dtvListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmIdItem,
-            this.clmNomeProduto,
-            this.clmIdProduto,
-            this.clmValorUnitaro,
-            this.clmQuantidade,
-            this.clmTotal});
             this.dtvListaProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtvListaProdutos.EnableHeadersVisualStyles = false;
             this.dtvListaProdutos.Location = new System.Drawing.Point(473, 158);
@@ -694,62 +681,6 @@
             this.btnCancelarPedido.UseVisualStyleBackColor = false;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
-            // clmIdItem
-            // 
-            this.clmIdItem.HeaderText = "Item";
-            this.clmIdItem.MinimumWidth = 6;
-            this.clmIdItem.Name = "clmIdItem";
-            this.clmIdItem.ReadOnly = true;
-            this.clmIdItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmIdItem.Width = 40;
-            // 
-            // clmNomeProduto
-            // 
-            this.clmNomeProduto.HeaderText = "Nome do Produto";
-            this.clmNomeProduto.MinimumWidth = 6;
-            this.clmNomeProduto.Name = "clmNomeProduto";
-            this.clmNomeProduto.ReadOnly = true;
-            this.clmNomeProduto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmNomeProduto.Width = 150;
-            // 
-            // clmIdProduto
-            // 
-            this.clmIdProduto.HeaderText = "ID Produto";
-            this.clmIdProduto.MinimumWidth = 6;
-            this.clmIdProduto.Name = "clmIdProduto";
-            this.clmIdProduto.ReadOnly = true;
-            this.clmIdProduto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmIdProduto.Width = 40;
-            // 
-            // clmValorUnitaro
-            // 
-            dataGridViewCellStyle1.Format = "C7";
-            this.clmValorUnitaro.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmValorUnitaro.HeaderText = "Valor Un.";
-            this.clmValorUnitaro.MinimumWidth = 6;
-            this.clmValorUnitaro.Name = "clmValorUnitaro";
-            this.clmValorUnitaro.ReadOnly = true;
-            this.clmValorUnitaro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmValorUnitaro.Width = 125;
-            // 
-            // clmQuantidade
-            // 
-            this.clmQuantidade.HeaderText = "Quantidade";
-            this.clmQuantidade.MinimumWidth = 6;
-            this.clmQuantidade.Name = "clmQuantidade";
-            this.clmQuantidade.ReadOnly = true;
-            this.clmQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmQuantidade.Width = 50;
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.HeaderText = "Total";
-            this.clmTotal.MinimumWidth = 6;
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            this.clmTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmTotal.Width = 80;
-            // 
             // FrmTelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -784,7 +715,7 @@
             this.Controls.Add(this.txtNomeRota);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtDesconto);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblTotalProduto);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnRemoverProduto);
@@ -849,7 +780,7 @@
         private Button btnRemoverProduto;
         private Label label8;
         private Label label9;
-        private Label label10;
+        private Label lblTotalProduto;
         private Label label11;
         private TextBox txtDesconto;
         private Label label12;
@@ -880,11 +811,5 @@
         private Button btnCadastrarNovoCliente;
         public TextBox txtTotal;
         private Button btnCancelarPedido;
-        private DataGridViewTextBoxColumn clmIdItem;
-        private DataGridViewTextBoxColumn clmNomeProduto;
-        private DataGridViewTextBoxColumn clmIdProduto;
-        private DataGridViewTextBoxColumn clmValorUnitaro;
-        private DataGridViewTextBoxColumn clmQuantidade;
-        private DataGridViewTextBoxColumn clmTotal;
     }
 }
