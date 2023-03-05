@@ -66,7 +66,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtTaxaEntrega = new System.Windows.Forms.TextBox();
             this.btnSelecionarRota = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblTotalVenda = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btnSalvarPedido = new System.Windows.Forms.Button();
@@ -88,6 +88,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnCadastrarNovoCliente = new System.Windows.Forms.Button();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
+            this.btnAplicarDesconto = new System.Windows.Forms.Button();
             this.MenuInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvListaProdutos)).BeginInit();
             this.SuspendLayout();
@@ -376,6 +377,7 @@
             this.lblTotalProduto.Size = new System.Drawing.Size(147, 31);
             this.lblTotalProduto.TabIndex = 21;
             this.lblTotalProduto.Text = "totalProduto";
+            this.lblTotalProduto.Visible = false;
             this.lblTotalProduto.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
@@ -396,6 +398,7 @@
             this.txtDesconto.Size = new System.Drawing.Size(122, 27);
             this.txtDesconto.TabIndex = 22;
             this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // label12
             // 
@@ -446,21 +449,22 @@
             this.btnSelecionarRota.UseVisualStyleBackColor = false;
             this.btnSelecionarRota.Click += new System.EventHandler(this.btnSelecionarRota_Click);
             // 
-            // label14
+            // lblTotalVenda
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(220, 459);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(127, 31);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "totalVenda";
+            this.lblTotalVenda.AutoSize = true;
+            this.lblTotalVenda.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalVenda.Location = new System.Drawing.Point(221, 514);
+            this.lblTotalVenda.Name = "lblTotalVenda";
+            this.lblTotalVenda.Size = new System.Drawing.Size(127, 31);
+            this.lblTotalVenda.TabIndex = 31;
+            this.lblTotalVenda.Text = "totalVenda";
+            this.lblTotalVenda.Visible = false;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(184, 458);
+            this.label15.Location = new System.Drawing.Point(184, 514);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 31);
             this.label15.TabIndex = 30;
@@ -470,7 +474,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(17, 458);
+            this.label16.Location = new System.Drawing.Point(17, 514);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(155, 31);
             this.label16.TabIndex = 29;
@@ -482,7 +486,7 @@
             this.btnSalvarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarPedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvarPedido.Location = new System.Drawing.Point(164, 517);
+            this.btnSalvarPedido.Location = new System.Drawing.Point(165, 568);
             this.btnSalvarPedido.Name = "btnSalvarPedido";
             this.btnSalvarPedido.Size = new System.Drawing.Size(153, 67);
             this.btnSalvarPedido.TabIndex = 33;
@@ -495,7 +499,7 @@
             this.btnConcluirPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConcluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConcluirPedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConcluirPedido.Location = new System.Drawing.Point(10, 517);
+            this.btnConcluirPedido.Location = new System.Drawing.Point(11, 568);
             this.btnConcluirPedido.Name = "btnConcluirPedido";
             this.btnConcluirPedido.Size = new System.Drawing.Size(146, 67);
             this.btnConcluirPedido.TabIndex = 32;
@@ -507,7 +511,8 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1065, 554);
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(1065, 602);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 33);
             this.button3.TabIndex = 34;
@@ -531,7 +536,7 @@
             this.dtvListaProdutos.RowHeadersWidth = 51;
             this.dtvListaProdutos.RowTemplate.Height = 29;
             this.dtvListaProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvListaProdutos.Size = new System.Drawing.Size(679, 390);
+            this.dtvListaProdutos.Size = new System.Drawing.Size(679, 426);
             this.dtvListaProdutos.TabIndex = 35;
             // 
             // label17
@@ -672,7 +677,7 @@
             this.btnCancelarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarPedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelarPedido.Location = new System.Drawing.Point(325, 517);
+            this.btnCancelarPedido.Location = new System.Drawing.Point(326, 568);
             this.btnCancelarPedido.Name = "btnCancelarPedido";
             this.btnCancelarPedido.Size = new System.Drawing.Size(131, 67);
             this.btnCancelarPedido.TabIndex = 50;
@@ -680,11 +685,25 @@
             this.btnCancelarPedido.UseVisualStyleBackColor = false;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
+            // btnAplicarDesconto
+            // 
+            this.btnAplicarDesconto.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAplicarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicarDesconto.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAplicarDesconto.Location = new System.Drawing.Point(32, 451);
+            this.btnAplicarDesconto.Name = "btnAplicarDesconto";
+            this.btnAplicarDesconto.Size = new System.Drawing.Size(86, 33);
+            this.btnAplicarDesconto.TabIndex = 51;
+            this.btnAplicarDesconto.Text = "Aplicar";
+            this.btnAplicarDesconto.UseVisualStyleBackColor = false;
+            this.btnAplicarDesconto.Click += new System.EventHandler(this.btnAplicarDesconto_Click);
+            // 
             // FrmTelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 596);
+            this.ClientSize = new System.Drawing.Size(1164, 647);
+            this.Controls.Add(this.btnAplicarDesconto);
             this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.btnCadastrarNovoCliente);
             this.Controls.Add(this.button4);
@@ -704,7 +723,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnSalvarPedido);
             this.Controls.Add(this.btnConcluirPedido);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblTotalVenda);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.btnSelecionarRota);
@@ -787,7 +806,7 @@
         private Label label13;
         private TextBox txtTaxaEntrega;
         private Button btnSelecionarRota;
-        private Label label14;
+        private Label lblTotalVenda;
         private Label label15;
         private Label label16;
         private Button btnSalvarPedido;
@@ -810,5 +829,6 @@
         private Button btnCadastrarNovoCliente;
         public TextBox txtTotal;
         private Button btnCancelarPedido;
+        private Button btnAplicarDesconto;
     }
 }
