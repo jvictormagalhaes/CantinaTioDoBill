@@ -28,17 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MenuInicio = new System.Windows.Forms.MenuStrip();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quentinhasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendaBalcãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtRg = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -56,186 +45,108 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lvlNumero = new System.Windows.Forms.Label();
-            this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // MenuInicio
-            // 
-            this.MenuInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MenuInicio.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem,
-            this.cadastroToolStripMenuItem1,
-            this.vendasToolStripMenuItem,
-            this.relatóriosToolStripMenuItem});
-            this.MenuInicio.Location = new System.Drawing.Point(0, 0);
-            this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            this.MenuInicio.Size = new System.Drawing.Size(883, 30);
-            this.MenuInicio.TabIndex = 12;
-            this.MenuInicio.Text = "MenuInicio";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.cadastroToolStripMenuItem.Text = "Usuário";
-            // 
-            // usuáriosToolStripMenuItem
-            // 
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.usuáriosToolStripMenuItem.Text = "Cadastro de Usuário";
-            // 
-            // cadastroToolStripMenuItem1
-            // 
-            this.cadastroToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem,
-            this.produtosToolStripMenuItem,
-            this.quentinhasToolStripMenuItem});
-            this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
-            this.cadastroToolStripMenuItem1.Text = "Cadastro";
-            // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // produtosToolStripMenuItem
-            // 
-            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.produtosToolStripMenuItem.Text = "Produtos";
-            // 
-            // quentinhasToolStripMenuItem
-            // 
-            this.quentinhasToolStripMenuItem.Name = "quentinhasToolStripMenuItem";
-            this.quentinhasToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.quentinhasToolStripMenuItem.Text = "Tipos de Quentinhas";
-            // 
-            // vendasToolStripMenuItem
-            // 
-            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendaBalcãoToolStripMenuItem});
-            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.vendasToolStripMenuItem.Text = "Vendas";
-            // 
-            // vendaBalcãoToolStripMenuItem
-            // 
-            this.vendaBalcãoToolStripMenuItem.Name = "vendaBalcãoToolStripMenuItem";
-            this.vendaBalcãoToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
-            this.vendaBalcãoToolStripMenuItem.Text = "Venda Balcão";
-            // 
-            // relatóriosToolStripMenuItem
-            // 
-            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatórioDeVendasToolStripMenuItem});
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
-            // relatórioDeVendasToolStripMenuItem
-            // 
-            this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
-            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.relatórioDeVendasToolStripMenuItem.Text = "Relatório de Vendas";
             // 
             // txtRg
             // 
             this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRg.Location = new System.Drawing.Point(552, 63);
+            this.txtRg.Location = new System.Drawing.Point(552, 43);
             this.txtRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(155, 27);
             this.txtRg.TabIndex = 24;
+            this.txtRg.TextChanged += new System.EventHandler(this.txtRg_TextChanged);
             // 
             // txtCpf
             // 
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCpf.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCpf.Location = new System.Drawing.Point(391, 63);
+            this.txtCpf.Location = new System.Drawing.Point(391, 43);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(155, 27);
             this.txtCpf.TabIndex = 23;
+            this.txtCpf.TextChanged += new System.EventHandler(this.txtCpf_TextChanged);
             // 
             // txtEndereco
             // 
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndereco.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEndereco.Location = new System.Drawing.Point(15, 122);
+            this.txtEndereco.Location = new System.Drawing.Point(15, 102);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(330, 27);
             this.txtEndereco.TabIndex = 22;
+            this.txtEndereco.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefone.Location = new System.Drawing.Point(715, 62);
+            this.txtTelefone.Location = new System.Drawing.Point(715, 42);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(162, 27);
             this.txtTelefone.TabIndex = 20;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             // 
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNome.Location = new System.Drawing.Point(15, 63);
+            this.txtNome.Location = new System.Drawing.Point(15, 43);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(370, 27);
             this.txtNome.TabIndex = 19;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(554, 39);
+            this.lblRg.Location = new System.Drawing.Point(554, 19);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(28, 20);
             this.lblRg.TabIndex = 18;
             this.lblRg.Text = "RG";
+            this.lblRg.Click += new System.EventHandler(this.lblRg_Click);
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(390, 39);
+            this.lblCpf.Location = new System.Drawing.Point(390, 19);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(33, 20);
             this.lblCpf.TabIndex = 17;
             this.lblCpf.Text = "CPF";
+            this.lblCpf.Click += new System.EventHandler(this.lblCpf_Click);
             // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(13, 97);
+            this.lblEndereco.Location = new System.Drawing.Point(13, 77);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(71, 20);
             this.lblEndereco.TabIndex = 16;
             this.lblEndereco.Text = "Endereço";
+            this.lblEndereco.Click += new System.EventHandler(this.lblEndereco_Click);
             // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(714, 39);
+            this.lblTelefone.Location = new System.Drawing.Point(714, 19);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(66, 20);
             this.lblTelefone.TabIndex = 14;
             this.lblTelefone.Text = "Telefone";
+            this.lblTelefone.Click += new System.EventHandler(this.lblTelefone_Click);
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNome.Location = new System.Drawing.Point(12, 39);
+            this.lblNome.Location = new System.Drawing.Point(12, 19);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(44, 16);
             this.lblNome.TabIndex = 13;
@@ -282,7 +193,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel1.Controls.Add(this.btnSalvar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.bntCancelar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(689, 253);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(689, 218);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -293,46 +204,50 @@
             // txtBairro
             // 
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBairro.Location = new System.Drawing.Point(355, 122);
+            this.txtBairro.Location = new System.Drawing.Point(355, 102);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(162, 27);
             this.txtBairro.TabIndex = 54;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblBairro.Location = new System.Drawing.Point(354, 99);
+            this.lblBairro.Location = new System.Drawing.Point(354, 79);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(49, 20);
             this.lblBairro.TabIndex = 53;
             this.lblBairro.Text = "Bairro";
+            this.lblBairro.Click += new System.EventHandler(this.lblBairro_Click);
             // 
             // txtNumero
             // 
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(530, 122);
+            this.txtNumero.Location = new System.Drawing.Point(530, 102);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(64, 27);
             this.txtNumero.TabIndex = 56;
+            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             // 
             // lvlNumero
             // 
             this.lvlNumero.AutoSize = true;
             this.lvlNumero.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lvlNumero.Location = new System.Drawing.Point(529, 99);
+            this.lvlNumero.Location = new System.Drawing.Point(529, 79);
             this.lvlNumero.Name = "lvlNumero";
             this.lvlNumero.Size = new System.Drawing.Size(26, 20);
             this.lvlNumero.TabIndex = 55;
             this.lvlNumero.Text = "Nº";
+            this.lvlNumero.Click += new System.EventHandler(this.lvlNumero_Click);
             // 
             // FrmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 316);
+            this.ClientSize = new System.Drawing.Size(883, 272);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lvlNumero);
             this.Controls.Add(this.txtBairro);
@@ -348,18 +263,14 @@
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.MenuInicio);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MainMenuStrip = this.MenuInicio;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmCadastroCliente";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.FrmCadastroCliente_Load);
-            this.MenuInicio.ResumeLayout(false);
-            this.MenuInicio.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,18 +278,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip MenuInicio;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quentinhasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendaBalcãoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblEndereco;

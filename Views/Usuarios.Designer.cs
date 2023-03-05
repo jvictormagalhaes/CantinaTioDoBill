@@ -28,18 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MenuInicio = new System.Windows.Forms.MenuStrip();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quentinhasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendaBalcãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bntAdicionar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -47,103 +35,9 @@
             this.bntSair = new System.Windows.Forms.Button();
             this.dtvUsuarios = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.MenuInicio.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MenuInicio
-            // 
-            this.MenuInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MenuInicio.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem,
-            this.cadastroToolStripMenuItem1,
-            this.vendasToolStripMenuItem,
-            this.relatóriosToolStripMenuItem});
-            this.MenuInicio.Location = new System.Drawing.Point(0, 0);
-            this.MenuInicio.Name = "MenuInicio";
-            this.MenuInicio.Size = new System.Drawing.Size(762, 28);
-            this.MenuInicio.TabIndex = 2;
-            this.MenuInicio.Text = "MenuInicio";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.cadastroToolStripMenuItem.Text = "Usuário";
-            // 
-            // usuáriosToolStripMenuItem
-            // 
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.usuáriosToolStripMenuItem.Text = "Cadastro de Usuário";
-            this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
-            // 
-            // cadastroToolStripMenuItem1
-            // 
-            this.cadastroToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem,
-            this.produtosToolStripMenuItem,
-            this.quentinhasToolStripMenuItem});
-            this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
-            this.cadastroToolStripMenuItem1.Text = "Cadastro";
-            // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // produtosToolStripMenuItem
-            // 
-            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.produtosToolStripMenuItem.Text = "Produtos";
-            // 
-            // quentinhasToolStripMenuItem
-            // 
-            this.quentinhasToolStripMenuItem.Name = "quentinhasToolStripMenuItem";
-            this.quentinhasToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.quentinhasToolStripMenuItem.Text = "Tipos de Quentinhas";
-            // 
-            // vendasToolStripMenuItem
-            // 
-            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendasToolStripMenuItem1,
-            this.vendaBalcãoToolStripMenuItem});
-            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.vendasToolStripMenuItem.Text = "Vendas";
-            // 
-            // vendasToolStripMenuItem1
-            // 
-            this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
-            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(182, 26);
-            this.vendasToolStripMenuItem1.Text = "Vendas";
-            // 
-            // vendaBalcãoToolStripMenuItem
-            // 
-            this.vendaBalcãoToolStripMenuItem.Name = "vendaBalcãoToolStripMenuItem";
-            this.vendaBalcãoToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
-            this.vendaBalcãoToolStripMenuItem.Text = "Venda Balcão";
-            // 
-            // relatóriosToolStripMenuItem
-            // 
-            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatórioDeVendasToolStripMenuItem});
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
-            // relatórioDeVendasToolStripMenuItem
-            // 
-            this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
-            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.relatórioDeVendasToolStripMenuItem.Text = "Relatório de Vendas";
             // 
             // tableLayoutPanel1
             // 
@@ -239,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvUsuarios.Location = new System.Drawing.Point(12, 72);
+            this.dtvUsuarios.Location = new System.Drawing.Point(12, 57);
             this.dtvUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvUsuarios.Name = "dtvUsuarios";
             this.dtvUsuarios.ReadOnly = true;
@@ -247,7 +141,7 @@
             this.dtvUsuarios.RowHeadersWidth = 51;
             this.dtvUsuarios.RowTemplate.Height = 24;
             this.dtvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvUsuarios.Size = new System.Drawing.Size(504, 292);
+            this.dtvUsuarios.Size = new System.Drawing.Size(504, 303);
             this.dtvUsuarios.TabIndex = 56;
             this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
             // 
@@ -255,7 +149,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 43);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 25);
             this.label1.TabIndex = 58;
@@ -269,7 +163,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtvUsuarios);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.MenuInicio);
             this.Controls.Add(this.bntSair);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmUsuarios";
@@ -278,8 +171,6 @@
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             this.Shown += new System.EventHandler(this.FrmUsuarios_Shown);
             this.VisibleChanged += new System.EventHandler(this.FrmUsuarios_VisibleChanged);
-            this.MenuInicio.ResumeLayout(false);
-            this.MenuInicio.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -288,19 +179,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip MenuInicio;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quentinhasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem vendaBalcãoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button bntSair;
         private System.Windows.Forms.Button bntAdicionar;

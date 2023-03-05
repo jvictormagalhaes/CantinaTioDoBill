@@ -53,5 +53,70 @@ namespace CantinaDoTioBill
         {
 
         }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvlNumero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBairro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCpf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEndereco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCpf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEndereco_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

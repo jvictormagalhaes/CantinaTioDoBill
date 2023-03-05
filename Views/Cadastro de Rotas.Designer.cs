@@ -73,6 +73,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Location = new System.Drawing.Point(64, 164);
@@ -85,6 +86,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.BackColor = System.Drawing.Color.Red;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

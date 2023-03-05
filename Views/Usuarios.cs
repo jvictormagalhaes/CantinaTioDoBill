@@ -69,11 +69,6 @@ namespace CantinaDoTioBill.View
             }
         }
 
-        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void FrmUsuarios_Shown(object sender, EventArgs e)
         {
             

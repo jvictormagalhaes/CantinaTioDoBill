@@ -14,7 +14,7 @@ namespace CantinaDoTioBill.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public bool Status { get; set; }
+        public string Status { get; set; }
         [Required]
         public double Subtotal { get; set; }
         [Required]
