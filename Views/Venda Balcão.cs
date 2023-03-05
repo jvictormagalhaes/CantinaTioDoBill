@@ -18,8 +18,8 @@ namespace CantinaDoTioBill
         {
             using(var db = new BancoContext())
             {
-                var listaProdutos = db.Vendas.Select(x => x).ToList();
-                dtvListaProdutos.DataSource = listaProdutos;
+              //  var listaProdutos = db.TelaVenda.Select(x => x).ToList();
+               // dtvListaProdutos.DataSource = listaProdutos;
             }
         }
 
@@ -88,19 +88,28 @@ namespace CantinaDoTioBill
 
         private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
-            using (var db = new BancoContext())
+            try
             {
-                var telaVenda = new TelaVenda();
-                telaVenda.NomeItem = txtNomeProduto.Text;
-                telaVenda.IdProduto = Convert.ToInt32(txtIdProduto.Text);
-                telaVenda.ValorUnitario = Convert.ToDouble(txtValorUnProduto.Text);
-                telaVenda.Quantidade = Convert.ToInt32(txtQuantidadeProduto.Text);
-                telaVenda.Total = Convert.ToDouble(txtTotal.Text);
+                using (var db = new BancoContext())
+                {
+                    var telaVenda = new TelaVenda();
+                    telaVenda.NomeItem = txtNomeProduto.Text;
+                    telaVenda.IdProduto = Convert.ToInt32(txtIdProduto.Text);
+                    telaVenda.ValorUnitario = Convert.ToDouble(txtValorUnProduto.Text);
+                    telaVenda.Quantidade = Convert.ToInt32(txtQuantidadeProduto.Text);
+                    telaVenda.Total = Convert.ToDouble(txtTotal.Text);
 
-                db.TelaVenda.Add(telaVenda);
-                db.SaveChanges();
+                    db.TelaVenda.Add(telaVenda);
+                    db.SaveChanges();
 
-                AtualizarListaVendas(db);
+                    AtualizarListaVendas(db);
+                    var subtotal = db.TelaVenda.Sum(x => x.Total);
+                    lblTotalProduto.Text = subtotal.ToString("F2");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Preencha os campos!","Erro",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
@@ -140,6 +149,8 @@ namespace CantinaDoTioBill
                         db.SaveChanges();
 
                         AtualizarListaVendas(db);
+                        var subtotal = db.TelaVenda.Sum(x => x.Total);
+                        lblTotalProduto.Text = subtotal.ToString("F2");
                     }
                 }
             }

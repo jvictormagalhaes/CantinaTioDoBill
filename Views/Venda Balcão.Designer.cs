@@ -523,12 +523,11 @@
             this.dtvListaProdutos.AllowUserToResizeRows = false;
             this.dtvListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtvListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvListaProdutos.ColumnHeadersVisible = false;
             this.dtvListaProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtvListaProdutos.EnableHeadersVisualStyles = false;
-            this.dtvListaProdutos.Location = new System.Drawing.Point(473, 158);
+            this.dtvListaProdutos.Location = new System.Drawing.Point(485, 158);
             this.dtvListaProdutos.Name = "dtvListaProdutos";
             this.dtvListaProdutos.ReadOnly = true;
+            this.dtvListaProdutos.RowHeadersVisible = false;
             this.dtvListaProdutos.RowHeadersWidth = 51;
             this.dtvListaProdutos.RowTemplate.Height = 29;
             this.dtvListaProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
