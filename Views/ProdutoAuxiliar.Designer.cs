@@ -67,6 +67,7 @@
             // 
             // btnSelecionarProduto
             // 
+            this.btnSelecionarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelecionarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelecionarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecionarProduto.Location = new System.Drawing.Point(411, 310);
@@ -79,6 +80,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(522, 310);
@@ -99,6 +101,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtvProdutos);
             this.Name = "FrmProdutoAuxiliar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Produtos";
             this.Load += new System.EventHandler(this.ProdutoAuxiliar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvProdutos)).EndInit();

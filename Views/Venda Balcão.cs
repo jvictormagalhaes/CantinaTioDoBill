@@ -1,6 +1,7 @@
 ﻿using CantinaDoTioBill.Models;
 using CantinaDoTioBill.View;
 using CantinaDoTioBill.Views;
+using MessageUtils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,7 +95,7 @@ namespace CantinaDoTioBill
 
         private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void AtualizarListaVendas(BancoContext db)
@@ -122,6 +123,39 @@ namespace CantinaDoTioBill
                     txtDesconto.Text = desconto.ToString();
                 else
                     txtDesconto.Text = "0";
+            }
+        }
+
+        private void btnRemoverProduto_Click(object sender, EventArgs e)
+        {
+            if(SimpleMessage.Confirm("Deseja realmente remover este produto?", "Remover Produto"))
+            {
+                DataGridViewRow linha = dtvListaProdutos.SelectedRows[0];
+                linha.Cells.Clear();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelarPedido_Click(object sender, EventArgs e)
+        {
+            if(SimpleMessage.Confirm("Deseja realmente cancelar a venda?", "Cancelamento"))
+            {
+                txtIdCliente.Text = String.Empty;
+                txtNomeCliente.Text = String.Empty;
+                txtEndereco.Text = String.Empty;
+                txtNumeroCasa.Text = String.Empty;
+                txtBairro.Text = String.Empty;
+                txtTelefone.Text = String.Empty;
+                txtIdProduto.Text = String.Empty;
+                txtNomeProduto.Text = String.Empty;
+                txtValorUnProduto.Text = String.Empty;
+                txtQuantidadeProduto.Text = String.Empty;
+                txtTotal.Text = String.Empty;
+                dtvListaProdutos.DataSource = null;
             }
         }
     }

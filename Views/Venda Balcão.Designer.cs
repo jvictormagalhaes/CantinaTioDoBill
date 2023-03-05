@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuInicio = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +70,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSalvarPedido = new System.Windows.Forms.Button();
+            this.btnConcluirPedido = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dtvListaProdutos = new System.Windows.Forms.DataGridView();
             this.label17 = new System.Windows.Forms.Label();
@@ -87,6 +88,13 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.btnCadastrarNovoCliente = new System.Windows.Forms.Button();
+            this.btnCancelarPedido = new System.Windows.Forms.Button();
+            this.clmIdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmValorUnitaro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenuInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvListaProdutos)).BeginInit();
             this.SuspendLayout();
@@ -334,7 +342,7 @@
             // 
             // btnRemoverProduto
             // 
-            this.btnRemoverProduto.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnRemoverProduto.BackColor = System.Drawing.Color.DarkGray;
             this.btnRemoverProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemoverProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -344,6 +352,7 @@
             this.btnRemoverProduto.TabIndex = 18;
             this.btnRemoverProduto.Text = "Remover Produto";
             this.btnRemoverProduto.UseVisualStyleBackColor = false;
+            this.btnRemoverProduto.Click += new System.EventHandler(this.btnRemoverProduto_Click);
             // 
             // label8
             // 
@@ -473,31 +482,32 @@
             this.label16.TabIndex = 29;
             this.label16.Text = "VALOR TOTAL";
             // 
-            // button1
+            // btnSalvarPedido
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(204, 520);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 67);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Salvar Pedido";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSalvarPedido.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSalvarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarPedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalvarPedido.Location = new System.Drawing.Point(164, 517);
+            this.btnSalvarPedido.Name = "btnSalvarPedido";
+            this.btnSalvarPedido.Size = new System.Drawing.Size(153, 67);
+            this.btnSalvarPedido.TabIndex = 33;
+            this.btnSalvarPedido.Text = "Salvar Pedido";
+            this.btnSalvarPedido.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnConcluirPedido
             // 
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(32, 520);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 67);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Concluir Pedido";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnConcluirPedido.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnConcluirPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConcluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConcluirPedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConcluirPedido.Location = new System.Drawing.Point(10, 517);
+            this.btnConcluirPedido.Name = "btnConcluirPedido";
+            this.btnConcluirPedido.Size = new System.Drawing.Size(146, 67);
+            this.btnConcluirPedido.TabIndex = 32;
+            this.btnConcluirPedido.Text = "Concluir Pedido";
+            this.btnConcluirPedido.UseVisualStyleBackColor = false;
+            this.btnConcluirPedido.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -520,10 +530,21 @@
             this.dtvListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtvListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvListaProdutos.ColumnHeadersVisible = false;
+            this.dtvListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmIdItem,
+            this.clmNomeProduto,
+            this.clmIdProduto,
+            this.clmValorUnitaro,
+            this.clmQuantidade,
+            this.clmTotal});
+            this.dtvListaProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtvListaProdutos.EnableHeadersVisualStyles = false;
             this.dtvListaProdutos.Location = new System.Drawing.Point(473, 158);
             this.dtvListaProdutos.Name = "dtvListaProdutos";
+            this.dtvListaProdutos.ReadOnly = true;
             this.dtvListaProdutos.RowHeadersWidth = 51;
             this.dtvListaProdutos.RowTemplate.Height = 29;
+            this.dtvListaProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvListaProdutos.Size = new System.Drawing.Size(679, 390);
             this.dtvListaProdutos.TabIndex = 35;
             // 
@@ -659,11 +680,82 @@
             this.btnCadastrarNovoCliente.UseVisualStyleBackColor = false;
             this.btnCadastrarNovoCliente.Click += new System.EventHandler(this.btnCadastrarNovoCliente_Click);
             // 
+            // btnCancelarPedido
+            // 
+            this.btnCancelarPedido.BackColor = System.Drawing.Color.Red;
+            this.btnCancelarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarPedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelarPedido.Location = new System.Drawing.Point(325, 517);
+            this.btnCancelarPedido.Name = "btnCancelarPedido";
+            this.btnCancelarPedido.Size = new System.Drawing.Size(131, 67);
+            this.btnCancelarPedido.TabIndex = 50;
+            this.btnCancelarPedido.Text = "Cancelar Pedido";
+            this.btnCancelarPedido.UseVisualStyleBackColor = false;
+            this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
+            // 
+            // clmIdItem
+            // 
+            this.clmIdItem.HeaderText = "Item";
+            this.clmIdItem.MinimumWidth = 6;
+            this.clmIdItem.Name = "clmIdItem";
+            this.clmIdItem.ReadOnly = true;
+            this.clmIdItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmIdItem.Width = 40;
+            // 
+            // clmNomeProduto
+            // 
+            this.clmNomeProduto.HeaderText = "Nome do Produto";
+            this.clmNomeProduto.MinimumWidth = 6;
+            this.clmNomeProduto.Name = "clmNomeProduto";
+            this.clmNomeProduto.ReadOnly = true;
+            this.clmNomeProduto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmNomeProduto.Width = 150;
+            // 
+            // clmIdProduto
+            // 
+            this.clmIdProduto.HeaderText = "ID Produto";
+            this.clmIdProduto.MinimumWidth = 6;
+            this.clmIdProduto.Name = "clmIdProduto";
+            this.clmIdProduto.ReadOnly = true;
+            this.clmIdProduto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmIdProduto.Width = 40;
+            // 
+            // clmValorUnitaro
+            // 
+            dataGridViewCellStyle1.Format = "C7";
+            this.clmValorUnitaro.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmValorUnitaro.HeaderText = "Valor Un.";
+            this.clmValorUnitaro.MinimumWidth = 6;
+            this.clmValorUnitaro.Name = "clmValorUnitaro";
+            this.clmValorUnitaro.ReadOnly = true;
+            this.clmValorUnitaro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmValorUnitaro.Width = 125;
+            // 
+            // clmQuantidade
+            // 
+            this.clmQuantidade.HeaderText = "Quantidade";
+            this.clmQuantidade.MinimumWidth = 6;
+            this.clmQuantidade.Name = "clmQuantidade";
+            this.clmQuantidade.ReadOnly = true;
+            this.clmQuantidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmQuantidade.Width = 50;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.HeaderText = "Total";
+            this.clmTotal.MinimumWidth = 6;
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            this.clmTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clmTotal.Width = 80;
+            // 
             // FrmTelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 596);
+            this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.btnCadastrarNovoCliente);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label22);
@@ -680,8 +772,8 @@
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.dtvListaProdutos);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSalvarPedido);
+            this.Controls.Add(this.btnConcluirPedido);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
@@ -768,8 +860,8 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private Button button1;
-        private Button button2;
+        private Button btnSalvarPedido;
+        private Button btnConcluirPedido;
         private Button button3;
         private DataGridView dtvListaProdutos;
         private Label label17;
@@ -787,5 +879,12 @@
         private Button button4;
         private Button btnCadastrarNovoCliente;
         public TextBox txtTotal;
+        private Button btnCancelarPedido;
+        private DataGridViewTextBoxColumn clmIdItem;
+        private DataGridViewTextBoxColumn clmNomeProduto;
+        private DataGridViewTextBoxColumn clmIdProduto;
+        private DataGridViewTextBoxColumn clmValorUnitaro;
+        private DataGridViewTextBoxColumn clmQuantidade;
+        private DataGridViewTextBoxColumn clmTotal;
     }
 }

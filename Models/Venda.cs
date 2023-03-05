@@ -18,6 +18,8 @@ namespace CantinaDoTioBill.Models
         [Required]
         public double Subtotal { get; set; }
         [Required]
+        public int IdCliente { get; set; }
+        [Required]
         public double Desconto { get; set; }
         [Required]
         public double TaxaEntrega { get; set; }
@@ -26,7 +28,7 @@ namespace CantinaDoTioBill.Models
         [Required]
         public DateTime Data { get; set; }
         [Required]
-        public List<Produto> produtos { get; set; }
+        public List<Produto> Produtos { get; set; }
 
 
         public Venda()

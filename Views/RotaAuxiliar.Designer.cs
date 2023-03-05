@@ -69,6 +69,7 @@
             // 
             // btnSelecionarRota
             // 
+            this.btnSelecionarRota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelecionarRota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelecionarRota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecionarRota.Location = new System.Drawing.Point(137, 227);
@@ -81,6 +82,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(237, 227);
@@ -101,6 +103,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtvRotas);
             this.Name = "FrmRotaAuxiliar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Rotas";
             this.Load += new System.EventHandler(this.FrmRotaAuxiliar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvRotas)).EndInit();

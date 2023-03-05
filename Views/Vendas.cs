@@ -20,7 +20,8 @@ namespace CantinaDoTioBill.View
 
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
-           
+            FrmTelaVenda telaVenda = new FrmTelaVenda();
+            telaVenda.Show();
         }
 
         private void bntSair_Click(object sender, EventArgs e)
