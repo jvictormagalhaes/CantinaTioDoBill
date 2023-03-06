@@ -20,6 +20,7 @@ namespace CantinaDoTioBill
         //Fecha a Tela de Venda Balcão
         private void button3_Click(object sender, EventArgs e)
         {
+            LimparDataGridView();
             this.Close();
         }
 
@@ -41,7 +42,7 @@ namespace CantinaDoTioBill
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -67,7 +68,7 @@ namespace CantinaDoTioBill
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -95,7 +96,7 @@ namespace CantinaDoTioBill
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -155,7 +156,7 @@ namespace CantinaDoTioBill
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -190,7 +191,7 @@ namespace CantinaDoTioBill
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -217,29 +218,28 @@ namespace CantinaDoTioBill
                         venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
 
                         db.Vendas.Add(venda);
-
-                        while (db.TelaVenda.Count() != 0)
-                        {
-                            TelaVenda linhaexcluir = db.TelaVenda.First();
-                            db.Remove(linhaexcluir);
-                        }
-
-                        db.SaveChanges();
+                        
                         LimparTela();
+
+                        LimparDataGridView();
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         //Faz o cancelamento do Pedido
         private void btnCancelarPedido_Click(object sender, EventArgs e)
         {
-            if (SimpleMessage.Confirm("Deseja cancelar a venda?", "Cancelar Venda")) ;
-             LimparTela(); //Limpa a tela de vendas
+            if (SimpleMessage.Confirm("Deseja cancelar a venda?", "Cancelar Venda"))
+            {
+                LimparTela(); //Limpa a tela de vendas
+            }
+
+            LimparDataGridView();
         }
 
         //Atualiza o DataGridView do Produtos na tela de Vendas
@@ -265,7 +265,7 @@ namespace CantinaDoTioBill
                     lblTotalVenda.Text = valorTotalVenda(subtotal, taxa, quantidade).ToString("F2");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -327,19 +327,12 @@ namespace CantinaDoTioBill
                         db.Vendas.Add(venda);
                         db.SaveChanges();
                         SimpleMessage.Inform("Venda Salva !", "Informação");
-
-                        while (db.TelaVenda.Count() != 0)
-                        {
-                            TelaVenda linhaexcluir = db.TelaVenda.First();
-                            db.Remove(linhaexcluir);
-                            db.SaveChanges();
-                        }
-
                         LimparTela();
                     }
+                    LimparDataGridView();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -367,9 +360,29 @@ namespace CantinaDoTioBill
             dtvListaProdutos.DataSource = null;
         }
 
+        private void LimparDataGridView()
+        {
+            try
+            {
+                using (var db = new BancoContext())
+                {
+                    while (db.TelaVenda.Count() != 0)
+                    {
+                        TelaVenda linhaexcluir = db.TelaVenda.First();
+                        db.Remove(linhaexcluir);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void dtvListaProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
         }
     }
 }

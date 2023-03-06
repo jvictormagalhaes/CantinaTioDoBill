@@ -140,6 +140,7 @@
             this.Controls.Add(this.lblNome);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmCadastroProdutos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.FrmCadastroProdutos_Load);
             this.ResumeLayout(false);
