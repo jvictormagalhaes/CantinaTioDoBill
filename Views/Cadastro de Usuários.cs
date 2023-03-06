@@ -35,11 +35,6 @@ namespace CantinaDoTioBill
             DialogResult = DialogResult.OK;
         }
 
-        private void rbStatusInativo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmCadastroUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
 

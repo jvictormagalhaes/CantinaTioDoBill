@@ -49,70 +49,84 @@ namespace CantinaDoTioBill.Views
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if(dtvRotas.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvRotas.SelectedRows[0];
-                Rota rota = linha.DataBoundItem as Rota;
-
-                using(var form = new FrmCadastroRotas())
+                DataGridViewRow linha = null;
+                if (dtvRotas.SelectedRows.Count > 0)
                 {
-                    form.Text = "Editar Rota";
-                    form.txtNomeRota.Text = rota.NomeRota;
-                    form.txtTaxa.Text = rota.Taxa.ToString();
+                    linha = dtvRotas.SelectedRows[0];
+                    Rota rota = linha.DataBoundItem as Rota;
 
-                    if(form.ShowDialog() == DialogResult.OK)
+                    using (var form = new FrmCadastroRotas())
+                    {
+                        form.Text = "Editar Rota";
+                        form.txtNomeRota.Text = rota.NomeRota;
+                        form.txtTaxa.Text = rota.Taxa.ToString();
+
+                        if (form.ShowDialog() == DialogResult.OK)
+                        {
+                            try
+                            {
+                                using (var db = new BancoContext())
+                                {
+                                    rota.NomeRota = form.txtNomeRota.Text;
+                                    rota.Taxa = Convert.ToDouble(form.txtTaxa.Text.ToString(CultureInfo.InvariantCulture));
+                                    db.Rota.Attach(rota);
+                                    db.Entry(rota).State = EntityState.Modified;
+                                    db.SaveChanges();
+
+                                    SimpleMessage.Inform("Rota atualizada!", "Informação");
+                                    AtualizarRotas(db);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow linha = null;
+                if (dtvRotas.SelectedRows.Count > 0)
+                {
+                    linha = dtvRotas.SelectedRows[0];
+                    Rota rota = linha.DataBoundItem as Rota;
+
+                    if (SimpleMessage.Confirm("Deseja realmente excluir esta rota?", "Exclusão da rota"))
                     {
                         try
                         {
-                            using(var db = new BancoContext())
+                            using (var db = new BancoContext())
                             {
-                                rota.NomeRota = form.txtNomeRota.Text;
-                                rota.Taxa = Convert.ToDouble(form.txtTaxa.Text.ToString(CultureInfo.InvariantCulture));
                                 db.Rota.Attach(rota);
-                                db.Entry(rota).State = EntityState.Modified;
+                                db.Entry(rota).State = EntityState.Deleted;
                                 db.SaveChanges();
 
-                                SimpleMessage.Inform("Rota atualizada!", "Informação");
+                                SimpleMessage.Inform("Rota excluída!", "Informação");
                                 AtualizarRotas(db);
                             }
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             MessageBox.Show(ex.ToString());
                         }
                     }
                 }
             }
-        }
-
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow linha = null;
-            if(dtvRotas.SelectedRows.Count > 0)
+            catch(Exception ex)
             {
-                linha = dtvRotas.SelectedRows[0];
-                Rota rota = linha.DataBoundItem as Rota;
-
-                if(SimpleMessage.Confirm("Deseja realmente excluir esta rota?","Exclusão da rota"))
-                {
-                    try
-                    {
-                        using(var db = new BancoContext())
-                        {
-                            db.Rota.Attach(rota);
-                            db.Entry(rota).State = EntityState.Deleted;
-                            db.SaveChanges();
-
-                            SimpleMessage.Inform("Rota excluída!", "Informação");
-                            AtualizarRotas(db);
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -129,10 +143,17 @@ namespace CantinaDoTioBill.Views
 
         private void FrmRotas_Load(object sender, EventArgs e)
         {
-            using(var db = new BancoContext())
+            try
             {
-                var rotas = db.Rota.Select(x => x).ToList();
-                dtvRotas.DataSource = rotas;
+                using (var db = new BancoContext())
+                {
+                    var rotas = db.Rota.Select(x => x).ToList();
+                    dtvRotas.DataSource = rotas;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

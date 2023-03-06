@@ -20,10 +20,17 @@ namespace CantinaDoTioBill.Views
 
         private void ProdutoAuxiliar_Load(object sender, EventArgs e)
         {
-            using(var db = new BancoContext())
+            try
             {
-                var produtos = db.Produto.Select(x => x).ToList();
-                dtvProdutos.DataSource = produtos;
+                using (var db = new BancoContext())
+                {
+                    var produtos = db.Produto.Select(x => x).ToList();
+                    dtvProdutos.DataSource = produtos;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

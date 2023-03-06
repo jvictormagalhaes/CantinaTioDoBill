@@ -26,39 +26,51 @@ namespace CantinaDoTioBill
         //Adiciona o Produto com as informs no DataGridView
         private void btnSelecionarProduto_Click(object sender, EventArgs e)
         {
-            using (var form = new FrmProdutoAuxiliar())
+            try
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                using (var form = new FrmProdutoAuxiliar())
                 {
-                    DataGridViewRow linhaProduto = form.dtvProdutos.SelectedRows[0];
-                    Produto produto = linhaProduto.DataBoundItem as Produto;
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        DataGridViewRow linhaProduto = form.dtvProdutos.SelectedRows[0];
+                        Produto produto = linhaProduto.DataBoundItem as Produto;
 
-                    txtIdProduto.Text = produto.Id.ToString();
-                    txtNomeProduto.Text = produto.Nome;
-                    txtValorUnProduto.Text = produto.Preco.ToString();
+                        txtIdProduto.Text = produto.Id.ToString();
+                        txtNomeProduto.Text = produto.Nome;
+                        txtValorUnProduto.Text = produto.Preco.ToString();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            using (var form = new FrmClienteAuxiliar())
+            try
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                using (var form = new FrmClienteAuxiliar())
                 {
-                    DataGridViewRow linhaCliente = form.dtvClientesAuxiliar.SelectedRows[0];
-                    Cliente cliente = linhaCliente.DataBoundItem as Cliente;
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        DataGridViewRow linhaCliente = form.dtvClientesAuxiliar.SelectedRows[0];
+                        Cliente cliente = linhaCliente.DataBoundItem as Cliente;
 
-                    txtIdCliente.Text = cliente.Id.ToString();
-                    txtNomeCliente.Text = cliente.Nome;
-                    txtEndereco.Text = cliente.Endereco;
-                    txtNumeroCasa.Text = cliente.Numero;
-                    txtBairro.Text = cliente.Bairro;
-                    txtTelefone.Text = cliente.Telefone;
+                        txtIdCliente.Text = cliente.Id.ToString();
+                        txtNomeCliente.Text = cliente.Nome;
+                        txtEndereco.Text = cliente.Endereco;
+                        txtNumeroCasa.Text = cliente.Numero;
+                        txtBairro.Text = cliente.Bairro;
+                        txtTelefone.Text = cliente.Telefone;
+                    }
                 }
             }
-
-
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCadastrarNovoCliente_Click(object sender, EventArgs e)
@@ -69,16 +81,23 @@ namespace CantinaDoTioBill
 
         private void btnSelecionarRota_Click(object sender, EventArgs e)
         {
-            using (var form = new FrmRotaAuxiliar())
+            try
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                using (var form = new FrmRotaAuxiliar())
                 {
-                    DataGridViewRow linhaRota = form.dtvRotas.SelectedRows[0];
-                    Rota rota = linhaRota.DataBoundItem as Rota;
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        DataGridViewRow linhaRota = form.dtvRotas.SelectedRows[0];
+                        Rota rota = linhaRota.DataBoundItem as Rota;
 
-                    txtNomeRota.Text = rota.NomeRota;
-                    txtTaxaEntrega.Text = rota.Taxa.ToString();
+                        txtNomeRota.Text = rota.NomeRota;
+                        txtTaxaEntrega.Text = rota.Taxa.ToString();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -119,79 +138,100 @@ namespace CantinaDoTioBill
         //Pega o valor da quantidade, caso não tenha nada, coloca o valor 0
         private void txtQuantidadeProduto_TextChanged(object sender, EventArgs e)
         {
-            using (var db = new BancoContext())
+            try
             {
-                if (txtQuantidadeProduto.Text == String.Empty)
+                using (var db = new BancoContext())
                 {
-                    txtQuantidadeProduto.Text = "";
+                    if (txtQuantidadeProduto.Text == String.Empty)
+                    {
+                        txtQuantidadeProduto.Text = "";
+                    }
+                    else
+                    {
+                        int quantidade = db.TelaVenda.Sum(x => x.Quantidade);
+                        double valorUn = Convert.ToDouble(txtValorUnProduto.Text);
+                        txtTotal.Text = ((valorUn * Convert.ToInt16(txtQuantidadeProduto.Text)).ToString("F2"));
+                        DaDesconto(quantidade);
+                    }
                 }
-                else
-                {
-                    int quantidade = db.TelaVenda.Sum(x => x.Quantidade);
-                    double valorUn = Convert.ToDouble(txtValorUnProduto.Text);
-                    txtTotal.Text = ((valorUn * Convert.ToInt16(txtQuantidadeProduto.Text)).ToString("F2"));
-                    DaDesconto(quantidade);
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         //Remove produto selecionado no DataGridView
         private void btnRemoverProduto_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if (dtvListaProdutos.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvListaProdutos.SelectedRows[0];
-                TelaVenda telaVenda = linha.DataBoundItem as TelaVenda;
-
-                if (SimpleMessage.Confirm("Deseja retirar o produto?", "Exclusão de Produto"))
+                DataGridViewRow linha = null;
+                if (dtvListaProdutos.SelectedRows.Count > 0)
                 {
-                    using (var db = new BancoContext())
+                    linha = dtvListaProdutos.SelectedRows[0];
+                    TelaVenda telaVenda = linha.DataBoundItem as TelaVenda;
+
+                    if (SimpleMessage.Confirm("Deseja retirar o produto?", "Exclusão de Produto"))
                     {
-                        db.TelaVenda.Attach(telaVenda);
-                        db.Entry(telaVenda).State = EntityState.Deleted;
-                        db.SaveChanges();
+                        using (var db = new BancoContext())
+                        {
+                            db.TelaVenda.Attach(telaVenda);
+                            db.Entry(telaVenda).State = EntityState.Deleted;
+                            db.SaveChanges();
 
-                        AtualizarListaVendas(db);
-                        var subtotal = db.TelaVenda.Sum(x => x.Total);
-                        lblTotalProduto.Text = subtotal.ToString("F2");
+                            AtualizarListaVendas(db);
+                            var subtotal = db.TelaVenda.Sum(x => x.Total);
+                            lblTotalProduto.Text = subtotal.ToString("F2");
 
-                        int quantidade = db.TelaVenda.Sum(x => x.Quantidade);
-                        DaDesconto(quantidade);
+                            int quantidade = db.TelaVenda.Sum(x => x.Quantidade);
+                            DaDesconto(quantidade);
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         //Finaliza a venda salvando na tabela de Vendas com Status "C" - Concluida
         private void button2_Click(object sender, EventArgs e)
         {
-            if (SimpleMessage.Confirm("Deseja concluir a venda?", "Concluir Venda"))
+            try
             {
-                using (var db = new BancoContext())
+                if (SimpleMessage.Confirm("Deseja concluir a venda?", "Concluir Venda"))
                 {
-                    double valorDesconto = Math.Abs(Convert.ToDouble(lblTotalProduto.Text) - Convert.ToDouble(lblTotalVenda.Text));
-
-                    Venda venda = new Venda();
-                    venda.Data = DateTime.Now;
-                    venda.Desconto = Convert.ToDouble(valorDesconto);
-                    venda.Status = "F";
-                    venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
-                    venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
-                    venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
-                    venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
-
-                    db.Vendas.Add(venda);
-                    
-                    while (db.TelaVenda.Count() != 0)
+                    using (var db = new BancoContext())
                     {
-                        TelaVenda linhaexcluir = db.TelaVenda.First();
-                        db.Remove(linhaexcluir);
-                    }
+                        double valorDesconto = Math.Abs(Convert.ToDouble(lblTotalProduto.Text) - Convert.ToDouble(lblTotalVenda.Text));
 
-                    db.SaveChanges();
-                    LimparTela();
+                        Venda venda = new Venda();
+                        venda.Data = DateTime.Now;
+                        venda.Desconto = Convert.ToDouble(valorDesconto);
+                        venda.Status = "F";
+                        venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
+                        venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
+                        venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
+                        venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
+
+                        db.Vendas.Add(venda);
+
+                        while (db.TelaVenda.Count() != 0)
+                        {
+                            TelaVenda linhaexcluir = db.TelaVenda.First();
+                            db.Remove(linhaexcluir);
+                        }
+
+                        db.SaveChanges();
+                        LimparTela();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         
@@ -208,18 +248,26 @@ namespace CantinaDoTioBill
             this.Cursor = Cursors.WaitCursor;
             var atualizar = db.TelaVenda.Select(x => x).ToList();
             dtvListaProdutos.DataSource = atualizar;
+            dtvListaProdutos.Columns[0].Visible = false;
             this.Cursor = Cursors.Default;
         }
 
         //Aplica o desconto no Valor Total da Venda
         private void btnAplicarDesconto_Click(object sender, EventArgs e)
         {
-            using (var db = new BancoContext())
+            try
             {
-                int quantidade = db.TelaVenda.Sum(x => x.Quantidade);
-                double subtotal = db.TelaVenda.Sum(x => x.Total);
-                double taxa = Convert.ToDouble(txtTaxaEntrega.Text);
-                lblTotalVenda.Text = valorTotalVenda(subtotal, taxa, quantidade).ToString("F2");
+                using (var db = new BancoContext())
+                {
+                    int quantidade = db.TelaVenda.Sum(x => x.Quantidade);
+                    double subtotal = db.TelaVenda.Sum(x => x.Total);
+                    double taxa = Convert.ToDouble(txtTaxaEntrega.Text);
+                    lblTotalVenda.Text = valorTotalVenda(subtotal, taxa, quantidade).ToString("F2");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -261,32 +309,39 @@ namespace CantinaDoTioBill
         //Salvar o pedido e guarda na tabela Vendas com o Status "A" - Aberta;
         private void btnSalvarPedido_Click(object sender, EventArgs e)
         {
-            if (SimpleMessage.Confirm("Deseja salvar a venda?", "Salvar Venda"))
+            try
             {
-                using (var db = new BancoContext())
+                if (SimpleMessage.Confirm("Deseja salvar a venda?", "Salvar Venda"))
                 {
-                    Venda venda = new Venda();
-                    venda.Data = DateTime.Now;
-                    venda.Desconto = Convert.ToDouble(txtDesconto.Text);
-                    venda.Status = "A";
-                    venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
-                    venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
-                    venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
-                    venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
-
-                    db.Vendas.Add(venda);
-                    db.SaveChanges();
-                    SimpleMessage.Inform("Venda Salva !","Informação");
-
-                    while (db.TelaVenda.Count() != 0)
+                    using (var db = new BancoContext())
                     {
-                        TelaVenda linhaexcluir = db.TelaVenda.First();
-                        db.Remove(linhaexcluir);
-                        db.SaveChanges();
-                    }
+                        Venda venda = new Venda();
+                        venda.Data = DateTime.Now;
+                        venda.Desconto = Convert.ToDouble(txtDesconto.Text);
+                        venda.Status = "A";
+                        venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
+                        venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
+                        venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
+                        venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
 
-                    LimparTela();
+                        db.Vendas.Add(venda);
+                        db.SaveChanges();
+                        SimpleMessage.Inform("Venda Salva !", "Informação");
+
+                        while (db.TelaVenda.Count() != 0)
+                        {
+                            TelaVenda linhaexcluir = db.TelaVenda.First();
+                            db.Remove(linhaexcluir);
+                            db.SaveChanges();
+                        }
+
+                        LimparTela();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -310,6 +365,11 @@ namespace CantinaDoTioBill
             lblTotalVenda.Text = String.Empty;
             lblTotalProduto.Text = String.Empty;
             dtvListaProdutos.DataSource = null;
+        }
+
+        private void dtvListaProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        
         }
     }
 }

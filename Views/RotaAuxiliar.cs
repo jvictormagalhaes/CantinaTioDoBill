@@ -21,10 +21,17 @@ namespace CantinaDoTioBill.Views
 
         private void FrmRotaAuxiliar_Load(object sender, EventArgs e)
         {
-            using(var db = new BancoContext())
+            try
             {
-                var rotas = db.Rota.Select(x => x).ToList();
-                dtvRotas.DataSource = rotas;
+                using (var db = new BancoContext())
+                {
+                    var rotas = db.Rota.Select(x => x).ToList();
+                    dtvRotas.DataSource = rotas;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

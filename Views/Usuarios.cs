@@ -49,23 +49,30 @@ namespace CantinaDoTioBill.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if(dtvUsuarios.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvUsuarios.SelectedRows[0];
-                Usuario usuario = linha.DataBoundItem as Usuario;
-                if(SimpleMessage.Confirm("Deseja realmente excluir este usuário?", "Exclusão de Usuário."))
+                DataGridViewRow linha = null;
+                if (dtvUsuarios.SelectedRows.Count > 0)
                 {
-                    using(var db = new BancoContext())
+                    linha = dtvUsuarios.SelectedRows[0];
+                    Usuario usuario = linha.DataBoundItem as Usuario;
+                    if (SimpleMessage.Confirm("Deseja realmente excluir este usuário?", "Exclusão de Usuário."))
                     {
-                        db.Usuario.Attach(usuario);
-                        db.Entry(usuario).State = EntityState.Deleted;
-                        db.SaveChanges();
+                        using (var db = new BancoContext())
+                        {
+                            db.Usuario.Attach(usuario);
+                            db.Entry(usuario).State = EntityState.Deleted;
+                            db.SaveChanges();
 
-                        SimpleMessage.Inform("Usuário deletado com sucesso", "Informação");
-                        AtualizarUsuario(db);
+                            SimpleMessage.Inform("Usuário deletado com sucesso", "Informação");
+                            AtualizarUsuario(db);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -81,10 +88,17 @@ namespace CantinaDoTioBill.View
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
-            using (var db = new BancoContext())
+            try
             {
-                var usuarios = db.Usuario.Select(x => x).ToList();
-                dtvUsuarios.DataSource = usuarios;
+                using (var db = new BancoContext())
+                {
+                    var usuarios = db.Usuario.Select(x => x).ToList();
+                    dtvUsuarios.DataSource = usuarios;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -106,36 +120,43 @@ namespace CantinaDoTioBill.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if (dtvUsuarios.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvUsuarios.SelectedRows[0];
-                Usuario usuario = linha.DataBoundItem as Usuario;
-
-                using(var form = new FrmCadastroUsuario())
+                DataGridViewRow linha = null;
+                if (dtvUsuarios.SelectedRows.Count > 0)
                 {
-                    form.Text = "Editar Usuário";
-                    form.txtNome.Text = usuario.Nome;
-                    form.txtUsername.Text = usuario.Username;
-                    form.txtSenha.Text = usuario.Senha;
+                    linha = dtvUsuarios.SelectedRows[0];
+                    Usuario usuario = linha.DataBoundItem as Usuario;
 
-                    if(form.ShowDialog() == DialogResult.OK)
+                    using (var form = new FrmCadastroUsuario())
                     {
-                        using(var db = new BancoContext())
+                        form.Text = "Editar Usuário";
+                        form.txtNome.Text = usuario.Nome;
+                        form.txtUsername.Text = usuario.Username;
+                        form.txtSenha.Text = usuario.Senha;
+
+                        if (form.ShowDialog() == DialogResult.OK)
                         {
-                            usuario.Nome = form.txtNome.Text;
-                            usuario.Username = form.txtUsername.Text;
-                            usuario.Senha = form.txtSenha.Text;
+                            using (var db = new BancoContext())
+                            {
+                                usuario.Nome = form.txtNome.Text;
+                                usuario.Username = form.txtUsername.Text;
+                                usuario.Senha = form.txtSenha.Text;
 
-                            db.Usuario.Attach(usuario);
-                            db.Entry(usuario).State = EntityState.Modified;
-                            db.SaveChanges();
+                                db.Usuario.Attach(usuario);
+                                db.Entry(usuario).State = EntityState.Modified;
+                                db.SaveChanges();
 
-                            SimpleMessage.Inform("Usuário atualizado com sucesso", "Informação");
-                            AtualizarUsuario(db);
+                                SimpleMessage.Inform("Usuário atualizado com sucesso", "Informação");
+                                AtualizarUsuario(db);
+                            }
                         }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

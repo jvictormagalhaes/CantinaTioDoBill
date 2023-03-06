@@ -16,7 +16,6 @@ namespace CantinaDoTioBill
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -26,7 +25,6 @@ namespace CantinaDoTioBill
             {
                 Application.Exit();
             }
-            else { };
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)

@@ -55,47 +55,61 @@ namespace CantinaDoTioBill.View
 
         private void FrmProdutos_Load(object sender, EventArgs e)
         {
-            using (var db = new BancoContext())
+            try
             {
-                var produtos = db.Produto.Select(x => x).ToList();
-                dtvProdutos.DataSource = produtos;
+                using (var db = new BancoContext())
+                {
+                    var produtos = db.Produto.Select(x => x).ToList();
+                    dtvProdutos.DataSource = produtos;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if (dtvProdutos.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvProdutos.SelectedRows[0];
-                Produto produto = linha.DataBoundItem as Produto;
-
-                using (var form = new FrmCadastroProdutos())
+                DataGridViewRow linha = null;
+                if (dtvProdutos.SelectedRows.Count > 0)
                 {
-                    form.Text = "Editar Produto";
-                    form.txtNome.Text = produto.Nome;
-                    form.txtEstoque.Text = produto.Estoque.ToString();
-                    form.txtValorUnitario.Text = produto.Preco.ToString();
+                    linha = dtvProdutos.SelectedRows[0];
+                    Produto produto = linha.DataBoundItem as Produto;
 
-                    if (form.ShowDialog() == DialogResult.OK)
+                    using (var form = new FrmCadastroProdutos())
                     {
-                        using (var db = new BancoContext())
+                        form.Text = "Editar Produto";
+                        form.txtNome.Text = produto.Nome;
+                        form.txtEstoque.Text = produto.Estoque.ToString();
+                        form.txtValorUnitario.Text = produto.Preco.ToString();
+
+                        if (form.ShowDialog() == DialogResult.OK)
                         {
-                            produto.Nome = form.txtNome.Text;
-                            produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
-                        
+                            using (var db = new BancoContext())
+                            {
+                                produto.Nome = form.txtNome.Text;
+                                produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
+                                produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
 
-                            db.Produto.Attach(produto);
-                            db.Entry(produto).State = EntityState.Modified;
-                            db.SaveChanges();
 
-                            MessageBox.Show("Produto atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AtualizarProdutos(db);
+                                db.Produto.Attach(produto);
+                                db.Entry(produto).State = EntityState.Modified;
+                                db.SaveChanges();
 
+                                MessageBox.Show("Produto atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                AtualizarProdutos(db);
+
+                            }
                         }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -112,24 +126,31 @@ namespace CantinaDoTioBill.View
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if (dtvProdutos.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvProdutos.SelectedRows[0];
-                Produto produto = linha.DataBoundItem as Produto;
-
-                if (SimpleMessage.Confirm("Deseja realmente excluir esse produto?", "Exclusão de Produto"))
+                DataGridViewRow linha = null;
+                if (dtvProdutos.SelectedRows.Count > 0)
                 {
-                    using(var db = new BancoContext())
-                    {
-                        db.Produto.Attach(produto);
-                        db.Entry(produto).State = EntityState.Deleted;
-                        db.SaveChanges();
+                    linha = dtvProdutos.SelectedRows[0];
+                    Produto produto = linha.DataBoundItem as Produto;
 
-                        MessageBox.Show("Produto excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        AtualizarProdutos(db);
+                    if (SimpleMessage.Confirm("Deseja realmente excluir esse produto?", "Exclusão de Produto"))
+                    {
+                        using (var db = new BancoContext())
+                        {
+                            db.Produto.Attach(produto);
+                            db.Entry(produto).State = EntityState.Deleted;
+                            db.SaveChanges();
+
+                            MessageBox.Show("Produto excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizarProdutos(db);
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }

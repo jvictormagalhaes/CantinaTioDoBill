@@ -13,10 +13,17 @@ namespace CantinaDoTioBill.View
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
-            using (var db = new BancoContext())
+            try
             {
-                var clientes = db.Cliente.Select(x => x).ToList();
-                dtvClientes.DataSource = clientes;
+                using (var db = new BancoContext())
+                {
+                    var clientes = db.Cliente.Select(x => x).ToList();
+                    dtvClientes.DataSource = clientes;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -131,26 +138,31 @@ namespace CantinaDoTioBill.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = null;
-            if (dtvClientes.SelectedRows.Count > 0)
+            try
             {
-                linha = dtvClientes.SelectedRows[0];
-                Cliente cliente = linha.DataBoundItem as Cliente;
-                if(SimpleMessage.Confirm("Deseja realmente excluir o cliente?", "Exclusão de Produto"))
+                DataGridViewRow linha = null;
+                if (dtvClientes.SelectedRows.Count > 0)
                 {
-                    using(var db = new BancoContext())
+                    linha = dtvClientes.SelectedRows[0];
+                    Cliente cliente = linha.DataBoundItem as Cliente;
+                    if (SimpleMessage.Confirm("Deseja realmente excluir o cliente?", "Exclusão de Produto"))
                     {
-                        db.Cliente.Attach(cliente);
-                        db.Entry(cliente).State = EntityState.Deleted;
-                        db.SaveChanges();
+                        using (var db = new BancoContext())
+                        {
+                            db.Cliente.Attach(cliente);
+                            db.Entry(cliente).State = EntityState.Deleted;
+                            db.SaveChanges();
 
-                        MessageBox.Show("Cliente excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        AtualizarCliente(db);
+                            MessageBox.Show("Cliente excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizarCliente(db);
+                        }
                     }
                 }
             }
-
-
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

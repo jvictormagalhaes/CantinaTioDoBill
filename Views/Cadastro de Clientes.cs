@@ -34,11 +34,6 @@ namespace CantinaDoTioBill
             this.Close();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void bntSalvar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -47,11 +42,6 @@ namespace CantinaDoTioBill
         private void btnSalvar_Leave(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnRota_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNumero_TextChanged(object sender, EventArgs e)

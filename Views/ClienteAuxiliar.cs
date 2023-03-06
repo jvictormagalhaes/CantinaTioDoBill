@@ -30,10 +30,17 @@ namespace CantinaDoTioBill.Views
 
         private void FrmClienteAuxiliar_Load(object sender, EventArgs e)
         {
-            using(var db = new BancoContext())
+            try
             {
-                var clientes = db.Cliente.Select(x => x).ToList();
-                dtvClientesAuxiliar.DataSource = clientes;
+                using (var db = new BancoContext())
+                {
+                    var clientes = db.Cliente.Select(x => x).ToList();
+                    dtvClientesAuxiliar.DataSource = clientes;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

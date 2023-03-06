@@ -432,8 +432,9 @@
             this.dtvListaProdutos.RowHeadersWidth = 51;
             this.dtvListaProdutos.RowTemplate.Height = 29;
             this.dtvListaProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvListaProdutos.Size = new System.Drawing.Size(679, 426);
+            this.dtvListaProdutos.Size = new System.Drawing.Size(654, 426);
             this.dtvListaProdutos.TabIndex = 35;
+            this.dtvListaProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvListaProdutos_CellContentClick);
             // 
             // label17
             // 

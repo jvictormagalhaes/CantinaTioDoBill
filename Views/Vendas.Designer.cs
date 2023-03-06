@@ -35,8 +35,11 @@
             this.btnCancelarVenda = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblCifrao = new System.Windows.Forms.Label();
-            this.lblTotalVendas = new System.Windows.Forms.Label();
+            this.lblCifraoF = new System.Windows.Forms.Label();
+            this.lblTotalVendasFinalizadas = new System.Windows.Forms.Label();
+            this.lblTotalDeVendasCanceladas = new System.Windows.Forms.Label();
+            this.lblCifraoC = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVendas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,10 +50,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntSair.Location = new System.Drawing.Point(690, 342);
+            this.bntSair.Location = new System.Drawing.Point(670, 389);
             this.bntSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntSair.Name = "bntSair";
-            this.bntSair.Size = new System.Drawing.Size(75, 46);
+            this.bntSair.Size = new System.Drawing.Size(95, 36);
             this.bntSair.TabIndex = 1;
             this.bntSair.Text = "Sair";
             this.bntSair.UseVisualStyleBackColor = true;
@@ -82,15 +85,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvVendas.ColumnHeadersVisible = false;
-            this.dtvVendas.Location = new System.Drawing.Point(12, 47);
+            this.dtvVendas.Location = new System.Drawing.Point(13, 47);
             this.dtvVendas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtvVendas.Name = "dtvVendas";
             this.dtvVendas.ReadOnly = true;
+            this.dtvVendas.RowHeadersVisible = false;
             this.dtvVendas.RowHeadersWidth = 51;
             this.dtvVendas.RowTemplate.Height = 24;
             this.dtvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvVendas.Size = new System.Drawing.Size(613, 298);
+            this.dtvVendas.Size = new System.Drawing.Size(613, 310);
             this.dtvVendas.TabIndex = 56;
             // 
             // btnConcluirVenda
@@ -103,7 +106,7 @@
             this.btnConcluirVenda.Location = new System.Drawing.Point(641, 147);
             this.btnConcluirVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConcluirVenda.Name = "btnConcluirVenda";
-            this.btnConcluirVenda.Size = new System.Drawing.Size(124, 61);
+            this.btnConcluirVenda.Size = new System.Drawing.Size(124, 67);
             this.btnConcluirVenda.TabIndex = 57;
             this.btnConcluirVenda.Text = "Concluir Venda";
             this.btnConcluirVenda.UseVisualStyleBackColor = true;
@@ -117,10 +120,10 @@
             this.btnCancelarVenda.BackColor = System.Drawing.Color.Red;
             this.btnCancelarVenda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarVenda.Location = new System.Drawing.Point(641, 216);
+            this.btnCancelarVenda.Location = new System.Drawing.Point(641, 222);
             this.btnCancelarVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelarVenda.Name = "btnCancelarVenda";
-            this.btnCancelarVenda.Size = new System.Drawing.Size(124, 59);
+            this.btnCancelarVenda.Size = new System.Drawing.Size(124, 74);
             this.btnCancelarVenda.TabIndex = 58;
             this.btnCancelarVenda.Text = "CancelarVenda";
             this.btnCancelarVenda.UseVisualStyleBackColor = false;
@@ -139,42 +142,77 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(231, 358);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(13, 361);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 31);
+            this.label2.Size = new System.Drawing.Size(248, 28);
             this.label2.TabIndex = 60;
-            this.label2.Text = "Total de Vendas:";
+            this.label2.Text = "Total de Vendas Finalizadas";
             // 
-            // lblCifrao
+            // lblCifraoF
             // 
-            this.lblCifrao.AutoSize = true;
-            this.lblCifrao.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCifrao.Location = new System.Drawing.Point(405, 357);
-            this.lblCifrao.Name = "lblCifrao";
-            this.lblCifrao.Size = new System.Drawing.Size(40, 31);
-            this.lblCifrao.TabIndex = 61;
-            this.lblCifrao.Text = "R$";
-            this.lblCifrao.Visible = false;
+            this.lblCifraoF.AutoSize = true;
+            this.lblCifraoF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCifraoF.Location = new System.Drawing.Point(48, 389);
+            this.lblCifraoF.Name = "lblCifraoF";
+            this.lblCifraoF.Size = new System.Drawing.Size(35, 28);
+            this.lblCifraoF.TabIndex = 61;
+            this.lblCifraoF.Text = "R$";
+            this.lblCifraoF.Visible = false;
             // 
-            // lblTotalVendas
+            // lblTotalVendasFinalizadas
             // 
-            this.lblTotalVendas.AutoSize = true;
-            this.lblTotalVendas.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalVendas.Location = new System.Drawing.Point(438, 357);
-            this.lblTotalVendas.Name = "lblTotalVendas";
-            this.lblTotalVendas.Size = new System.Drawing.Size(163, 31);
-            this.lblTotalVendas.TabIndex = 62;
-            this.lblTotalVendas.Text = "totalDeVendas";
-            this.lblTotalVendas.Visible = false;
+            this.lblTotalVendasFinalizadas.AutoSize = true;
+            this.lblTotalVendasFinalizadas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalVendasFinalizadas.Location = new System.Drawing.Point(79, 389);
+            this.lblTotalVendasFinalizadas.Name = "lblTotalVendasFinalizadas";
+            this.lblTotalVendasFinalizadas.Size = new System.Drawing.Size(234, 28);
+            this.lblTotalVendasFinalizadas.TabIndex = 62;
+            this.lblTotalVendasFinalizadas.Text = "totalDeVendasFinalizadas";
+            this.lblTotalVendasFinalizadas.Visible = false;
+            // 
+            // lblTotalDeVendasCanceladas
+            // 
+            this.lblTotalDeVendasCanceladas.AutoSize = true;
+            this.lblTotalDeVendasCanceladas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalDeVendasCanceladas.Location = new System.Drawing.Point(381, 389);
+            this.lblTotalDeVendasCanceladas.Name = "lblTotalDeVendasCanceladas";
+            this.lblTotalDeVendasCanceladas.Size = new System.Drawing.Size(236, 28);
+            this.lblTotalDeVendasCanceladas.TabIndex = 65;
+            this.lblTotalDeVendasCanceladas.Text = "totalDeVendasCanceladas";
+            this.lblTotalDeVendasCanceladas.Visible = false;
+            // 
+            // lblCifraoC
+            // 
+            this.lblCifraoC.AutoSize = true;
+            this.lblCifraoC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCifraoC.Location = new System.Drawing.Point(350, 389);
+            this.lblCifraoC.Name = "lblCifraoC";
+            this.lblCifraoC.Size = new System.Drawing.Size(35, 28);
+            this.lblCifraoC.TabIndex = 64;
+            this.lblCifraoC.Text = "R$";
+            this.lblCifraoC.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(319, 361);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(254, 28);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Total de Vendas Canceladas:";
             // 
             // FrmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 401);
-            this.Controls.Add(this.lblTotalVendas);
-            this.Controls.Add(this.lblCifrao);
+            this.ClientSize = new System.Drawing.Size(777, 438);
+            this.Controls.Add(this.lblTotalDeVendasCanceladas);
+            this.Controls.Add(this.lblCifraoC);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTotalVendasFinalizadas);
+            this.Controls.Add(this.lblCifraoF);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelarVenda);
@@ -201,7 +239,10 @@
         private Button btnCancelarVenda;
         private Label label1;
         private Label label2;
-        private Label lblCifrao;
-        private Label lblTotalVendas;
+        private Label lblCifraoF;
+        private Label lblTotalVendasFinalizadas;
+        private Label lblTotalDeVendasCanceladas;
+        private Label lblCifraoC;
+        private Label label5;
     }
 }
