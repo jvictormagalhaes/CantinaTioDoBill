@@ -76,7 +76,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnCadastrarNovoCliente = new System.Windows.Forms.Button();
             this.btnCancelarPedido = new System.Windows.Forms.Button();
-            this.btnAplicarDesconto = new System.Windows.Forms.Button();
+            this.btnAdicionarRota = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvListaProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +131,7 @@
             this.txtQuantidadeProduto.TabIndex = 7;
             this.txtQuantidadeProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQuantidadeProduto.TextChanged += new System.EventHandler(this.txtQuantidadeProduto_TextChanged);
+            this.txtQuantidadeProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidadeProduto_KeyPress);
             // 
             // txtValorUnProduto
             // 
@@ -140,12 +141,14 @@
             this.txtValorUnProduto.Size = new System.Drawing.Size(133, 27);
             this.txtValorUnProduto.TabIndex = 8;
             this.txtValorUnProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorUnProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUnProduto_KeyPress);
             // 
             // txtTotal
             // 
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal.Location = new System.Drawing.Point(335, 235);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(122, 27);
             this.txtTotal.TabIndex = 9;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -278,7 +281,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 397);
+            this.label11.Location = new System.Drawing.Point(11, 396);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 20);
             this.label11.TabIndex = 23;
@@ -287,10 +290,10 @@
             // txtDesconto
             // 
             this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDesconto.Location = new System.Drawing.Point(14, 418);
+            this.txtDesconto.Location = new System.Drawing.Point(10, 417);
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.ReadOnly = true;
-            this.txtDesconto.Size = new System.Drawing.Size(122, 27);
+            this.txtDesconto.Size = new System.Drawing.Size(89, 27);
             this.txtDesconto.TabIndex = 22;
             this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
@@ -298,7 +301,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(146, 397);
+            this.label12.Location = new System.Drawing.Point(110, 397);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(116, 20);
             this.label12.TabIndex = 25;
@@ -307,9 +310,10 @@
             // txtNomeRota
             // 
             this.txtNomeRota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeRota.Location = new System.Drawing.Point(148, 418);
+            this.txtNomeRota.Location = new System.Drawing.Point(112, 418);
             this.txtNomeRota.Name = "txtNomeRota";
-            this.txtNomeRota.Size = new System.Drawing.Size(122, 27);
+            this.txtNomeRota.ReadOnly = true;
+            this.txtNomeRota.Size = new System.Drawing.Size(155, 27);
             this.txtNomeRota.TabIndex = 24;
             // 
             // label13
@@ -326,6 +330,7 @@
             this.txtTaxaEntrega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxaEntrega.Location = new System.Drawing.Point(273, 418);
             this.txtTaxaEntrega.Name = "txtTaxaEntrega";
+            this.txtTaxaEntrega.ReadOnly = true;
             this.txtTaxaEntrega.Size = new System.Drawing.Size(122, 27);
             this.txtTaxaEntrega.TabIndex = 26;
             this.txtTaxaEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -505,6 +510,7 @@
             this.txtNumeroCasa.Name = "txtNumeroCasa";
             this.txtNumeroCasa.Size = new System.Drawing.Size(79, 27);
             this.txtNumeroCasa.TabIndex = 42;
+            this.txtNumeroCasa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCasa_KeyPress);
             // 
             // label21
             // 
@@ -539,6 +545,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(129, 27);
             this.txtTelefone.TabIndex = 46;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // button4
             // 
@@ -582,25 +589,26 @@
             this.btnCancelarPedido.UseVisualStyleBackColor = false;
             this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
-            // btnAplicarDesconto
+            // btnAdicionarRota
             // 
-            this.btnAplicarDesconto.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnAplicarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAplicarDesconto.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAplicarDesconto.Location = new System.Drawing.Point(32, 453);
-            this.btnAplicarDesconto.Name = "btnAplicarDesconto";
-            this.btnAplicarDesconto.Size = new System.Drawing.Size(86, 33);
-            this.btnAplicarDesconto.TabIndex = 51;
-            this.btnAplicarDesconto.Text = "Aplicar";
-            this.btnAplicarDesconto.UseVisualStyleBackColor = false;
-            this.btnAplicarDesconto.Click += new System.EventHandler(this.btnAplicarDesconto_Click);
+            this.btnAdicionarRota.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAdicionarRota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarRota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarRota.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarRota.Location = new System.Drawing.Point(105, 451);
+            this.btnAdicionarRota.Name = "btnAdicionarRota";
+            this.btnAdicionarRota.Size = new System.Drawing.Size(165, 33);
+            this.btnAdicionarRota.TabIndex = 51;
+            this.btnAdicionarRota.Text = "Adicionar Rota";
+            this.btnAdicionarRota.UseVisualStyleBackColor = false;
+            this.btnAdicionarRota.Click += new System.EventHandler(this.btnAplicarDesconto_Click);
             // 
             // FrmTelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 647);
-            this.Controls.Add(this.btnAplicarDesconto);
+            this.Controls.Add(this.btnAdicionarRota);
             this.Controls.Add(this.btnCancelarPedido);
             this.Controls.Add(this.btnCadastrarNovoCliente);
             this.Controls.Add(this.button4);
@@ -710,6 +718,6 @@
         private Button btnCadastrarNovoCliente;
         public TextBox txtTotal;
         private Button btnCancelarPedido;
-        private Button btnAplicarDesconto;
+        private Button btnAdicionarRota;
     }
 }

@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Views\Cadastro de Clientes.cs">
+    <Compile Update="Views\Clientes\Cadastro de Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Cadastro de Produtos.cs">
+    <Compile Update="Views\Produtos\Cadastro de Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Cadastro de Rotas.cs">
+    <Compile Update="Views\Rotas\Cadastro de Rotas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Cadastro de Usuários.cs">
+    <Compile Update="Views\Usuarios\Cadastro de Usuários.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\ClienteAuxiliar.cs">
+    <Compile Update="Views\Clientes\ClienteAuxiliar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Clientes.cs">
+    <Compile Update="Views\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Home.cs">
@@ -25,25 +25,28 @@
     <Compile Update="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\ProdutoAuxiliar.cs">
+    <Compile Update="Views\Produtos\ProdutoAuxiliar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Produtos.cs">
+    <Compile Update="Views\Produtos\Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\RotaAuxiliar.cs">
+    <Compile Update="Views\Rotas\RotaAuxiliar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Rotas.cs">
+    <Compile Update="Views\Rotas\Rotas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Usuarios.cs">
+    <Compile Update="Views\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Venda Balcão.cs">
+    <Compile Update="Views\Vendas\FrmRelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Vendas.cs">
+    <Compile Update="Views\Vendas\Venda Balcão.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Vendas\Vendas.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -41,6 +41,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Location = new System.Drawing.Point(451, 183);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -55,6 +56,7 @@
             // 
             this.bntCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bntCancelar.BackColor = System.Drawing.Color.Red;
+            this.bntCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntCancelar.Location = new System.Drawing.Point(551, 183);
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -93,6 +95,7 @@
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(130, 27);
             this.txtValorUnitario.TabIndex = 65;
+            this.txtValorUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUnitario_KeyPress);
             // 
             // label6
             // 
@@ -113,6 +116,7 @@
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(130, 27);
             this.txtEstoque.TabIndex = 69;
+            this.txtEstoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstoque_KeyPress);
             // 
             // label8
             // 

@@ -57,6 +57,7 @@
             this.txtRg.Size = new System.Drawing.Size(155, 27);
             this.txtRg.TabIndex = 24;
             this.txtRg.TextChanged += new System.EventHandler(this.txtRg_TextChanged);
+            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
             // txtCpf
             // 
@@ -68,6 +69,7 @@
             this.txtCpf.Size = new System.Drawing.Size(155, 27);
             this.txtCpf.TabIndex = 23;
             this.txtCpf.TextChanged += new System.EventHandler(this.txtCpf_TextChanged);
+            this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             // 
             // txtEndereco
             // 
@@ -90,6 +92,7 @@
             this.txtTelefone.Size = new System.Drawing.Size(162, 27);
             this.txtTelefone.TabIndex = 20;
             this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // txtNome
             // 
@@ -101,6 +104,7 @@
             this.txtNome.Size = new System.Drawing.Size(370, 27);
             this.txtNome.TabIndex = 19;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // lblRg
             // 
@@ -159,6 +163,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bntCancelar.BackColor = System.Drawing.Color.Red;
+            this.bntCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bntCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntCancelar.Location = new System.Drawing.Point(97, 4);
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -174,6 +179,7 @@
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Location = new System.Drawing.Point(3, 4);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -231,6 +237,7 @@
             this.txtNumero.Size = new System.Drawing.Size(64, 27);
             this.txtNumero.TabIndex = 56;
             this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // lvlNumero
             // 
@@ -271,6 +278,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.FrmCadastroCliente_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmCadastroCliente_KeyPress);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

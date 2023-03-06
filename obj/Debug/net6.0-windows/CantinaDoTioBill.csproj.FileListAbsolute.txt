@@ -70,3 +70,4 @@ C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.Views.FrmClienteAuxiliar.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.Views.FrmRotaAuxiliar.resources
 C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.Views.FrmProdutoAuxiliar.resources
+C:\Users\vitor\OneDrive\Área de Trabalho\Curso C# Completo\Cantinha do tio Bill\CantinaDoTioBill\obj\Debug\net6.0-windows\CantinaDoTioBill.Views.Vendas.FrmRelatorioVendas.resources

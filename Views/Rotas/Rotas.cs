@@ -132,7 +132,7 @@ namespace CantinaDoTioBill.Views
 
         private void AtualizarRotas(BancoContext db)
         {
-            if(dtvRotas.Rows.Count > 0)
+            if(dtvRotas.Rows.Count >= 0)
             {
                 this.Cursor = Cursors.WaitCursor;
                 var atualizar = db.Rota.Select(x => x).ToList();

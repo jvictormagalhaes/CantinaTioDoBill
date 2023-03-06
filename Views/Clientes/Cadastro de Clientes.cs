@@ -1,4 +1,5 @@
 ﻿using CantinaDoTioBill.Models;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,7 @@ namespace CantinaDoTioBill
 
         private void txtCpf_TextChanged(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void txtEndereco_TextChanged(object sender, EventArgs e)
@@ -107,6 +108,51 @@ namespace CantinaDoTioBill
         private void lblTelefone_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmCadastroCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -70,6 +70,7 @@
             this.txtTaxa.Name = "txtTaxa";
             this.txtTaxa.Size = new System.Drawing.Size(125, 27);
             this.txtTaxa.TabIndex = 3;
+            this.txtTaxa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxa_KeyPress);
             // 
             // btnSalvar
             // 

@@ -109,7 +109,7 @@ namespace CantinaDoTioBill.View
 
         private void AtualizarUsuario(BancoContext db)
         {
-            if (dtvUsuarios.Rows.Count > 0)
+            if (dtvUsuarios.Rows.Count >= 0)
             {
                 this.Cursor = Cursors.WaitCursor;
                 var atualizar = db.Usuario.Select(x => x).ToList();

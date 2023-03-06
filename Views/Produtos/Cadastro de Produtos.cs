@@ -34,5 +34,23 @@ namespace CantinaDoTioBill
         {
            DialogResult = DialogResult.OK;
         }
+
+        private void txtEstoque_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtValorUnitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CantinaDoTioBill.Models;
 using CantinaDoTioBill.View;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -38,6 +39,15 @@ namespace CantinaDoTioBill
         private void FrmCadastroUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            {
+                e.Handled = true;
+                e = null;
+            }
         }
     }
 }

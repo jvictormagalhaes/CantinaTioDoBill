@@ -1,17 +1,8 @@
 ﻿using CantinaDoTioBill.Models;
 using MessageUtils;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
-using System.Windows.Forms;
+
 
 namespace CantinaDoTioBill.View
 {
@@ -90,9 +81,7 @@ namespace CantinaDoTioBill.View
                             SimpleMessage.Inform("Venda concluída com sucesso", "Informação");
                             AtualizarVendas();
                         }
-
                     }
-
                 }
             }
             catch(Exception ex)
@@ -139,7 +128,7 @@ namespace CantinaDoTioBill.View
             {
                 using (var db = new BancoContext())
                 {
-                    if (dtvVendas.Rows.Count > 0)
+                    if (dtvVendas.Rows.Count >= 0)
                     {
                         this.Cursor = Cursors.WaitCursor;
                         var atualizar = db.Vendas.Select(x => x).ToList();

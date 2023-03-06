@@ -113,17 +113,6 @@ namespace CantinaDoTioBill.View
             }
         }
 
-        private void AtualizarProdutos(BancoContext db)
-        {
-            if (dtvProdutos.Rows.Count > 0)
-            {
-                this.Cursor = Cursors.WaitCursor;
-                var atualizar = db.Produto.Select(x => x).ToList();
-                dtvProdutos.DataSource = atualizar;
-                this.Cursor = Cursors.Default;
-            }
-        }
-
         private void btnRemover_Click(object sender, EventArgs e)
         {
             try
@@ -152,7 +141,17 @@ namespace CantinaDoTioBill.View
             {
                 MessageBox.Show(ex.Message);
             }
+        }
 
+        private void AtualizarProdutos(BancoContext db)
+        {
+            if (dtvProdutos.Rows.Count >= 0)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                var atualizar = db.Produto.Select(x => x).ToList();
+                dtvProdutos.DataSource = atualizar;
+                this.Cursor = Cursors.Default;
+            }
         }
     }
 }
