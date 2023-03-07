@@ -16,7 +16,7 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                using(var form = new FrmCadastroUsuario())
+                using (var form = new FrmCadastroUsuario())
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
@@ -26,7 +26,7 @@ namespace CantinaDoTioBill.View
                             usuario.Nome = form.txtNome.Text;
                             usuario.Username = form.txtUsername.Text;
                             usuario.Senha = form.txtSenha.Text;
-            
+
                             db.Usuario.Add(usuario);
                             db.SaveChanges();
 
@@ -78,12 +78,12 @@ namespace CantinaDoTioBill.View
 
         private void FrmUsuarios_Shown(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FrmUsuarios_VisibleChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace CantinaDoTioBill.View
                     dtvUsuarios.DataSource = usuarios;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -154,7 +154,7 @@ namespace CantinaDoTioBill.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

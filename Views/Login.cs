@@ -34,7 +34,6 @@ namespace CantinaDoTioBill
                 FrmHome form = new FrmHome();
                 form.ShowDialog();
                 this.Close();
-
             }
             else
             {

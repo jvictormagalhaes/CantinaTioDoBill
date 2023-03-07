@@ -1,10 +1,12 @@
 ﻿using CantinaDoTioBill.Models;
 using CantinaDoTioBill.View;
+using MessageUtils;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
 using System.Windows.Forms;
 
 namespace CantinaDoTioBill
@@ -33,7 +35,10 @@ namespace CantinaDoTioBill
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+           if(VerificarCampoVazio() == true)
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void FrmCadastroUsuario_FormClosed(object sender, FormClosedEventArgs e)
@@ -49,10 +54,22 @@ namespace CantinaDoTioBill
             }
 
         }
-
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        private bool VerificarCampoVazio()
+        {
+            bool verificacao = true;
+
+            if(txtNome.Text.Length == 0 ||
+               txtUsername.Text.Length == 0 ||
+               txtSenha.Text.Length == 0) {
+            
+                SimpleMessage.Error("Ainda há campo(os) em branco", " Erro");
+                verificacao = false;
+            }
+            return verificacao;
         }
     }
 }

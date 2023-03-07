@@ -1,15 +1,6 @@
-﻿using CantinaDoTioBill.Models;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Xsl;
+﻿
+using MessageUtils;
+
 
 namespace CantinaDoTioBill
 {
@@ -37,12 +28,14 @@ namespace CantinaDoTioBill
 
         public void bntSalvar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if(VerificarCampoVazio() == true)
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void btnSalvar_Leave(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
@@ -116,37 +109,25 @@ namespace CantinaDoTioBill
 
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
         private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
@@ -160,14 +141,30 @@ namespace CantinaDoTioBill
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }
-            else
+        }
+
+        private bool VerificarCampoVazio()
+        {
+            bool verificacao = true;
+
+            if (txtNome.Text.Length == 0 ||
+                txtCpf.Text.Length == 0 ||
+                txtRg.Text.Length == 0 ||
+                txtRg.Text.Length == 0 ||
+                txtEndereco.Text.Length == 0 ||
+                txtTelefone.Text.Length == 0 ||
+                txtNumero.Text.Length == 0 ||
+                txtBairro.Text.Length == 0
+                ) 
             {
-                e.Handled = false;
+                SimpleMessage.Error("Ainda há campo(os) em branco", "Erro");
+                verificacao = false;
             }
+            return verificacao;
         }
     }
 }

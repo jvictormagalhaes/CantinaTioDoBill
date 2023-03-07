@@ -93,6 +93,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(176, 27);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnSair
