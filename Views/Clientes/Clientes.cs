@@ -83,6 +83,7 @@ namespace CantinaDoTioBill.View
                         form.txtCpf.Text = cliente.Cpf;
                         form.txtRg.Text = cliente.Rg;
                         form.txtEndereco.Text = cliente.Endereco;
+                        form.txtTelefone.Text = cliente.Telefone;
                         form.txtBairro.Text = cliente.Bairro;
                         form.txtNumero.Text = cliente.Numero;
 

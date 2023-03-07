@@ -43,11 +43,16 @@ namespace CantinaDoTioBill
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            if (char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                e = null;
             }
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

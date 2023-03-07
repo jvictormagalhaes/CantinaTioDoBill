@@ -1,4 +1,5 @@
 ﻿using CantinaDoTioBill.Models;
+using Microsoft.VisualBasic;
 using System.Globalization;
 
 namespace CantinaDoTioBill
@@ -37,20 +38,27 @@ namespace CantinaDoTioBill
 
         private void txtEstoque_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
 
         }
 
         private void txtValorUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
             }
-
+            else
+            {
+                e.Handled = false;
+            }
         }
     }
 }

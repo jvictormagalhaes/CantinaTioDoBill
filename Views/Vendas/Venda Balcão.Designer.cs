@@ -138,6 +138,7 @@
             this.txtValorUnProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValorUnProduto.Location = new System.Drawing.Point(169, 235);
             this.txtValorUnProduto.Name = "txtValorUnProduto";
+            this.txtValorUnProduto.ReadOnly = true;
             this.txtValorUnProduto.Size = new System.Drawing.Size(133, 27);
             this.txtValorUnProduto.TabIndex = 8;
             this.txtValorUnProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -149,7 +150,7 @@
             this.txtTotal.Location = new System.Drawing.Point(335, 235);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(122, 27);
+            this.txtTotal.Size = new System.Drawing.Size(129, 27);
             this.txtTotal.TabIndex = 9;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -466,6 +467,7 @@
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(289, 27);
             this.txtNomeCliente.TabIndex = 37;
+            this.txtNomeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCliente_KeyPress);
             // 
             // txtIdCliente
             // 

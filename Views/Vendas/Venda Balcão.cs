@@ -3,6 +3,7 @@ using CantinaDoTioBill.View;
 using CantinaDoTioBill.Views;
 using MessageUtils;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using System.Data;
 
 namespace CantinaDoTioBill
@@ -360,6 +361,7 @@ namespace CantinaDoTioBill
             dtvListaProdutos.DataSource = null;
         }
 
+        //Faz limpeza da tabela TelaVenda no banco
         private void LimparDataGridView()
         {
             try
@@ -387,38 +389,59 @@ namespace CantinaDoTioBill
 
         private void txtQuantidadeProduto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
             }
-
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void txtValorUnProduto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
 
         }
 
         private void txtNumeroCasa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
             }
-
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
             }
+            else
+            {
+                e.Handled = false;
+            }
+        }
 
+        private void txtNomeCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -116,42 +116,57 @@ namespace CantinaDoTioBill
 
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
 
         private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
+            if (char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                e = null;
             }
         }
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
     }

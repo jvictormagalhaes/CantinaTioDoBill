@@ -134,10 +134,36 @@ namespace CantinaDoTioBill.View
                         var atualizar = db.Vendas.Select(x => x).ToList();
                         dtvVendas.DataSource = atualizar;
                         this.Cursor = Cursors.Default;
+                        CalculaTotais();
                     }
                 }
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //Faz o calculo dos labels
+        private void CalculaTotais()
+        {
+            try
+            {
+                using (var db = new BancoContext())
+                {
+                    var vendas = db.Vendas.Select(x => x).ToList();
+                    dtvVendas.DataSource = vendas;
+                    var totalVendasCanceladas = db.Vendas.Where(x => x.Status == "C").Sum(x => x.ValorTotal);
+                    var totalVendasFinalizadas = db.Vendas.Where(x => x.Status == "F").Sum(x => x.ValorTotal);
+                    lblTotalVendasFinalizadas.Text = totalVendasFinalizadas.ToString("F2");
+                    lblTotalDeVendasCanceladas.Text = totalVendasCanceladas.ToString("F2");
+                    lblCifraoF.Visible = true;
+                    lblCifraoC.Visible = true;
+                    lblTotalVendasFinalizadas.Visible = true;
+                    lblTotalDeVendasCanceladas.Visible = true;
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
