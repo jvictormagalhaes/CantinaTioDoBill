@@ -23,7 +23,7 @@ namespace CantinaDoTioBill
           FrmLogin login = new FrmLogin();
           if (login.ShowDialog() == DialogResult.OK)
           {
-                Application.Run(new FrmTelaVenda());
+                Application.Run(new FrmLogin());
           }
         }
     }

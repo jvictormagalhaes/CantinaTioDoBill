@@ -67,7 +67,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(267, 27);
-            this.txtNome.TabIndex = 15;
+            this.txtNome.TabIndex = 0;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
@@ -78,7 +78,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(184, 27);
-            this.txtUsername.TabIndex = 16;
+            this.txtUsername.TabIndex = 1;
             // 
             // txtSenha
             // 
@@ -87,7 +87,7 @@
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(173, 27);
-            this.txtSenha.TabIndex = 18;
+            this.txtSenha.TabIndex = 5;
             this.txtSenha.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
@@ -126,7 +126,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(101, 33);
-            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -143,7 +143,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(82, 33);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.bntCancelar_Click);

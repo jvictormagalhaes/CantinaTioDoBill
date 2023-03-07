@@ -39,7 +39,7 @@ namespace CantinaDoTioBill
 
                         txtIdProduto.Text = produto.Id.ToString();
                         txtNomeProduto.Text = produto.Nome;
-                        txtValorUnProduto.Text = produto.Preco.ToString();
+                        txtValorUnProduto.Text = produto.Preco.ToString("F2");
                     }
                 }
             }
@@ -93,7 +93,7 @@ namespace CantinaDoTioBill
                         Rota rota = linhaRota.DataBoundItem as Rota;
 
                         txtNomeRota.Text = rota.NomeRota;
-                        txtTaxaEntrega.Text = rota.Taxa.ToString();
+                        txtTaxaEntrega.Text = rota.Taxa.ToString("F2");
                     }
                 }
             }

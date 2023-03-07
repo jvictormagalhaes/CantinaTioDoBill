@@ -30,7 +30,7 @@ namespace CantinaDoTioBill.Views
                         {
                             Rota rotas = new Rota();
                             rotas.NomeRota = form.txtNomeRota.Text;
-                            rotas.Taxa = Convert.ToDouble(form.txtTaxa.Text);
+                            rotas.Taxa = Convert.ToDouble(form.txtTaxa.Text, CultureInfo.InvariantCulture);
 
                             db.Rota.Add(rotas);
                             db.SaveChanges();
@@ -61,7 +61,7 @@ namespace CantinaDoTioBill.Views
                     {
                         form.Text = "Editar Rota";
                         form.txtNomeRota.Text = rota.NomeRota;
-                        form.txtTaxa.Text = rota.Taxa.ToString();
+                        form.txtTaxa.Text = rota.Taxa.ToString("F2");
 
                         if (form.ShowDialog() == DialogResult.OK)
                         {

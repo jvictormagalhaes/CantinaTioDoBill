@@ -55,7 +55,7 @@
             this.txtRg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(155, 27);
-            this.txtRg.TabIndex = 24;
+            this.txtRg.TabIndex = 3;
             this.txtRg.TextChanged += new System.EventHandler(this.txtRg_TextChanged);
             this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
@@ -67,7 +67,7 @@
             this.txtCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(155, 27);
-            this.txtCpf.TabIndex = 23;
+            this.txtCpf.TabIndex = 2;
             this.txtCpf.TextChanged += new System.EventHandler(this.txtCpf_TextChanged);
             this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             // 
@@ -79,7 +79,7 @@
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(330, 27);
-            this.txtEndereco.TabIndex = 22;
+            this.txtEndereco.TabIndex = 5;
             this.txtEndereco.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // txtTelefone
@@ -90,7 +90,7 @@
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(162, 27);
-            this.txtTelefone.TabIndex = 20;
+            this.txtTelefone.TabIndex = 4;
             this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
@@ -102,7 +102,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(370, 27);
-            this.txtNome.TabIndex = 19;
+            this.txtNome.TabIndex = 1;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
@@ -169,7 +169,7 @@
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntCancelar.Name = "bntCancelar";
             this.bntCancelar.Size = new System.Drawing.Size(82, 33);
-            this.bntCancelar.TabIndex = 1;
+            this.bntCancelar.TabIndex = 7;
             this.bntCancelar.Text = "Cancelar";
             this.bntCancelar.UseVisualStyleBackColor = false;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
@@ -185,7 +185,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(88, 33);
-            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.TabIndex = 8;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.bntSalvar_Click);
@@ -214,7 +214,7 @@
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(162, 27);
-            this.txtBairro.TabIndex = 54;
+            this.txtBairro.TabIndex = 6;
             this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
@@ -235,7 +235,7 @@
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(64, 27);
-            this.txtNumero.TabIndex = 56;
+            this.txtNumero.TabIndex = 9;
             this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 

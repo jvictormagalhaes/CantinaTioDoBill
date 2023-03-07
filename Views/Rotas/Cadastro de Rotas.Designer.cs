@@ -61,7 +61,7 @@
             this.txtNomeRota.Location = new System.Drawing.Point(17, 42);
             this.txtNomeRota.Name = "txtNomeRota";
             this.txtNomeRota.Size = new System.Drawing.Size(297, 27);
-            this.txtNomeRota.TabIndex = 2;
+            this.txtNomeRota.TabIndex = 1;
             // 
             // txtTaxa
             // 

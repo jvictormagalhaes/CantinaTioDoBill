@@ -84,7 +84,7 @@ namespace CantinaDoTioBill.View
                         form.Text = "Editar Produto";
                         form.txtNome.Text = produto.Nome;
                         form.txtEstoque.Text = produto.Estoque.ToString();
-                        form.txtValorUnitario.Text = produto.Preco.ToString();
+                        form.txtValorUnitario.Text = produto.Preco.ToString("F2");
 
                         if (form.ShowDialog() == DialogResult.OK)
                         {

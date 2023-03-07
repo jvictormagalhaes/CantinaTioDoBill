@@ -47,7 +47,7 @@
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(94, 33);
-            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.TabIndex = 3;
             this.btnAdicionar.Text = "Salvar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -62,7 +62,7 @@
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntCancelar.Name = "bntCancelar";
             this.bntCancelar.Size = new System.Drawing.Size(96, 33);
-            this.bntCancelar.TabIndex = 1;
+            this.bntCancelar.TabIndex = 4;
             this.bntCancelar.Text = "Cancelar";
             this.bntCancelar.UseVisualStyleBackColor = false;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
@@ -84,7 +84,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(351, 27);
-            this.txtNome.TabIndex = 56;
+            this.txtNome.TabIndex = 1;
             this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtValorUnitario
@@ -94,7 +94,7 @@
             this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(130, 27);
-            this.txtValorUnitario.TabIndex = 65;
+            this.txtValorUnitario.TabIndex = 2;
             this.txtValorUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUnitario_KeyPress);
             // 
             // label6
@@ -115,7 +115,7 @@
             this.txtEstoque.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(130, 27);
-            this.txtEstoque.TabIndex = 69;
+            this.txtEstoque.TabIndex = 5;
             this.txtEstoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstoque_KeyPress);
             // 
             // label8
