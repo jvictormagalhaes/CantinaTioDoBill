@@ -1,4 +1,5 @@
 ﻿
+using MessageUtils;
 using Microsoft.VisualBasic;
 
 namespace CantinaDoTioBill.Views
@@ -12,9 +13,11 @@ namespace CantinaDoTioBill.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (VerificarCampoVazio() == true)
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,14 +30,23 @@ namespace CantinaDoTioBill.Views
 
         private void txtTaxa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 44)
             {
                 e.Handled = true;
             }
-            else
+        }
+
+        private bool VerificarCampoVazio()
+        {
+            bool verificacao = true;
+
+            if (txtNomeRota.Text.Length == 0 ||
+                txtTaxa.Text.Length == 0)
             {
-                e.Handled = false;
+                SimpleMessage.Error("Há campo(os) em branco", "Erro");
+                verificacao = false;
             }
+            return verificacao;
         }
     }
 }

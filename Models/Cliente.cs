@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Runtime;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CantinaDoTioBill.Models
 {
-    internal class Cliente
+    public class Cliente
     {
         [Key]
         public int Id { get; set; }
@@ -24,6 +20,7 @@ namespace CantinaDoTioBill.Models
         public string Endereco { get; set; }
         [Required]
         public string Bairro { get; set; }
+        [Required]
         public string Numero { get; set; }
 
 
@@ -37,7 +34,6 @@ namespace CantinaDoTioBill.Models
             Endereco = endereco;
             Bairro = bairro;
         }
-
         public Cliente()
         {
 

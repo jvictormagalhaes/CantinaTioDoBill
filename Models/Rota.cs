@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CantinaDoTioBill.Models
 {
-    internal class Rota
+    public class Rota
     {
         [Key]
         public int Id { get; set; }

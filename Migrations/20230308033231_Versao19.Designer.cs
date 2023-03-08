@@ -4,6 +4,7 @@ using CantinaDoTioBill.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaDoTioBill.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    partial class BancoContextModelSnapshot : ModelSnapshot
+    [Migration("20230308033231_Versao19")]
+    partial class Versao19
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +84,12 @@ namespace CantinaDoTioBill.Migrations
                     b.Property<double>("Preco")
                         .HasColumnType("float");
 
+                    b.Property<int?>("VendaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VendaId");
 
                     b.ToTable("Produto");
                 });
@@ -194,6 +201,18 @@ namespace CantinaDoTioBill.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vendas");
+                });
+
+            modelBuilder.Entity("CantinaDoTioBill.Models.Produto", b =>
+                {
+                    b.HasOne("CantinaDoTioBill.Models.Venda", null)
+                        .WithMany("Produtos")
+                        .HasForeignKey("VendaId");
+                });
+
+            modelBuilder.Entity("CantinaDoTioBill.Models.Venda", b =>
+                {
+                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }

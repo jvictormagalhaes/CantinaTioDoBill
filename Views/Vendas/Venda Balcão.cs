@@ -30,6 +30,9 @@ namespace CantinaDoTioBill
         {
             try
             {
+                txtQuantidadeProduto.Text = string.Empty;
+                txtTotal.Text = string.Empty;
+
                 using (var form = new FrmProdutoAuxiliar())
                 {
                     if (form.ShowDialog() == DialogResult.OK)
@@ -40,6 +43,8 @@ namespace CantinaDoTioBill
                         txtIdProduto.Text = produto.Id.ToString();
                         txtNomeProduto.Text = produto.Nome;
                         txtValorUnProduto.Text = produto.Preco.ToString("F2");
+
+                        
                     }
                 }
             }
@@ -221,7 +226,6 @@ namespace CantinaDoTioBill
                         db.Vendas.Add(venda);
                         
                         LimparTela();
-
                         LimparDataGridView();
                     }
                 }
@@ -389,13 +393,9 @@ namespace CantinaDoTioBill
 
         private void txtQuantidadeProduto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
@@ -414,31 +414,31 @@ namespace CantinaDoTioBill
 
         private void txtNumeroCasa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
         private void txtNomeCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTaxaEntrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }

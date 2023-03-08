@@ -2,8 +2,9 @@
 
 namespace CantinaDoTioBill.Models
 {
-    class BancoContext : DbContext
+    public class BancoContext : DbContext
     {
+
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Produto> Produto { get; set; }
@@ -11,8 +12,9 @@ namespace CantinaDoTioBill.Models
         public DbSet<Rota> Rota { get; set; }
         public DbSet<TelaVenda> TelaVenda { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseSqlite("Data Source=C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\Curso C# Completo\\Cantinha do tio Bill\\CantinaDoTioBill\\Banco.db");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data Source= (localdb)\\MSSQLLocalDB ;InitialCatalog = Banco; UserID =VICTOR\victor; Password=");
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CantinaDoTioBill.Models
 {
-    internal class Produto
+    public class Produto
     {
         [Key]
         public int Id { get; set; }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CantinaDoTioBill.Models
 {
-    internal class TelaVenda
+    public class TelaVenda
     {
         [Key,Required]
         public int IdItem { get; set; }

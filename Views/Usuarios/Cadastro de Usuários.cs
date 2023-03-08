@@ -36,9 +36,11 @@ namespace CantinaDoTioBill
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
            if(VerificarCampoVazio() == true)
-            {
-                DialogResult = DialogResult.OK;
-            }
+           {
+                if (VerificarCampoVazio() == true) {
+                    DialogResult = DialogResult.OK;
+                }
+           }
         }
 
         private void FrmCadastroUsuario_FormClosed(object sender, FormClosedEventArgs e)

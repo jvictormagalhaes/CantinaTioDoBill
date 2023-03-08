@@ -335,6 +335,7 @@
             this.txtTaxaEntrega.Size = new System.Drawing.Size(122, 27);
             this.txtTaxaEntrega.TabIndex = 26;
             this.txtTaxaEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTaxaEntrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxaEntrega_KeyPress);
             // 
             // btnSelecionarRota
             // 

@@ -1,6 +1,5 @@
-﻿using CantinaDoTioBill.Models;
-using Microsoft.VisualBasic;
-using System.Globalization;
+﻿
+using MessageUtils;
 
 namespace CantinaDoTioBill
 {
@@ -33,32 +32,40 @@ namespace CantinaDoTioBill
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-           DialogResult = DialogResult.OK;
+            if (VerificarCampoVazio() == true) {
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void txtEstoque_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }
-            else
-            {
-                e.Handled = false;
-            }
-
         }
 
         private void txtValorUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & Strings.Asc(e.KeyChar) == 24)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 44)
             {
                 e.Handled = true;
             }
-            else
+
+        }
+
+        private bool VerificarCampoVazio()
+        {
+            bool verificacao = true;
+
+            if (txtNome.Text.Length == 0 ||
+                txtValorUnitario.Text.Length == 0 ||
+                txtEstoque.Text.Length == 0)
             {
-                e.Handled = false;
+                SimpleMessage.Error("Há campo(os) em branco!", " Erro");
+                verificacao = false;
             }
+            return verificacao;
         }
     }
 }
