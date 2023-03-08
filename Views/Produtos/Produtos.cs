@@ -22,18 +22,14 @@ namespace CantinaDoTioBill.View
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
-                        using (var db = new BancoContext())
-                        {
-                            Produto produto = new Produto();
-                            produto.Nome = form.txtNome.Text;
-                            produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
-                            db.Produto.Add(produto);
-                            db.SaveChanges();
-                            AtualizarProdutos(db);
+                        Produto produto = new Produto();
+                        produto.Nome = form.txtNome.Text;
+                        produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
+                        produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
 
-                            MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        ProdutoController.Adicionar(produto);
+                        dtvProdutos.DataSource = ProdutoController.ListaProduto();
+                        MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -58,13 +54,9 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                using (var db = new BancoContext())
-                {
-                    var produtos = db.Produto.Select(x => x).ToList();
-                    dtvProdutos.DataSource = produtos;
-                }
+                dtvProdutos.DataSource = ProdutoController.ListaProduto();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -89,26 +81,18 @@ namespace CantinaDoTioBill.View
 
                         if (form.ShowDialog() == DialogResult.OK)
                         {
-                            using (var db = new BancoContext())
-                            {
-                                produto.Nome = form.txtNome.Text;
-                                produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                                produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
+                            produto.Nome = form.txtNome.Text;
+                            produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
+                            produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
 
-
-                                db.Produto.Attach(produto);
-                                db.Entry(produto).State = EntityState.Modified;
-                                db.SaveChanges();
-
-                                MessageBox.Show("Produto atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                AtualizarProdutos(db);
-
-                            }
+                            ProdutoController.Adicionar(produto);
+                            dtvProdutos.DataSource = ProdutoController.ListaProduto();
+                            MessageBox.Show("Produto atualizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -126,19 +110,13 @@ namespace CantinaDoTioBill.View
 
                     if (SimpleMessage.Confirm("Deseja realmente excluir esse produto?", "Exclusão de Produto"))
                     {
-                        using (var db = new BancoContext())
-                        {
-                            db.Produto.Attach(produto);
-                            db.Entry(produto).State = EntityState.Deleted;
-                            db.SaveChanges();
-
+                            ProdutoController.Excluir(produto.Id);
+                            dtvProdutos.DataSource = ProdutoController.ListaProduto();
                             MessageBox.Show("Produto excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AtualizarProdutos(db);
-                        }
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -149,8 +127,7 @@ namespace CantinaDoTioBill.View
             if (dtvProdutos.Rows.Count >= 0)
             {
                 this.Cursor = Cursors.WaitCursor;
-                var atualizar = db.Produto.Select(x => x).ToList();
-                dtvProdutos.DataSource = atualizar;
+                dtvProdutos.DataSource = ProdutoController.ListaProduto();
                 this.Cursor = Cursors.Default;
             }
         }

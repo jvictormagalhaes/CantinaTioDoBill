@@ -222,7 +222,7 @@ namespace CantinaDoTioBill
                         venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
                         venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
                         venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
-                        venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
+                        venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
 
                         db.Vendas.Add(venda);
                         
@@ -328,7 +328,7 @@ namespace CantinaDoTioBill
                         venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
                         venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
                         venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
-                        venda.IdCliente = Convert.ToInt32(txtIdCliente.Text);
+                        venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
 
                         db.Vendas.Add(venda);
                         db.SaveChanges();

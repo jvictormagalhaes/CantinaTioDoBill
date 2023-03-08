@@ -25,7 +25,7 @@ namespace CantinaDoTioBill.Controller
             return db.Rota.Where(x => x.Id == Id).FirstOrDefault();
         }
 
-        public static List<Cliente> ListaClientes()
+        public static List<Cliente> ListaRotas()
         {
             return db.Cliente.ToList();
         }

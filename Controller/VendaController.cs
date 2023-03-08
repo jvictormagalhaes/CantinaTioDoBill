@@ -29,12 +29,5 @@ namespace CantinaDoTioBill.Controller
         {
             return db.Vendas.ToList();
         }
-
-        public static void Excluir(int Id)
-        {
-            Venda venda = GetVenda(Id);
-            db.Vendas.Remove(venda);
-            db.SaveChanges();
-        }
     }
 }

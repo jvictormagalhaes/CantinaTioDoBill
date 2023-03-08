@@ -1,7 +1,6 @@
 ﻿using CantinaDoTioBill.Controller;
 using CantinaDoTioBill.Models;
 using MessageUtils;
-using Microsoft.EntityFrameworkCore;
 
 namespace CantinaDoTioBill.View
 {
@@ -13,6 +12,7 @@ namespace CantinaDoTioBill.View
             InitializeComponent();
         }
 
+        //Adicionar um Usuario
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
             try
@@ -43,6 +43,7 @@ namespace CantinaDoTioBill.View
             this.Close();
         }
 
+        //Deletar um Usuario
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -54,10 +55,8 @@ namespace CantinaDoTioBill.View
                     Usuario usuario = linha.DataBoundItem as Usuario;
                     if (SimpleMessage.Confirm("Deseja realmente excluir este usuário?", "Exclusão de Usuário."))
                     {
-                        int idusuario = usuario.Id;
-                        UsuarioController.Excluir(idusuario);
+                        UsuarioController.Excluir(usuario.Id);
                         dtvUsuarios.DataSource = UsuarioController.ListaUsuario();
-
                         SimpleMessage.Inform("Usuário deletado com sucesso", "Informação");
                     }
                 }
@@ -72,21 +71,17 @@ namespace CantinaDoTioBill.View
         {
 
         }
-
         private void FrmUsuarios_VisibleChanged(object sender, EventArgs e)
         {
 
         }
 
+        //Carregar o DataGrid
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
             try
             {
-                using (var db = new BancoContext())
-                {
-                    var usuarios = db.Usuario.Select(x => x).ToList();
-                    dtvUsuarios.DataSource = usuarios;
-                }
+                UsuarioController.ListaUsuario();
             }
             catch (Exception ex)
             {
@@ -99,6 +94,7 @@ namespace CantinaDoTioBill.View
 
         }
 
+        //Editar um Usuário
         private void btnEditar_Click(object sender, EventArgs e)
         {
             try

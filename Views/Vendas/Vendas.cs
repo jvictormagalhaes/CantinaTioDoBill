@@ -132,8 +132,7 @@ namespace CantinaDoTioBill.View
                     if (dtvVendas.Rows.Count >= 0)
                     {
                         this.Cursor = Cursors.WaitCursor;
-                        var atualizar = db.Vendas.Select(x => x).ToList();
-                        dtvVendas.DataSource = atualizar;
+                        dtvVendas.DataSource = VendaController.ListaVenda();
                         this.Cursor = Cursors.Default;
                         CalculaTotais();
                     }

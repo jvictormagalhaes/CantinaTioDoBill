@@ -1,11 +1,11 @@
 ﻿using CantinaDoTioBill.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace CantinaDoTioBill.Controller
 {
     public class BancoContext : DbContext
     {
-
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Produto> Produto { get; set; }
@@ -15,7 +15,7 @@ namespace CantinaDoTioBill.Controller
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source= (localdb)\\MSSQLLocalDB ;InitialCatalog = Banco; UserID =VICTOR\victor; Password=");
+            optionsBuilder.UseSqlServer("Data Source=VICTOR\\;Initial Catalog=Banco;Integrated Security=True");
         }
     }
 }

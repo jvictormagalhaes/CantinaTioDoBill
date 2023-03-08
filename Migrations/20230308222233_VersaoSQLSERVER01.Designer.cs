@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaDoTioBill.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20230308033231_Versao19")]
-    partial class Versao19
+    [Migration("20230308222233_VersaoSQLSERVER01")]
+    partial class VersaoSQLSERVER01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,12 +84,7 @@ namespace CantinaDoTioBill.Migrations
                     b.Property<double>("Preco")
                         .HasColumnType("float");
 
-                    b.Property<int?>("VendaId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("VendaId");
 
                     b.ToTable("Produto");
                 });
@@ -176,14 +171,14 @@ namespace CantinaDoTioBill.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("ClienteNum")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
                     b.Property<double>("Desconto")
                         .HasColumnType("float");
-
-                    b.Property<int>("IdCliente")
-                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -201,18 +196,6 @@ namespace CantinaDoTioBill.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vendas");
-                });
-
-            modelBuilder.Entity("CantinaDoTioBill.Models.Produto", b =>
-                {
-                    b.HasOne("CantinaDoTioBill.Models.Venda", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("VendaId");
-                });
-
-            modelBuilder.Entity("CantinaDoTioBill.Models.Venda", b =>
-                {
-                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }

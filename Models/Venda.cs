@@ -12,7 +12,7 @@ namespace CantinaDoTioBill.Models
         [Required]
         public double Subtotal { get; set; }
         [Required]
-        public int IdCliente { get; set; }
+        public int ClienteNum { get; set; }  //Id cliente
         [Required]
         public double Desconto { get; set; }
         [Required]
