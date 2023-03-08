@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CantinaDoTioBill.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace CantinaDoTioBill.Models
+namespace CantinaDoTioBill.Controller
 {
     public class BancoContext : DbContext
     {

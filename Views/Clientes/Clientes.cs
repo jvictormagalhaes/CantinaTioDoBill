@@ -1,4 +1,5 @@
-﻿using CantinaDoTioBill.Models;
+﻿using CantinaDoTioBill.Controller;
+using CantinaDoTioBill.Models;
 using MessageUtils;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +22,7 @@ namespace CantinaDoTioBill.View
                     dtvClientes.DataSource = clientes;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -35,23 +36,19 @@ namespace CantinaDoTioBill.View
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
-                        using (var db = new BancoContext())
-                        {
-                            Cliente cliente = new Cliente();
-                            cliente.Nome = form.txtNome.Text;
-                            cliente.Cpf = form.txtCpf.Text;
-                            cliente.Endereco = form.txtEndereco.Text;
-                            cliente.Rg = form.txtRg.Text;
-                            cliente.Telefone = form.txtTelefone.Text;
-                            cliente.Bairro = form.txtBairro.Text;
-                            cliente.Numero = form.txtNumero.Text;
-                            db.Cliente.Add(cliente);
-                            db.SaveChanges();
 
-                            AtualizarCliente(db);
+                        Cliente cliente = new Cliente();
+                        cliente.Nome = form.txtNome.Text;
+                        cliente.Cpf = form.txtCpf.Text;
+                        cliente.Endereco = form.txtEndereco.Text;
+                        cliente.Rg = form.txtRg.Text;
+                        cliente.Telefone = form.txtTelefone.Text;
+                        cliente.Bairro = form.txtBairro.Text;
+                        cliente.Numero = form.txtNumero.Text;
 
-                            MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        ClienteController.Adicionar(cliente);
+                        dtvClientes.DataSource = ClienteController.ListaClientes();
+                        MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -110,7 +107,7 @@ namespace CantinaDoTioBill.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -160,7 +157,7 @@ namespace CantinaDoTioBill.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

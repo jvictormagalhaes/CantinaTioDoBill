@@ -1,4 +1,5 @@
-﻿using CantinaDoTioBill.Models;
+﻿using CantinaDoTioBill.Controller;
+using CantinaDoTioBill.Models;
 using CantinaDoTioBill.View;
 using CantinaDoTioBill.Views;
 using MessageUtils;
