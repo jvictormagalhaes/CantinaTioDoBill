@@ -62,6 +62,7 @@
             this.txtNomeRota.Name = "txtNomeRota";
             this.txtNomeRota.Size = new System.Drawing.Size(297, 27);
             this.txtNomeRota.TabIndex = 1;
+            this.txtNomeRota.TextChanged += new System.EventHandler(this.txtNomeRota_TextChanged);
             // 
             // txtTaxa
             // 
@@ -70,6 +71,7 @@
             this.txtTaxa.Name = "txtTaxa";
             this.txtTaxa.Size = new System.Drawing.Size(125, 27);
             this.txtTaxa.TabIndex = 3;
+            this.txtTaxa.TextChanged += new System.EventHandler(this.txtTaxa_TextChanged);
             this.txtTaxa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxa_KeyPress);
             // 
             // btnSalvar

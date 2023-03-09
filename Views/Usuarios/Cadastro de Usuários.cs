@@ -25,7 +25,7 @@ namespace CantinaDoTioBill
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            txtSenha.MaxLength = 100;
         }
 
         private void bntCancelar_Click(object sender, EventArgs e)
@@ -58,6 +58,7 @@ namespace CantinaDoTioBill
         }
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
+            txtNome.MaxLength = 100;
         }
 
         private bool VerificarCampoVazio()
@@ -72,6 +73,11 @@ namespace CantinaDoTioBill
                 verificacao = false;
             }
             return verificacao;
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            txtUsername.MaxLength = 100;
         }
     }
 }

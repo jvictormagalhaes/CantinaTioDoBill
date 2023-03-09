@@ -72,16 +72,10 @@ namespace CantinaDoTioBill.View
                     Venda venda = linha.DataBoundItem as Venda;
                     if (SimpleMessage.Confirm("Deseja finalizar a venda?", "Concluir Venda."))
                     {
-                        using (var db = new BancoContext())
-                        {
-                            venda.Status = "F";
-                            db.Attach(venda);
-                            db.Entry(venda).State = EntityState.Modified;
-                            db.SaveChanges();
-
-                            SimpleMessage.Inform("Venda concluída com sucesso", "Informação");
-                            AtualizarVendas();
-                        }
+                        venda.Status = "F";
+                        VendaController.Concluir(venda);
+                        SimpleMessage.Inform("Venda concluída com sucesso", "Informação");
+                        dtvVendas.DataSource = VendaController.ListaVenda();
                     }
                 }
             }
@@ -102,17 +96,10 @@ namespace CantinaDoTioBill.View
                     Venda venda = linha.DataBoundItem as Venda;
                     if (SimpleMessage.Confirm("Deseja realmente cancelar a venda?", "Cancelamento"))
                     {
-                        using (var db = new BancoContext())
-                        {
-                            venda.Status = "C";
-                            db.Attach(venda);
-                            db.Entry(venda).State = EntityState.Modified;
-                            db.SaveChanges();
-
-                            SimpleMessage.Inform("Venda cancelada com sucesso", "Informação");
-                            AtualizarVendas();
-                        }
-
+                        venda.Status = "C";
+                        VendaController.Concluir(venda);
+                        SimpleMessage.Inform("Venda cancelada com sucesso", "Informação");
+                        dtvVendas.DataSource = VendaController.ListaVenda();
                     }
 
                 }

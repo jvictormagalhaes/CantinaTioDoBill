@@ -50,7 +50,7 @@ namespace CantinaDoTioBill
 
         private void txtBairro_TextChanged(object sender, EventArgs e)
         {
-
+            txtBairro.MaxLength = 50;
         }
 
         private void lblBairro_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace CantinaDoTioBill
 
         private void txtEndereco_TextChanged(object sender, EventArgs e)
         {
-            
+            txtEndereco.MaxLength = 100;
         }
 
         private void txtTelefone_TextChanged(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace CantinaDoTioBill
 
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
-
+            txtNome.MaxLength = 100;
         }
 
         private void lblRg_Click(object sender, EventArgs e)

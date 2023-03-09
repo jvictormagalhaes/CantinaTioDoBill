@@ -48,5 +48,15 @@ namespace CantinaDoTioBill.Views
             }
             return verificacao;
         }
+
+        private void txtTaxa_TextChanged(object sender, EventArgs e)
+        {
+            txtTaxa.MaxLength = 5;
+        }
+
+        private void txtNomeRota_TextChanged(object sender, EventArgs e)
+        {
+            txtNomeRota.MaxLength = 100;
+        }
     }
 }

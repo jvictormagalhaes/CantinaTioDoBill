@@ -137,7 +137,7 @@ namespace CantinaDoTioBill
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Preencha todos campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -208,7 +208,10 @@ namespace CantinaDoTioBill
             {
                 if (SimpleMessage.Confirm("Deseja concluir a venda?", "Concluir Venda"))
                 {
-                    double valorDesconto = Math.Abs(Convert.ToDouble(lblTotalVenda.Text) - Convert.ToDouble(lblTotalProduto.Text));
+                    
+                    double valorDesconto = 0;
+                    if (txtDesconto.Text != "0")
+                        valorDesconto = Math.Abs(Convert.ToDouble(lblTotalVenda.Text) - Convert.ToDouble(lblTotalProduto.Text));
 
                     Venda venda = new Venda();
                     venda.Data = DateTime.Now;
@@ -312,6 +315,9 @@ namespace CantinaDoTioBill
             {
                 if (SimpleMessage.Confirm("Deseja salvar a venda?", "Salvar Venda"))
                 {
+                    double valorDesconto = 0;
+                    if (txtDesconto.Text != "0")
+                        valorDesconto = Math.Abs(Convert.ToDouble(lblTotalVenda.Text) - Convert.ToDouble(lblTotalProduto.Text));
 
                     Venda venda = new Venda();
                     venda.Data = DateTime.Now;

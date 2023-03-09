@@ -95,6 +95,7 @@
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(130, 27);
             this.txtValorUnitario.TabIndex = 2;
+            this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
             this.txtValorUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorUnitario_KeyPress);
             // 
             // label6
@@ -116,6 +117,7 @@
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(130, 27);
             this.txtEstoque.TabIndex = 5;
+            this.txtEstoque.TextChanged += new System.EventHandler(this.txtEstoque_TextChanged);
             this.txtEstoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstoque_KeyPress);
             // 
             // label8

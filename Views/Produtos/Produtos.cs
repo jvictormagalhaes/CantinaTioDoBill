@@ -66,7 +66,7 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                DataGridViewRow linha = null;
+                DataGridViewRow linha;
                 if (dtvProdutos.SelectedRows.Count > 0)
                 {
                     linha = dtvProdutos.SelectedRows[0];
@@ -102,7 +102,7 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                DataGridViewRow linha = null;
+                DataGridViewRow linha;
                 if (dtvProdutos.SelectedRows.Count > 0)
                 {
                     linha = dtvProdutos.SelectedRows[0];

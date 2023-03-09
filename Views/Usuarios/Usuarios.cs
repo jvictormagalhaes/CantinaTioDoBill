@@ -48,7 +48,7 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                DataGridViewRow linha = null;
+                DataGridViewRow linha;
                 if (dtvUsuarios.SelectedRows.Count > 0)
                 {
                     linha = dtvUsuarios.SelectedRows[0];
@@ -81,7 +81,7 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                UsuarioController.ListaUsuario();
+                dtvUsuarios.DataSource = UsuarioController.ListaUsuario();
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                DataGridViewRow linha = null;
+                DataGridViewRow linha;
                 if (dtvUsuarios.SelectedRows.Count > 0)
                 {
                     linha = dtvUsuarios.SelectedRows[0];

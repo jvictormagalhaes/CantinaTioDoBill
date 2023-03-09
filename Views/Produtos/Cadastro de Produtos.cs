@@ -12,7 +12,7 @@ namespace CantinaDoTioBill
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            txtNome.MaxLength = 100;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,6 +72,16 @@ namespace CantinaDoTioBill
                 verificacao = false;
             }
             return verificacao;
+        }
+
+        private void txtValorUnitario_TextChanged(object sender, EventArgs e)
+        {
+            txtValorUnitario.MaxLength = 8;
+        }
+
+        private void txtEstoque_TextChanged(object sender, EventArgs e)
+        {
+            txtEstoque.MaxLength = 8;
         }
     }
 }

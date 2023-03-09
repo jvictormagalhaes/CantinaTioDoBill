@@ -30,7 +30,7 @@ namespace CantinaDoTioBill.Views
 
                         Rota rotas = new Rota();
                         rotas.NomeRota = form.txtNomeRota.Text;
-                        rotas.Taxa = Convert.ToDouble(form.txtTaxa.Text, CultureInfo.InvariantCulture);
+                        rotas.Taxa = Math.Round(Convert.ToDouble(form.txtTaxa.Text),2);
 
                         RotaController.Adicionar(rotas);
                         dtvRotas.DataSource = RotaController.ListaRotas();
