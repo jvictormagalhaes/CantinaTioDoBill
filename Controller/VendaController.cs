@@ -12,17 +12,12 @@ namespace CantinaDoTioBill.Controller
             db = new BancoContext();
         }
 
-        public static void Adicionar(Venda venda)
+        public static void Concluir(Venda venda)
         {
             db.Vendas.Add(venda);
             db.Entry(venda).State = venda.Id > 0 ? EntityState.Modified :
                 EntityState.Added;
             db.SaveChanges();
-        }
-
-        public static Venda GetVenda(int Id)
-        {
-            return db.Vendas.Where(x => x.Id == Id).FirstOrDefault();
         }
 
         public static List<Venda> ListaVenda()

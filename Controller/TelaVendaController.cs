@@ -11,9 +11,15 @@ namespace CantinaDoTioBill.Controller
             db = new BancoContext();
         }
 
-        public static List<Venda> ListaVenda()
+        public static List<TelaVenda> ListaTelaVenda()
         {
-            return db.Vendas.ToList();
+            return db.TelaVenda.ToList();
+        }
+
+        public static void Excluir(TelaVenda produto_venda)
+        {
+            db.TelaVenda.Remove(produto_venda);
+            db.SaveChanges();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace CantinaDoTioBill.View
 
                         ProdutoController.Adicionar(produto);
                         dtvProdutos.DataSource = ProdutoController.ListaProduto();
-                        MessageBox.Show("Cliente Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Produto Cadastrado com Sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

@@ -45,7 +45,7 @@ namespace CantinaDoTioBill
                         txtNomeProduto.Text = produto.Nome;
                         txtValorUnProduto.Text = produto.Preco.ToString("F2");
 
-                        
+
                     }
                 }
             }
@@ -125,7 +125,7 @@ namespace CantinaDoTioBill
                     db.TelaVenda.Add(telaVenda);
                     db.SaveChanges();
 
-                    AtualizarListaVendas(db);
+                    AtualizarListaVendas();
                     var subtotal = db.TelaVenda.Sum(x => x.Total);
                     lblTotalProduto.Text = subtotal.ToString("F2");
                     lblTotalVenda.Text = subtotal.ToString("F2");
@@ -184,11 +184,8 @@ namespace CantinaDoTioBill
                     {
                         using (var db = new BancoContext())
                         {
-                            db.TelaVenda.Attach(telaVenda);
-                            db.Entry(telaVenda).State = EntityState.Deleted;
-                            db.SaveChanges();
-
-                            AtualizarListaVendas(db);
+                            TelaVendaController.Excluir(telaVenda);
+                            AtualizarListaVendas();
                             var subtotal = db.TelaVenda.Sum(x => x.Total);
                             lblTotalProduto.Text = subtotal.ToString("F2");
 
@@ -211,24 +208,21 @@ namespace CantinaDoTioBill
             {
                 if (SimpleMessage.Confirm("Deseja concluir a venda?", "Concluir Venda"))
                 {
-                    using (var db = new BancoContext())
-                    {
-                        double valorDesconto = Math.Abs(Convert.ToDouble(lblTotalProduto.Text) - Convert.ToDouble(lblTotalVenda.Text));
+                    double valorDesconto = Math.Abs(Convert.ToDouble(lblTotalVenda.Text) - Convert.ToDouble(lblTotalProduto.Text));
 
-                        Venda venda = new Venda();
-                        venda.Data = DateTime.Now;
-                        venda.Desconto = Convert.ToDouble(valorDesconto);
-                        venda.Status = "F";
-                        venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
-                        venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
-                        venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
-                        venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
+                    Venda venda = new Venda();
+                    venda.Data = DateTime.Now;
+                    venda.Desconto = Math.Round(Convert.ToDouble(valorDesconto),3);
+                    venda.Status = "F";
+                    venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
+                    venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
+                    venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
+                    venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
 
-                        db.Vendas.Add(venda);
-                        
-                        LimparTela();
-                        LimparDataGridView();
-                    }
+                    VendaController.Concluir(venda);
+
+                    LimparTela();
+                    LimparDataGridView();
                 }
             }
             catch (Exception ex)
@@ -249,11 +243,10 @@ namespace CantinaDoTioBill
         }
 
         //Atualiza o DataGridView do Produtos na tela de Vendas
-        private void AtualizarListaVendas(BancoContext db)
+        private void AtualizarListaVendas()
         {
             this.Cursor = Cursors.WaitCursor;
-            var atualizar = db.TelaVenda.Select(x => x).ToList();
-            dtvListaProdutos.DataSource = atualizar;
+            dtvListaProdutos.DataSource = TelaVendaController.ListaTelaVenda();
             dtvListaProdutos.Columns[0].Visible = false;
             this.Cursor = Cursors.Default;
         }
@@ -319,22 +312,19 @@ namespace CantinaDoTioBill
             {
                 if (SimpleMessage.Confirm("Deseja salvar a venda?", "Salvar Venda"))
                 {
-                    using (var db = new BancoContext())
-                    {
-                        Venda venda = new Venda();
-                        venda.Data = DateTime.Now;
-                        venda.Desconto = Convert.ToDouble(txtDesconto.Text);
-                        venda.Status = "A";
-                        venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
-                        venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
-                        venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
-                        venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
 
-                        db.Vendas.Add(venda);
-                        db.SaveChanges();
-                        SimpleMessage.Inform("Venda Salva !", "Informação");
-                        LimparTela();
-                    }
+                    Venda venda = new Venda();
+                    venda.Data = DateTime.Now;
+                    venda.Desconto = Convert.ToDouble(txtDesconto.Text);
+                    venda.Status = "A";
+                    venda.Subtotal = Convert.ToDouble(lblTotalProduto.Text);
+                    venda.TaxaEntrega = Convert.ToDouble(txtTaxaEntrega.Text);
+                    venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
+                    venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
+
+                    VendaController.Concluir(venda);
+                    SimpleMessage.Inform("Venda Salva !", "Informação");
+                    LimparTela();
                     LimparDataGridView();
                 }
             }

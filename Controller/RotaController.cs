@@ -25,9 +25,9 @@ namespace CantinaDoTioBill.Controller
             return db.Rota.Where(x => x.Id == Id).FirstOrDefault();
         }
 
-        public static List<Cliente> ListaRotas()
+        public static List<Rota> ListaRotas()
         {
-            return db.Cliente.ToList();
+            return db.Rota.ToList();
         }
 
         public static void Excluir(int Id)

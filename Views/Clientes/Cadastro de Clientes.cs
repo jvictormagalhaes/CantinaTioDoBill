@@ -40,7 +40,7 @@ namespace CantinaDoTioBill
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
-
+            txtNumero.MaxLength = 4;
         }
 
         private void lvlNumero_Click(object sender, EventArgs e)
@@ -60,22 +60,22 @@ namespace CantinaDoTioBill
 
         private void txtRg_TextChanged(object sender, EventArgs e)
         {
-
+            txtRg.MaxLength = 11;
         }
 
         private void txtCpf_TextChanged(object sender, EventArgs e)
         {
- 
+            txtCpf.MaxLength = 11;
         }
 
         private void txtEndereco_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtTelefone_TextChanged(object sender, EventArgs e)
         {
-
+            txtTelefone.MaxLength = 12;
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace CantinaDoTioBill.View
                     AtualizarVendas();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -55,7 +55,7 @@ namespace CantinaDoTioBill.View
                     lblTotalDeVendasCanceladas.Visible = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -85,7 +85,7 @@ namespace CantinaDoTioBill.View
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -117,7 +117,7 @@ namespace CantinaDoTioBill.View
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -127,18 +127,14 @@ namespace CantinaDoTioBill.View
         {
             try
             {
-                using (var db = new BancoContext())
+                if (dtvVendas.Rows.Count >= 0)
                 {
-                    if (dtvVendas.Rows.Count >= 0)
-                    {
-                        this.Cursor = Cursors.WaitCursor;
-                        dtvVendas.DataSource = VendaController.ListaVenda();
-                        this.Cursor = Cursors.Default;
-                        CalculaTotais();
-                    }
+                    this.Cursor = Cursors.WaitCursor;
+                    dtvVendas.DataSource = VendaController.ListaVenda();
+                    CalculaTotais();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
