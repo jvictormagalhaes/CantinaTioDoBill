@@ -27,5 +27,10 @@ namespace CantinaDoTioBill.Views.Vendas
         {
 
         }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -113,6 +113,10 @@ namespace CantinaDoTioBill
         {
             try
             {
+                txtDesconto.Text = string.Empty;
+                txtNomeRota.Text = string.Empty;
+                txtTaxaEntrega.Text = string.Empty;
+
                 using (var db = new BancoContext())
                 {
                     var telaVenda = new TelaVenda();
@@ -228,9 +232,13 @@ namespace CantinaDoTioBill
                     LimparDataGridView();
                 }
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Os dados do cliente devem ser adicionados como Novo Cliente !");
+            }
+            catch (Exception)
+            {
+               MessageBox.Show("Verifique se todos os dados foram inseridos corretamente !");
             }
         }
 
@@ -334,9 +342,13 @@ namespace CantinaDoTioBill
                     LimparDataGridView();
                 }
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Os dados do cliente devem ser adicionados como Novo Cliente !");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Verifique se todos os dados foram inseridos corretamente !");
             }
         }
 
