@@ -78,6 +78,14 @@
               "target": "Package",
               "version": "[2.2.8, )"
             },
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[140.1000.523, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
+            },
             "ReportViewerCore.WinForms": {
               "target": "Package",
               "version": "[15.1.17, )"

@@ -30,7 +30,7 @@
         {
             this.bntSair = new System.Windows.Forms.Button();
             this.dtvVendas = new System.Windows.Forms.DataGridView();
-            this.btnConcluirVenda = new System.Windows.Forms.Button();
+            this.btnFinalizarVenda = new System.Windows.Forms.Button();
             this.btnCancelarVenda = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,21 +79,21 @@
             this.dtvVendas.Size = new System.Drawing.Size(613, 310);
             this.dtvVendas.TabIndex = 56;
             // 
-            // btnConcluirVenda
+            // btnFinalizarVenda
             // 
-            this.btnConcluirVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnFinalizarVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConcluirVenda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConcluirVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConcluirVenda.Location = new System.Drawing.Point(641, 115);
-            this.btnConcluirVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnConcluirVenda.Name = "btnConcluirVenda";
-            this.btnConcluirVenda.Size = new System.Drawing.Size(124, 67);
-            this.btnConcluirVenda.TabIndex = 57;
-            this.btnConcluirVenda.Text = "Concluir Venda";
-            this.btnConcluirVenda.UseVisualStyleBackColor = true;
-            this.btnConcluirVenda.Click += new System.EventHandler(this.btnConcluirVenda_Click);
+            this.btnFinalizarVenda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinalizarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizarVenda.Location = new System.Drawing.Point(641, 115);
+            this.btnFinalizarVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFinalizarVenda.Name = "btnFinalizarVenda";
+            this.btnFinalizarVenda.Size = new System.Drawing.Size(124, 67);
+            this.btnFinalizarVenda.TabIndex = 57;
+            this.btnFinalizarVenda.Text = "Finalizar Venda";
+            this.btnFinalizarVenda.UseVisualStyleBackColor = true;
+            this.btnFinalizarVenda.Click += new System.EventHandler(this.btnConcluirVenda_Click);
             // 
             // btnCancelarVenda
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelarVenda);
-            this.Controls.Add(this.btnConcluirVenda);
+            this.Controls.Add(this.btnFinalizarVenda);
             this.Controls.Add(this.bntSair);
             this.Controls.Add(this.dtvVendas);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -216,7 +216,7 @@
         #endregion
         private System.Windows.Forms.Button bntSair;
         private System.Windows.Forms.DataGridView dtvVendas;
-        private Button btnConcluirVenda;
+        private Button btnFinalizarVenda;
         private Button btnCancelarVenda;
         private Label label1;
         private Label label2;

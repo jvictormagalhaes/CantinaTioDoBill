@@ -33,6 +33,7 @@ namespace CantinaDoTioBill
             {
                 SimpleMessage.Inform("Acesso Liberado ! ", "Acesso");
                 FrmHome form = new FrmHome();
+                this.Hide();
                 form.ShowDialog();
                 this.Close();
             }
@@ -42,6 +43,7 @@ namespace CantinaDoTioBill
                 {
                     SimpleMessage.Inform("Acesso Liberado ! ", "Acesso"); 
                     FrmHome form = new FrmHome();
+                    this.Hide();
                     form.ShowDialog();
                     this.Close();
                 }
