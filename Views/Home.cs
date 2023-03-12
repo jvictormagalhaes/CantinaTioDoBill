@@ -1,5 +1,6 @@
 ﻿using CantinaDoTioBill.View;
 using CantinaDoTioBill.Views;
+using CantinaDoTioBill.Views.Vendas;
 
 namespace CantinaDoTioBill
 {
@@ -35,10 +36,8 @@ namespace CantinaDoTioBill
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             FrmClientes clientes = new FrmClientes();
             clientes.Show();
-
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,13 +48,8 @@ namespace CantinaDoTioBill
 
         private void vendaBalcãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmTelaVenda vb = new FrmTelaVenda();
-            vb.ShowDialog();
-        }
-
-        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            FrmTelaVenda vendaBalcao = new FrmTelaVenda();
+            vendaBalcao.ShowDialog();
         }
 
         private void vendasToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -123,6 +117,12 @@ namespace CantinaDoTioBill
         private void MenuInicio_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void relatórioDeVendasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioVendas relatorioVendas = new FrmRelatorioVendas();
+            relatorioVendas.ShowDialog();
         }
     }
 }

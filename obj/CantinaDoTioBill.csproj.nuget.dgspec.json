@@ -77,6 +77,10 @@
             "Microsoft.NETCore.App": {
               "target": "Package",
               "version": "[2.2.8, )"
+            },
+            "ReportViewerCore.WinForms": {
+              "target": "Package",
+              "version": "[15.1.17, )"
             }
           },
           "imports": [

@@ -47,17 +47,10 @@ namespace CantinaDoTioBill
 
         private void txtValorUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 44)
             {
                 e.Handled = true;
             }
-
-            // permite somente um ponto decimal
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-
         }
 
         private bool VerificarCampoVazio()
@@ -76,12 +69,12 @@ namespace CantinaDoTioBill
 
         private void txtValorUnitario_TextChanged(object sender, EventArgs e)
         {
-            txtValorUnitario.MaxLength = 8;
+            txtValorUnitario.MaxLength = 5;
         }
 
         private void txtEstoque_TextChanged(object sender, EventArgs e)
         {
-            txtEstoque.MaxLength = 8;
+            txtEstoque.MaxLength = 5;
         }
     }
 }

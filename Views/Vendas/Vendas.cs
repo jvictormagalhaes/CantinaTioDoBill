@@ -72,10 +72,30 @@ namespace CantinaDoTioBill.View
                     Venda venda = linha.DataBoundItem as Venda;
                     if (SimpleMessage.Confirm("Deseja finalizar a venda?", "Concluir Venda."))
                     {
-                        venda.Status = "F";
-                        VendaController.Concluir(venda);
-                        SimpleMessage.Inform("Venda concluída com sucesso", "Informação");
-                        dtvVendas.DataSource = VendaController.ListaVenda();
+                        if (venda.Status == "A")
+                        {
+                            using (var db = new BancoContext())
+                            {
+                                venda.Status = "F";
+                                db.Vendas.Attach(venda);
+                                db.Entry(venda).State = EntityState.Modified;
+                                db.SaveChanges();
+                                SimpleMessage.Inform("Venda concluída com sucesso", "Informação");
+                                dtvVendas.DataSource = VendaController.ListaVenda();
+                            }
+                        }
+                        else
+                        {
+                            if (venda.Status == "C")
+                            {
+                                SimpleMessage.Inform("Não é possivel finalizar uma venda cancelada!");
+                            }
+                            else
+                            {
+                                SimpleMessage.Inform("Venda já finalizada !");
+                            }
+
+                        }
                     }
                 }
             }
@@ -96,10 +116,18 @@ namespace CantinaDoTioBill.View
                     Venda venda = linha.DataBoundItem as Venda;
                     if (SimpleMessage.Confirm("Deseja realmente cancelar a venda?", "Cancelamento"))
                     {
-                        venda.Status = "C";
-                        VendaController.Concluir(venda);
-                        SimpleMessage.Inform("Venda cancelada com sucesso", "Informação");
-                        dtvVendas.DataSource = VendaController.ListaVenda();
+                        if (venda.Status == "A" || venda.Status == "F")
+                        {
+                            venda.Status = "C";
+                            VendaController.ConcluirPedido(venda);
+                            SimpleMessage.Inform("Venda cancelada com sucesso", "Informação");
+                            dtvVendas.DataSource = VendaController.ListaVenda();
+                            CalculaTotais();
+                        }
+                        else
+                        {
+                            SimpleMessage.Inform("Venda já cancelada");
+                        }
                     }
 
                 }

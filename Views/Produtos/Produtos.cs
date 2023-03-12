@@ -25,7 +25,7 @@ namespace CantinaDoTioBill.View
                         Produto produto = new Produto();
                         produto.Nome = form.txtNome.Text;
                         produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                        produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
+                        produto.Preco = Math.Round(Convert.ToDouble(form.txtValorUnitario.Text),2);
 
                         ProdutoController.Adicionar(produto);
                         dtvProdutos.DataSource = ProdutoController.ListaProduto();
@@ -83,7 +83,7 @@ namespace CantinaDoTioBill.View
                         {
                             produto.Nome = form.txtNome.Text;
                             produto.Estoque = Convert.ToInt32(form.txtEstoque.Text);
-                            produto.Preco = Convert.ToDouble(form.txtValorUnitario.Text, CultureInfo.InvariantCulture);
+                            produto.Preco = Math.Round(Convert.ToDouble(form.txtValorUnitario.Text), 2);
 
                             ProdutoController.Adicionar(produto);
                             dtvProdutos.DataSource = ProdutoController.ListaProduto();

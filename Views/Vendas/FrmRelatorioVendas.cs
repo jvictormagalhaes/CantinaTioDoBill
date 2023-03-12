@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CantinaDoTioBill.Controller;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,10 @@ namespace CantinaDoTioBill.Views.Vendas
         public FrmRelatorioVendas()
         {
             InitializeComponent();
+
+            reportViewer1.LocalReport.ReportEmbeddedResource = "CantinaDoTioBill.Views.Vendas.RelatorioVendas.rdlc";
+            reportViewer1.RefreshReport();
+            
         }
 
         private void FrmRelatorioVendas_Load(object sender, EventArgs e)

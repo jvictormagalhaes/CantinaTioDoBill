@@ -222,7 +222,7 @@ namespace CantinaDoTioBill
                     venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
                     venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
 
-                    VendaController.Concluir(venda);
+                    VendaController.ConcluirPedido(venda);
 
                     LimparTela();
                     LimparDataGridView();
@@ -328,7 +328,7 @@ namespace CantinaDoTioBill
                     venda.ValorTotal = Convert.ToDouble(lblTotalVenda.Text);
                     venda.ClienteNum = Convert.ToInt32(txtIdCliente.Text);
 
-                    VendaController.Concluir(venda);
+                    VendaController.ConcluirPedido(venda);
                     SimpleMessage.Inform("Venda Salva !", "Informação");
                     LimparTela();
                     LimparDataGridView();
