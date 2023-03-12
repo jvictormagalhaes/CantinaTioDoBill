@@ -234,7 +234,7 @@ namespace CantinaDoTioBill
             }
             catch (FormatException)
             {
-                MessageBox.Show("Os dados do cliente devem ser adicionados como Novo Cliente !");
+                MessageBox.Show("Verifique se todos os dados foram inseridos corretamente !");
             }
             catch (Exception)
             {
@@ -344,7 +344,7 @@ namespace CantinaDoTioBill
             }
             catch (FormatException)
             {
-                MessageBox.Show("Os dados do cliente devem ser adicionados como Novo Cliente !");
+                MessageBox.Show("Verifique se todos os dados foram inseridos corretamente !");
             }
             catch (Exception)
             {
